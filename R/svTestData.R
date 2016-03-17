@@ -88,8 +88,9 @@ append = FALSE, ...)
 
 protocol_junit.svTestData <- function (object, ...)
 {
-	if (!require(XML, quietly = TRUE))
-		return(invisible(FALSE))
+	#if (!require(XML, quietly = TRUE))
+	#	return(invisible(FALSE))
+  requireNamespace("XML")
 
 	toValidXmlString <- function (s) {
 		s <- gsub("&", "&amp;", s)
@@ -104,20 +105,22 @@ protocol_junit.svTestData <- function (object, ...)
 
 	Context <- attr(object, "context")
 	Stats <- attr(object, "stats")
-	result <- xmlNode('testcase', attrs = c(
+	.xmlNode <- XML::xmlNode
+  .addChildren <- XML::addChildren
+  result <- .xmlNode('testcase', attrs = c(
 		'classname' = basename(Context[['unit']]),
         'name' = toValidXmlString(Context[['test']]),
         'time' = object$timing))
 	kind <- as.numeric(.kindMax(object$kind))  # TODO: use accessor
 	elementName <- c(NA, 'failure', 'error', NA)[kind]
 	if (!is.na(elementName)) {
-		failureNode <- xmlNode(elementName, attrs = c(
+		failureNode <- .xmlNode(elementName, attrs = c(
             'type' = elementName,
             'message' = toValidXmlString(object$res)))  # TODO: use accessor
-		result <- addChildren(result, kids = list(failureNode))
+		result <- .addChildren(result, kids = list(failureNode))
 	}
 	if (kind == 4)
-		result <- addChildren(result, kids = list(xmlNode('skipped')))
+		result <- .addChildren(result, kids = list(.xmlNode('skipped')))
 
-	return(result)
+	result
 }

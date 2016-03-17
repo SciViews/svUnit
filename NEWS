@@ -1,5 +1,11 @@
 = svUnit News
 
+== svUnit 0.7-13
+
+* Dependency to optional XML package is now managed correctoly through
+  requireNamespace() and XML::xxx() calls.
+
+
 == svUnit 0.7-12
 
 * Rework of Author field in DESCRIPTION file.
