@@ -1,3 +1,5 @@
+importFrom(utils, sessionInfo, str)
+
 export(as.svSuite,
        as.svTest,
        checkEquals,

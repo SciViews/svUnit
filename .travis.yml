@@ -5,9 +5,10 @@ cache: packages
 r:
   - devel
 
-os:
-  - linux
-  - osx
+# OSes are defined in matrix.include hereunder
+#os:
+#  - linux
+#  - osx
 
 branches:
   only:
@@ -33,8 +34,10 @@ notifications:
     on_failure: change
 
 # covr is not a dependency for the package. So, install it explicitly
+# RUnit required for Rd xref checking. Also force its install
 r_binary_packages:
   - covr
+  - RUnit
 
 after_success:
   - Rscript -e 'covr::codecov()'
