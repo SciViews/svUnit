@@ -2,9 +2,12 @@ language: r
 sudo: false
 cache: packages
 
-# OSes are defined in matrix.include hereunder
-#os:
-#  - linux
+r:
+  - devel
+
+# Mac OS X specific config is defined in matrix.include hereunder
+os:
+  - linux
 #  - osx
 
 #branches:
@@ -15,16 +18,12 @@ cache: packages
 # Be strict when checking our package, but don't build the manual
 warnings_are_errors: true
 # Don't build vignettes on Mac OS X
+r_build_args: --no-manual --no-resave-data
+r_check_args: --no-manual --as-cran
+
 matrix:
   include:
-    - os: linux
-      r:
-        - devel
-      r_build_args: --no-manual --no-resave-data
-      r_check_args: --no-manual --as-cran
     - os: osx
-      r:
-        - devel
       r_build_args: --no-manual --no-build-vignettes --no-resave-data
       r_check_args: --no-manual --no-build-vignettes
 
