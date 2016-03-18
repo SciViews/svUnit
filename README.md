@@ -7,9 +7,11 @@
 [![CRAN Status](http://www.r-pkg.org/badges/version/svUnit)](http://cran.r-project.org/package=svUnit)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
 
-Testing for SciViews: units, integration and system tests.
+SciViews - unit, integration and system testing.
 
-The [R-Forge version](https://r-forge.r-project.org/projects/sciviews/)) is moved to Github on 2016-03-17 (SVN version 569). **Please, do not use R-forge anymore for SciViews development, use this github repository instead.**
+_Build badges are as follows (R versions at the time of the build)._
+- _Status for devel R version for both Linux and Mac OS X at left._
+- _Status for the latest stable version of R under Windows at right._ 
 
 
 ## Installation
@@ -31,7 +33,7 @@ Make sure you have the **devtools** R package installed:
 install.packages("devtools")
 ```
 
-Use `install_github()` to install the **svUnit** package from Github (master branch):
+Use `install_github()` to install the **svUnit** package from Github (source from **master** branch will be recompiled on your machine):
 
 ```r
 devtools::install_github("SciViews/svUnit")
@@ -39,7 +41,7 @@ devtools::install_github("SciViews/svUnit")
 
 R should install all required dependencies automatically, and then it should compile and install **svUnit**.
 
-Latest devel version in source and Windows binaires formats also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svUnit/build/artifacts).
+Latest devel version of **svUnit** (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svUnit/build/artifacts).
 
 
 ## Usage
@@ -56,3 +58,10 @@ Get help about this package:
 library(help = "svUnit")
 help("svUnit-package")
 ```
+
+For further instructions, please, refer to these help pages.
+
+
+## Note to developers
+
+This package used to be developed on R-Forge in the past. However, the latest [R-Forge version](https://r-forge.r-project.org/projects/sciviews/) was moved to this Github repository on 2016-03-17 (SVN version 569). **Please, do not use R-Forge anymore for SciViews development, use this Github repository instead.**
