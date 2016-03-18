@@ -33,7 +33,7 @@ env:
 
 # For building vignettes, we need utf8x.def for LaTeX (ucs package)
 before_install:
-  - sudo tlmgr install ucs
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo tlmgr install ucs framed ; fi
 
 # System dependencies
 #apt_packages:
