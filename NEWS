@@ -2,7 +2,9 @@
 
 == svUnit 0.7-13
 
-* Dependency to optional XML package is now managed correctoly through
+* Development moved to Github; CI added.
+
+* Dependency to optional XML package is now managed correctly through
   requireNamespace() and XML::xxx() calls.
 
 

@@ -3,7 +3,7 @@
 \alias{svUnit}
 \docType{package}
 
-\title{ A framework for test cases, test units and test suites in R }
+\title{ SciViews - Unit, integration and system testing }
 \description{
   The SciViews svUnit package defines a framework for testing R code, not unlike
   jUnit for Java. It is inspired on the \code{checkxxx()} functions from the
