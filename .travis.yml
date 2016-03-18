@@ -31,6 +31,10 @@ env:
  global:
    - CRAN: http://cran.rstudio.com
 
+# For building vignettes, we need utf8x.def for LaTeX (ucs package)
+before_install:
+  - tlmgr install ucs
+
 # System dependencies
 #apt_packages:
 # - libcurl4-openssl-dev
