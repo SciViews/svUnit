@@ -3,16 +3,18 @@ sudo: false
 cache: packages
 
 r:
+  - oldrel
+  - release
   - devel
 
 # Mac OS X specific config is defined in matrix.include hereunder
 os:
   - linux
-#  - osx
+# Disable MacOS X for now  - osx
 
-#branches:
-#  only:
-#    - master
+branches:
+  only:
+    - master
 #    - macosx
 
 # Be strict when checking our package, but don't build the manual
@@ -35,9 +37,9 @@ notifications:
 
 # covr is not a dependency for the package. So, install it explicitly
 # RUnit required for Rd xref checking. Also force its install
-r_binary_packages:
-  - covr
-  - RUnit
+#r_binary_packages:
+#  - covr
+#  - RUnit
 
 after_success:
   - Rscript -e 'covr::codecov()'
