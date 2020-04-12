@@ -1,5 +1,10 @@
 = svUnit News
 
+== svUnit 1.0.0
+
+* No further problems found in 2 years => version bumped to 1.0.0.
+
+
 == svUnit 0.7-13
 
 * Development moved to Github; CI added.
@@ -68,17 +73,17 @@
 
 * Loading of svUnit sometimes failed during checking of the SciViews-K Unit
   plugin installation in Komodo Edit/IDE. Corrected. Thanks Claudia Beleites.
-  
+
 * The unitTest.svUnit man page now uses require(svUnit) in a mechanism that
   ignores the tests in case svUnit is not installed in a machine where R CMD
   check is run.
-  
+
 * errorLog() now briefly reports statistics on all test run when used in
   interactive() mode. This is more appropriate when the tests are run by using
   example(unitTests.<mypackage>), while it does not change original behaviour
   (silent execution of the tests, except in case of failure or error) during
   the R CMD check process.
-  
+
 * The package vignette is updated to reflect these changes.
 
 
