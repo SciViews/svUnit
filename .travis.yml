@@ -10,7 +10,7 @@ r:
 # Mac OS X specific config is defined in matrix.include hereunder
 os:
   - linux
-  - osx # Disable MacOS X for now  - osx
+  #- osx # Disable MacOS X for now  - osx
 
 branches:
   only:
@@ -32,11 +32,11 @@ warnings_are_errors: true
 r_build_args: --no-manual --no-resave-data --compact-vignettes=gs+qpdf
 r_check_args: --no-manual --as-cran
 
-matrix:
-  include:
-    - os: osx
-      r_build_args: --no-manual --no-build-vignettes --no-resave-data
-      r_check_args: --no-manual --no-build-vignettes
+#matrix:
+#  include:
+#    - os: osx
+#      r_build_args: --no-manual --no-build-vignettes --no-resave-data
+#      r_check_args: --no-manual --no-build-vignettes
 
 # Email notifications
 notifications:
