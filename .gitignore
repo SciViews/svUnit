@@ -21,3 +21,5 @@ vignettes/*.pdf
 
 # Mac files
 .DS_Store
+doc
+Meta

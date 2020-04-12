@@ -1,7 +1,7 @@
 citHeader("To cite SciViews-R in publications use:")
 
 citEntry(entry="Manual",
-         title = "SciViews-R: A GUI API for R",
+         title = "SciViews-R",
          author = personList(as.person("Philippe Grosjean")),
          organization = "UMONS",
          address      = "MONS, Belgium",

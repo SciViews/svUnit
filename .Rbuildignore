@@ -3,7 +3,6 @@
 .git
 .git/*
 README.md
-NEWS.md
 FAQ.md
 CONDUCT.md
 LICENSE
@@ -14,3 +13,8 @@ Makefile
 ^\.travis\.yml$
 ^appveyor\.yml$
 ^.*\.Rproj$
+^doc$
+^Meta$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
