@@ -8,7 +8,7 @@
 \alias{checkTrue}
 \alias{checkException}
 \alias{DEACTIVATED}
-\title{SciViews R Unit assertions (check functions)}
+\title{SciViews-R Unit assertions (check functions)}
 \usage{
 checkEquals(
   target,

@@ -1,4 +1,4 @@
-#' SciViews R Unit assertions (check functions)
+#' SciViews-R Unit assertions (check functions)
 #'
 #' These functions define the assertions in test functions. They are designed to
 #' check the result of some test calculation.
