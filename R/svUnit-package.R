@@ -1,0 +1,135 @@
+#' SciViews - Unit, Integration and System Testing
+#'
+#' The SciViews svUnit package defines a framework for testing R code, not
+#' unlike jUnit for Java. It is inspired on the `checkxxx()` functions from the
+#' RUnit package and the same test unit files should be compatible with both
+#' svUnit and RUnit. However, the internal implementation is completely
+#' different and svUnit can also be used interactively, while RUnit is only
+#' designed to run test units written in files on disks.
+#'
+#' @docType package
+#' @name svUnit-package
+#'
+#' @details
+#' The test unit framework provided in svUnit is based on tests, also called
+#' assertions, implemented in `checkxxx()` functions. For instance, the
+#' `checkTrue(expr)` function check if its 'expr' argument returns `TRUE`.
+#' Results of these assertions are collected in a centralized logger located in
+#' the `.Log` object in `.GlobalEnv`. This is a 'svSuiteData' object with data
+#' about the context of the tests (see for instance, [lastTest()], [lastSuite()]
+#' or `metadata(.Log)`).
+#'
+#' Assertions can give three results: (1) `TRUE` if success, (2) `FALSE` in
+#' case of failure (in our example, 'expr' in `checkTrue(expr)` did not return
+#' `TRUE`), and (3) `NA` if the code in 'expr' cannot be parsed or executed
+#' correctly. All these errors or failures are catch and recorded in the logger,
+#' as individual 'svTestData' objects.
+#'
+#' Both the logger ('svSuiteData' object) and test records inside it
+#' ('svTestData' objects) have convenient methods to visualize information they
+#' contain: [print()], [summary()] and [stats()] methods. Access to the
+#' individual test records in the logger is done with list-like instructions:
+#' `.Log$mytest` returns the 'svTestData' object named 'mytest', itself the
+#' result of running test in the 'mytest' test function (i.e.,
+#' `runTest(mytest)`, see hereunder). Assertions run at the command line,
+#' outside of specific contexts provided by test functions, test units and
+#' test suites (see hereunder) are recorded under the 'eval' 'svTestData' object
+#' in the logger (i.e., `.Log$eval`).
+#'
+#' Since a 'svSuiteData' object (the logger) is also an environment, you can get
+#' the list of all test records it contains using `ls(.Log)`, and you can
+#' eliminate a given test record using `rm(mytest, envir = .Log)`.
+#'
+#' Test cases are collections of assertions with the satellite code needed to
+#' build example or situations to be tested. They are collected together in argument-less functions with class being 'svTest'. See `?svTest`  for
+#' further explanations and a couple of example test cases/test functions.
+#'
+#' In its simplest instance, a test function is defined as a separate R object
+#' loaded in memory (unlike RUnit where all test must be defined in files). You
+#' run it simply by using `runTest(mytest)`. A slightly more structured way
+#' to work is to attach the test function to the object it testes. You use
+#' `test(myobj) <- testmyobj` to do so, and retrieve it with `test(myobj)`. Now,
+#' the test function always follows the tested object. Testing the object is
+#' still simple by using `runTest(myobj)`, which is totally equivalent to
+#' `runTest(test(myobj))`. One can determine if an object has a test function
+#' associated, or is a test function itself by using `is.test(myobj)`.
+#'
+#' Several test functions can be collected together in so-called test units. A
+#' test unit only exists on disk. It is a file named 'runit*.R' containing
+#' sourceable R code with test functions having names starting with 'test'
+#' (unlike RUnit, the default convention of file names starting with 'runit' and
+#' test function names starting with 'test' is not customizable in svUnit). One
+#' can also define special `.setUp()` and `.tearDown()` functions in the unit.
+#' The first function will be run before each test function, and the latter one
+#' will be run after it. Test units are created manually, or from a collection
+#' of objects with associated test functions loaded in an environment (usually
+#' `.GlobalEnv`) thanks to the [makeUnit()] method. These units should be
+#' mutually compatible with those used in the RUnit package (at least this is
+#'  verified with version 0.4-17 of RUnit).
+#'
+#' Test units defined for packages should be located in the package /runitTests
+#' subdirectory (/inst/runitTests for source of the package) or one of its
+#' subdirectories. That way, they are located automatically by the function
+#' [svSuiteList()] that also automatically detects all objects with associated
+#' test functions loaded in `.GlobalEnv`. Test suites are 'svSuite'
+#' objects with a list of test units or test objects to collect in the suite.
+#' Thus, [svSuiteList()] automatically builds such a suite with all tests it
+#' finds in R, with many possibilities to filter packages' test units, objects'
+#' test functions, or to add non standard directories with test units, for
+#' instance. See `?svSuite` for more details on creating and using these
+#' suites.
+#'
+#' A GUI (Graphical User Interface) is provided to automatically build and run
+#' tests suites and to get a graphical (tree) interactive report of the results
+#' in the Komodo Edit or IDE code editor, together with the SciViews-K extension.
+#' If you want to use this (optional) GUI, you have to install required software
+#' components on your machine.
+#'
+#' Finally, the svUnit framework is compatible with R CMD check (see the manual
+#' "Writing R extensions"). You simply define man pages (.Rd files) with an
+#' example section running selected test units from your package. The function
+#' [errorLog()] is designed to generate and error if one or more tests failed or
+#' raised an error during R CMD check, and it should be used at the end of the
+#' example that runs your unit test(s). That way, R CMD check is interrupted and
+#' a detailed report of the tests that failed or raised an error is printed. See
+#' an example in `?unitTests.svUnit`.
+#'
+#' @author Written by Ph. Grosjean, inspired from the general design of the
+#' 'RUnit' package by Thomas Konig, Klaus Junemann & Matthias Burger.
+#'
+#' @references There is a huge litterature and unit testing. An easy starting
+#' point is: \url{http://en.wikipedia.org/wiki/Unit_test}.
+#'
+#' @keywords utilities
+#' @concept unit testing
+#' @examples
+#' # Clear the logger
+#' clearLog()
+#'
+#' # Design and attach a simple test function to an object
+#' foo <- function(x, y = 2)
+#'   return(x * y)
+#' testfoo <- function() {
+#'   #DEACTIVATED()	# Use this to deactive the test (notice placed in the log)
+#'   checkEqualsNumeric(5, foo(2),  "Check return of foo()")
+#'   checkException(foo("b"),       "Wrong first argument")
+#'   checkException(foo(2, "a"),    "Wrong second argument")
+#' }
+#' # Attach this to the foo function
+#' test(foo) <- testfoo
+#'
+#' # Run this test
+#' runTest(foo)
+#'
+#' # Inspect the result
+#' ls(.Log)
+#' .Log$`test(foo)`
+#' # This test fails. You see that the test function requires that foo(2) = 5
+#' # and the actual implementation returns 4. This is a trivial, useless example,
+#' # but you are supposed to correct the function. For instance:
+#' foo <- function(x, y = 2)
+#'   return(x * y + 1)
+#' test(foo) <- testfoo
+#'
+#' (runTest(foo))	# Now, that's fine!
+NULL

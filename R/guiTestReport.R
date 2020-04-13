@@ -1,56 +1,32 @@
-guiSuiteList <- function(sep = "\t", path = NULL, compare = TRUE) {
-  Suites <- svSuiteList()
-
-  if (compare) {
-    oldSuites <- .getTemp(".guiSuiteListCache", default = "")
-    # Compare both versions
-    if (!identical(Suites, oldSuites)) {
-      # Keep a copy of the last version in SciViews:TempEnv
-      .assignTemp(".guiSuiteListCache", Suites)
-      Changed <- TRUE
-    } else Changed <- FALSE
-  } else {
-    Changed <- TRUE
-    .assignTemp(".guiSuiteListCache", Suites)
-  }
-
-  if (is.null(path)) {# Return result, as a single character string with sep
-    if (Changed) {
-      if (!is.null(sep))
-        Suites <- paste(Suites, collapse = sep)
-      return(Suites)
-    } else {
-      return(NULL)
-    }
-  } else {# Write to a file called 'Suites.txt' in this path
-    file <- file.path(path, "Suites.txt")
-    if (Changed) {
-      if (is.null(sep))
-        sep <- "\n"
-      cat(Suites, sep = sep, file = file)
-    }
-    return(invisible(Changed))
-  }
-}
-
-guiSuiteAutoList <- function(...) {
-  # Is koCmd() available?
-  if (!exists("koCmd", mode = "function"))
-    return(TRUE)
-
-  # Is it something changed in the unit list?
-  res <- guiSuiteList(sep = ",", path = NULL, compare = TRUE)
-  if (!is.null(res))
-    ret <- get("koCmd")('sv.r.unit.getRUnitList_Callback("<<<data>>>");',
-      data = res)
-  return(TRUE)
-}
-
-guiTestFeedback <- function(object, path = NULL, ...) {
-  # Give feedback to client about the currently running tests
-  # TODO: feedback about test run
-}
-
+#' Report or give feedback to the GUI client about running test units
+#'
+#' These functions are usually not called from the command line. They return
+#' data to compatible GUI clients, like Komodo Edit with the SciViews-K
+#' extension.
+#'
+#' @param object a 'svUnitData' object.
+#' @param sep Field separator to use in the results.
+#' @param path Path where to write a 'Suites.txt' file with the list of
+#' currently available test suites (to be used by the GUI client). If `NULL`,
+#' no file is written (by default).
+#' @param ... Not used currently.
+#' @param compare Do we compare the list of available test suite and return
+#' something to the GUI client only if there are changes in the list? This is
+#' used (when `TRUE`) to avoid unnecessary multiple processings of the same list
+#' by the GUI client.
+#'
+#' @return
+#' [guiSuiteList()] returns the list of available test suites invisibly.
+#' [guiSuiteAutoList()] is used to establish a callback to automatically list
+#' the available test suites in the GUI. It is not intended to be called
+#' directly by the user. The other functions just return `TRUE` invisibly.They
+#' are used for their side effect of sending data to compatible GUI clients.
+#'
+#' @export
+#' @author Philippe Grosjean
+#' @seealso [svTest()], [svSuite()], [koUnit_version()]
+#' @keywords utilities
+#' @concept unit testing
 guiTestReport <- function(object, sep = "\t", path = NULL, ...) {
   # Report the results of a test to the GUI client
   if (!is.svSuiteData(object))
@@ -141,4 +117,63 @@ guiTestReport <- function(object, sep = "\t", path = NULL, ...) {
     cat(Res, file = path)
   }
   path
+}
+
+#' @export
+#' @rdname guiTestReport
+guiSuiteList <- function(sep = "\t", path = NULL, compare = TRUE) {
+  Suites <- svSuiteList()
+
+  if (compare) {
+    oldSuites <- .getTemp(".guiSuiteListCache", default = "")
+    # Compare both versions
+    if (!identical(Suites, oldSuites)) {
+      # Keep a copy of the last version in SciViews:TempEnv
+      .assignTemp(".guiSuiteListCache", Suites)
+      Changed <- TRUE
+    } else Changed <- FALSE
+  } else {
+    Changed <- TRUE
+    .assignTemp(".guiSuiteListCache", Suites)
+  }
+
+  if (is.null(path)) {# Return result, as a single character string with sep
+    if (Changed) {
+      if (!is.null(sep))
+        Suites <- paste(Suites, collapse = sep)
+      return(Suites)
+    } else {
+      return(NULL)
+    }
+  } else {# Write to a file called 'Suites.txt' in this path
+    file <- file.path(path, "Suites.txt")
+    if (Changed) {
+      if (is.null(sep))
+        sep <- "\n"
+      cat(Suites, sep = sep, file = file)
+    }
+    return(invisible(Changed))
+  }
+}
+
+#' @export
+#' @rdname guiTestReport
+guiSuiteAutoList <- function(...) {
+  # Is koCmd() available?
+  if (!exists("koCmd", mode = "function"))
+    return(TRUE)
+
+  # Is it something changed in the unit list?
+  res <- guiSuiteList(sep = ",", path = NULL, compare = TRUE)
+  if (!is.null(res))
+    ret <- get("koCmd")('sv.r.unit.getRUnitList_Callback("<<<data>>>");',
+      data = res)
+  return(TRUE)
+}
+
+#' @export
+#' @rdname guiTestReport
+guiTestFeedback <- function(object, path = NULL, ...) {
+  # Give feedback to client about the currently running tests
+  # TODO: feedback about test run
 }

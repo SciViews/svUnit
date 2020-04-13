@@ -1,3 +1,5 @@
+#' @export
+#' @rdname svTest
 makeTestListFromExamples <- function(packageName, manFilesDir,
 skipFailing = FALSE) {
   manPageFiles <- list.files(manFilesDir, pattern = "\\.Rd$")

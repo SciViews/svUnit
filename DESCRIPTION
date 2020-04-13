@@ -10,7 +10,7 @@ Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 1.9.0)
 Suggests: svGUI, datasets, utils, XML, RUnit, knitr, covr
 License: GPL-2
-URL: https://github.com/SciViews/svUnit, http://www.sciviews.org/SciViews-R
+URL: https://github.com/SciViews/svUnit, https://www.sciviews.org/svUnit/
 BugReports: https://github.com/SciViews/svUnit/issues
 LazyData: yes
 Roxygen: list(markdown = TRUE)

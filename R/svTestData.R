@@ -1,11 +1,61 @@
+#' Objects of class 'svTestData' contain results from running a test
+#'
+#' The 'svTestData' contains results of test run. The `checkxxx()` functions and
+#' the `runTest()` method generate one such object which is located in the
+#' `.Log` object in `.GlobalEnv`. It is then possible to display and report
+#' information it contains in various ways to analyze the results.
+#'
+#' @param x Any kind of object, or a 'svTestData' object in the case of
+#' [print()].
+#' @param object A 'svTestData' object.
+#' @param all Do we print concise report for all test, or only for the tests
+#' that fail or produce an error?
+#' @param header Do we print a header or not?
+#' @param file Character. The path to the file where to write the report. If
+#' `file = ""`, the report is output to the console.
+#' @param append Do we append to this file?
+#' @param ... Further arguments to pass to methods. Not used yet.
+#'
+#' @return
+#' [is.svTestData()] returns `TRUE` if the object is an 'svTestData'. The
+#' various methods serve to extract or print content in the object.
+#'
+#' @export
+#' @name svTestData
+#' @author Philippe Grosjean
+#' @seealso [svTest()], [is.svSuiteData()], [Log()], [checkEquals()]
+#' @keywords utilities
+#' @concept unit testing
+#' @examples
+#' foo <- function(x, y = 2)
+#'   return(x * y)
+#' is.test(foo)  # No
+#' # Create test cases for this function
+#' test(foo) <- function() {
+#'   checkEqualsNumeric(4, foo(2))
+#'   checkEqualsNumeric(5, foo(2, 3))
+#'   checkEqualsNumeric(5, foo(nonexists))
+#' }
+#' # Generate a 'svTestData' object by running the test
+#' obj <- runTest(foo)  # Equivalent to runTest(test(foo)), but shorter
+#' obj
+#' summary(obj)
+#' stats(obj)
+#' is.svTestData(obj)
+#'
+#' rm(foo, obj)
 is.svTestData <- function(x) {
   # It this a svTestData object
   inherits(x, "svTestData")
 }
 
+#' @export
+#' @rdname svTestData
 stats <- function(object, ...)
   UseMethod("stats")
 
+#' @export
+#' @rdname svTestData
 stats.svTestData <- function(object, ...) {
   if (!is.svTestData(object))
     stop("'object' must inherit from 'svTestData'")
@@ -18,6 +68,8 @@ stats.svTestData <- function(object, ...) {
   list(kind = Kinds, timing = Stats["timing"])
 }
 
+#' @export
+#' @rdname svTestData
 print.svTestData <- function(x, all = FALSE, header = TRUE, file = "",
 append = FALSE, ...) {
   # If there is a context attribute, print info about the tests
@@ -53,6 +105,8 @@ append = FALSE, ...) {
   invisible(x)
 }
 
+#' @export
+#' @rdname svTestData
 summary.svTestData <- function(object, header = TRUE, file = "",
 append = FALSE, ...) {
   # If there is a context attribute, print info about the tests
@@ -89,6 +143,8 @@ append = FALSE, ...) {
   }
 }
 
+#' @export
+#' @rdname svTestData
 protocol_junit.svTestData <- function(object, ...) {
   #if (!require(XML, quietly = TRUE))
   #  return(invisible(FALSE))

@@ -6,6 +6,8 @@
 
 - The vignette is reworked into an R Markdown format.
 
+- The functions documentation is reworked in roxygen2 format (v7).
+
 - A pkgdown site is created to better document the svUnit package.
 
 # svUnit 0.7-13
