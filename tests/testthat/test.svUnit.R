@@ -1,15 +1,15 @@
 # Run tests using svUnit
 # This is a wrapper to run these from within testthat
-# so that R Studio's Test function and devtools::test() can be used too
+# so that RStudio's test function and devtools::test() can be used too
 pkgname <- "svUnit"
 
 test_svUnit <- function(pkgname) {
   library(svUnit)
   clearLog()
-  
+
   # Current dir is /tests/testthat
   basedir <- dirname(dirname(getwd()))
-  
+
   # Look for our tests in /unitTests or /inst/unitTests
   testdir <- file.path(basedir, "unitTests")
   if (!dir.exists(testdir)) {
@@ -24,7 +24,7 @@ test_svUnit <- function(pkgname) {
     # No test directory found
     stop("No svUnit test directories found for ", basename(basedir))
   }
-  
+
   res <- capture.output(runTest(svSuite(paste0("dir:", testdir)), pkgname))
   summary(Log())
 }
