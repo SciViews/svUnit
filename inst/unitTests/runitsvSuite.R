@@ -22,7 +22,7 @@ test_R <- svTest(function() {
   foo <- function(x)
     return(x)
   test(foo) <- function() {
-    checkEqualsNumeric(2, foo(2),     "foo(2) returns 2")
+    checkEquals(2, foo(2),            "foo(2) returns 2")
     checkException(foo("x"),          "foo(\"x\") raises an exception")
   }
   svSuite.foo <<- foo   # Place a copy of 'foo' in .GlobalEnv
@@ -49,10 +49,14 @@ test_R <- svTest(function() {
 testsvSuite <- function() {
   checkTrue(is.svSuite(svSuite("svSuite.foo")),
     "svSuite(\"svSuite.foo\") returns a 'svSuite' object")
+  checkTrue(is.svSuite(as.svSuite("svSuite.foo")),
+    "as.svSuite(\"svSuite.foo\") returns a 'svSuite' object")
   checkTrue(is.svSuite(svSuite("svSuite.bar")),
     "svSuite(\"svSuite.bar\") returns a 'svSuite' object")
   checkTrue(is.svSuite(svSuite("test_svSuite")),
     "svSuite(\"test_svSuite\") returns a 'svSuite' object")
+  checkTrue(is.svSuite(print(svSuite("test_svSuite"))),
+    "print(svSuite) returns a 'svSuite' object invisibly")
   checkTrue(is.svSuite(svSuite("nonexisting")),
     "svSuite(\"nonexisting\") returns a 'svSuite' object")
   checkException(svSuite(nonexisting),

@@ -9,7 +9,8 @@ mat <- matrix(rnorm(4), ncol = 2)
 
 # Create very simple test cases for matrix 'mat'
 testmat <- svTest(function() {
-  checkEqualsNumeric(2, nrow(mat))
+  checkEquals(2, nrow(mat), checkNames = FALSE)
+  checkEquals(2, ncol(mat), checkNames = TRUE) # Not important here
   checkTrue(is.numeric(mat))
 })
 

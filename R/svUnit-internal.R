@@ -1,4 +1,4 @@
-.onLoad <- function(lib, pkg) {
+.onLoad <- function(lib, pkg) { # nocov start
   # The default exclusion list, if it is not defined yet
   # Although there are unit tests defined in these packages (as examples),
   # we don't want to include them, by default, in our test suite!
@@ -13,9 +13,9 @@
   h <- .getTemp(".svTaskCallbackManager", default = NULL)
   if (!is.null(h))
     h$add(guiSuiteAutoList, name = "guiSuiteAutoList")
-}
+} # nocov end
 
-.onUnload <- function(libpath) {
+.onUnload <- function(libpath) { # nocov start
   # Delete the task callback
   h <- .getTemp(".svTaskCallbackManager", default = NULL)
   if (!is.null(h))
@@ -23,13 +23,13 @@
   # Clear the list of units in the GUI client
   if (exists("koCmd", mode = "function"))
     get("koCmd")('sv.r.unit.getRUnitList_Callback("");')
-}
+} # nocov end
 
 .packageName <- "svUnit"
 
 .komodoExtensionMinVersion <- "0.7.3"
 
-.installUpgradeKomodoExtension <- function() {
+.installUpgradeKomodoExtension <- function() { # nocov start
   if (!exists("koCmd", mode = "function"))
     return()
   # Look if the SciViews-K Unit Komodo extension is installed and is of the
@@ -63,7 +63,7 @@
     cmd <- paste(cmd, ' if (res == "OK") { ko.open.URI("<<<data>>>"); }', sep = "")
     get("koCmd")(cmd, data = xpiFile)
   }
-}
+} # nocov end
 
 .compareVersion <- function(a, b) {
   # This is the same as utils::compareVersion(), but we don't want
