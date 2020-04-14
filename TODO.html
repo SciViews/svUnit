@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Unit tests for the package 'svUnit' — unitTests.svUnit • svUnit</title>
+<title>svUnit To Do list • svUnit</title>
 
 
 <!-- jquery -->
@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
-<link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script>
+<link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -33,17 +33,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script>
+<link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Unit tests for the package 'svUnit' — unitTests.svUnit" />
-<meta property="og:description" content="Performs unit tests defined in this package by running
-example(unitTests.svUnit). Tests are in runit*.R files located in the
-'/unitTests' subdirectory or one of its subdirectories ('/inst/unitTests' and
-subdirectories in package sources)." />
+<meta property="og:title" content="svUnit To Do list" />
 
 
 
@@ -62,7 +58,7 @@ subdirectories in package sources)." />
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -74,7 +70,7 @@ subdirectories in package sources)." />
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">svUnit</a>
+        <a class="navbar-link" href="index.html">svUnit</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
@@ -82,19 +78,19 @@ subdirectories in package sources)." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
+  <a href="index.html">
     <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../articles/svUnit.html">Get started</a>
+  <a href="articles/svUnit.html">Get started</a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -115,56 +111,41 @@ subdirectories in package sources)." />
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-    <h1>Unit tests for the package 'svUnit'</h1>
-    <small class="dont-index">Source: <a href='https://github.com/SciViews/svUnit/blob/master/R/unitTests.svUnit.R'><code>R/unitTests.svUnit.R</code></a></small>
-    <div class="hidden name"><code>unitTests.svUnit.Rd</code></div>
+      <h1>svUnit To Do list</h1>
     </div>
 
-    <div class="ref-description">
-    <p>Performs unit tests defined in this package by running
-<code><a href='https://rdrr.io/r/utils/example.html'>example(unitTests.svUnit)</a></code>. Tests are in <code>runit*.R</code> files located in the
-'/unitTests' subdirectory or one of its subdirectories ('/inst/unitTests' and
-subdirectories in package sources).</p>
-    </div>
+<div id="svunit-to-do-list" class="section level1">
 
+<ul>
+<li><p>Split the svUnit vignette inot a real getting started one, and a rationate + SciViews-k/Komodo vignettes.</p></li>
+<li><p>Drop the unmaintained SciViews-K/Komodo feature?</p></li>
+<li><p>Add a GUI support for Visual Studio Code (and Atom?)</p></li>
+<li><p>Refine code, snake case equivalent of functions names and get rid of utils sessionInfo and str dependencies + rename Log into what? tests?.</p></li>
+<li><p>Make it also compatible with testthat (including in RStudio) and testit (+ look at testthis also).</p></li>
+<li><p>Be able to track the guilty line of code for each test and to output something like: ./inst/unitTest/runit.select.R:28:… (would be most useful for Emacs)!</p></li>
+<li><p>We need accessors to ‘timing’ and ‘max.kind’.</p></li>
+<li><p>guiTestFeedback() must be finished.</p></li>
+<li><p>Output results in html, latex, wiki, etc. format (summary.svSuiteData).</p></li>
+<li><p>Queue tests to run and run them asynchronously using tcltk and after() if this package is loaded and we are in interactive() mode.</p></li>
+<li><p>Translate this package.</p></li>
+<li><p>Increase test coverage for this package and provide a way to test failures and erros in tests… as success (because we want to test them too)!</p></li>
+<li><p>In RUnit/share/R, there are checkCode.r and compareRUnitTestData.r. The former provides functions to test R code in R files, the latter does a comparison of timings in two test set runs, using a tolerance value. Worth checking and integrating later on!</p></li>
+<li><p>Check RUnit compatibility with latest version.</p></li>
+</ul>
+</div>
 
-
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/library.html'>require</a></span>(<span class='no'>svUnit</span>)) {
-  <span class='fu'><a href='Log.html'>clearLog</a></span>()
-  <span class='fu'><a href='svTest.html'>runTest</a></span>(<span class='fu'><a href='svSuite.html'>svSuite</a></span>(<span class='st'>"package:svUnit"</span>), <span class='st'>"svUnit"</span>)
-  <span class='co'># \donttest{</span>
-  <span class='co'># Tests to run with example() but not with R CMD check</span>
-  <span class='fu'><a href='svTest.html'>runTest</a></span>(<span class='fu'><a href='svSuite.html'>svSuite</a></span>(<span class='st'>"package:svUnit (VirtualClass)"</span>), <span class='st'>"VirtualClass"</span>)
-  <span class='co'># }</span>
-  <span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-  <span class='co'># Tests to present in ?unitTests.svUnit but not run automatically</span>
-  <span class='co'># Run all currently loaded packages test cases and test suites</span>
-  <span class='fu'><a href='svTest.html'>runTest</a></span>(<span class='fu'><a href='svSuite.html'>svSuiteList</a></span>(), <span class='st'>"AllTests"</span>)
-  }
-  <span class='co'># \dontshow{</span>
-  <span class='co'># Put here test units you want to run during R CMD check but</span>
-  <span class='co'># don't want to show or run with example(unitTests.svUnit)</span>
-  <span class='co'># }</span>
-  <span class='co'># Check errors at the end (needed to interrupt R CMD check)</span>
-  <span class='fu'><a href='Log.html'>errorLog</a></span>()
-}</div><div class='output co'>#&gt; A svUnit test suite definition with:
-#&gt; 
-#&gt; - Test function:
-#&gt; [1] "test_svSuite"
-#&gt; * 
-#&gt;   runTest(bar) does not work inside test functions:  ... DEACTIVATED
-#&gt; </div></pre>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
+
 
 
       <footer>

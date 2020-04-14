@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">svUnit</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
 
@@ -76,7 +76,7 @@
       <h1 data-toc-skip>svUnit - A framework for unit testing in R</h1>
                         <h4 class="author">Philippe Grosjean (<a href="mailto:phgrosjean@sciviews.org" class="email">phgrosjean@sciviews.org</a>)</h4>
             
-            <h4 class="date">2020-04-13</h4>
+            <h4 class="date">2020-04-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/SciViews/svUnit/blob/master/vignettes/svUnit.Rmd"><code>vignettes/svUnit.Rmd</code></a></small>
       <div class="hidden name"><code>svUnit.Rmd</code></div>
@@ -93,15 +93,16 @@
 <li>Tests are related to package compilation and cannot easily be run independently (for instance, for functions developed separately).</li>
 <li>Once a test fails, the checking process is interrupted. Thus one has to correct the bug and launch package checking again… and perhaps get caught by the next bug. It is a long and painful process.</li>
 <li>There is no way to choose one or several tests selectively: all are run or not (depending on command line options) during package checking.</li>
-<li>It is very hard, or near to impossible to program in R in a test driven development (<em>write tests first</em>) with the standard tools (<a href="http://en.wikipedia.org/wiki/Test-" class="uri">http://en.wikipedia.org/wiki/Test-</a> driven_development).</li>
+<li>It is very hard, or near to impossible to program in R in a test driven development (<em>write tests first</em>) with the standard tools (<a href="http://en.wikipedia.org/wiki/Test-driven_development" class="uri">http://en.wikipedia.org/wiki/Test-driven_development</a>).</li>
 <li>Consequently, the ‘<em>test-code-simplify</em>’ cycle is not easily accessible yet to R programmer, because of the lack of an interactive and flexible testing mechanism providing immediate, or quasi immediate feedback about changes made.</li>
 <li>We would like also to emphasize that test suites are not only useful to check code, they can also be used to check data, or the pertinence of analyses.</li>
 </ul>
 </div>
 <div id="unit-testing-in-r-without-svunit" class="section level2">
 <h2 class="hasAnchor">
-<a href="#unit-testing-in-r-without-svunit" class="anchor"></a>Unit testing in R without svUnit</h2>
-<p>Besides the “regular” testing mechanism of R packages, one can find the <strong>testthat</strong> and <strong>RUnit</strong> package on CRAN (<a href="http://cran.r-project.org" class="uri">http://cran.r-project.org</a>). Another package used to provide an alternate implementation of test unit: <strong>butler</strong>, but it is archived because it is not maintained any more and has given up in favor of <strong>RUnit</strong>. <strong>RUnit</strong> implements the following features:</p>
+<a href="#unit-testing-in-r-without-svunit" class="anchor"></a>Unit testing in R without ‘svUnit’</h2>
+<p>Besides the “regular” testing mechanism of R packages, one can find the ‘testthat’ and ‘RUnit’ packages on CRAN (<a href="https://CRAN.R-project.org/package=testthat" class="uri">https://CRAN.R-project.org/package=testthat</a> and <a href="https://CRAN.R-project.org/package=RUnit" class="uri">https://CRAN.R-project.org/package=RUnit</a>, respectively)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Another package used to provide an alternate implementation of test unit: ‘butler’, but it is archived because it is not maintained any more and has given up in favor of ‘RUnit’.</p>
+<p>The ‘testthat’ package is heavily used by the UseR community (there are many more packages on CRAN that use it than any other testing system). It implements R testing in a rather original way. ‘RUnit’, on the other hand sticks with the framework initially defined by junit for Java and largely developed for many different languages. In this document, we will not discuss further about ‘testthat’. We will focus on the junit-like framework implemented in ‘RUnit’ and ‘svUnit’. ‘RUnit’ implements the following features:</p>
 <ul>
 <li>
 <strong>Assertions</strong>, <code><a href="../reference/check.html">checkEquals()</a></code>, <code><a href="../reference/check.html">checkEqualsNumeric()</a></code>, <code><a href="../reference/check.html">checkIdentical()</a></code> and <code><a href="../reference/check.html">checkTrue()</a></code> and negative tests (tests that check error conditions, <code><a href="../reference/check.html">checkException()</a></code>).</li>
@@ -110,27 +111,27 @@
 <li>A <strong>test suite</strong> (object <code>RUnitTestSuite</code>) is a special object defining a battery of tests. It points to one or several directories containing test units. A test suite is defined by <code>defineTestSuite()</code>.</li>
 <li>One or more test suites can be run by calling <code>runTestSuite()</code>. There is a shortcut to define and run a test suite constituted by only one test unit by using the function <code>runTestFile()</code>. Once the test is run, a <code>RUnitTestData</code> object is created that contains all the information collected from the various tests run.</li>
 <li>One can print a synthetic report (how many test units, test functions, number of errors, fails and deactivated item), or get a more extensive <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> of the tests with indication about which ones failed or produced errors. The function <code>printTextProtocol()</code> does the same, while <code>printHTMLProtocol()</code> produces a report in HTML format.</li>
-<li>RUnit contains also functions to determine which code is run in the original function when tested, in order to detect the parts of the code not covered by the test suite (code coverage function <code>inspect()</code> and function <code>tracker()</code>).</li>
+<li>‘RUnit’ contains also functions to determine which code is run in the original function when tested, in order to detect the parts of the code not covered by the test suite (code coverage function <code>inspect()</code> and function <code>tracker()</code>).</li>
 </ul>
-<p>As complete and nice as RUnit is, there is no tools to integrate the test suite in a given development environment (IDE) or graphical user interface (GUI), as far as we know. In particular, there is no real-time reporting mechanism used to easy the <em>test-code-simplify</em> cycle. The way tests are implemented and run is left to the user, but the implementation suggests that the authors of RUnit mainly target batch execution of the tests (for instance, nightly check of code in a server), rather that real-time interaction with the tests.</p>
-<p>There is also no integration with the “regular” <code>R CMD check</code> mechanism of R in RUnit.</p>
+<p>As complete and nice as ‘RUnit’ is, there is no tools to integrate the test suite in a given development environment (IDE) or graphical user interface (GUI), as far as we know. In particular, there is no real-time reporting mechanism used to easy the <em>test-code-simplify</em> cycle. The way tests are implemented and run is left to the user, but the implementation suggests that the authors of ‘RUnit’ mainly target batch execution of the tests (for instance, nightly check of code in a server), rather that real-time interaction with the tests.</p>
+<p>There is also no integration with the “regular” <code>R CMD check</code> mechanism of R in ‘RUnit’.</p>
 </div>
 <div id="unit-testing-framework-for-r-with-svunit" class="section level2">
 <h2 class="hasAnchor">
-<a href="#unit-testing-framework-for-r-with-svunit" class="anchor"></a>Unit testing framework for R with svUnit</h2>
-<p>Our initial goal was to implement a GUI layer on top of RUnit, and to integrate test units as smoothly as possible in a code editor, as well as, making tests easily accessible and fully compatible with <code>R CMD check</code> on all platforms supported by R. Ultimately, the test suite should be easy to create, to use interactively, and should be able to test functions in a complex set of R packages.</p>
-<p>However, we encountered several difficulties while trying to enhance RUnit mechanism. When we started to work on this project, RUnit (version 0.4-17) did not allow to subclass its objects. Moreover, its <code>RUnitTestData</code> object is optimized for quick testing, but not at all for easy reviewing of its content: it is a list of lists of lists,… requiring embedded for loop and <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> / <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> procedures to extract some content. Finally, the concept of test units as source-able files on disk is a nice idea, but it is too rigid for quick writing test cases for objects not associated (yet) with an R packages.</p>
-<p>We did a first implementation of the RUnit GUI based on these objects, before realizing that it is really not designed for such an use. So, we decide to write a completely different unit testing framework in R: <strong>svUnit</strong>, but we make it test code compatible with RUnit (i.e., the engine and objects used are totally different, but the test code run in RUnit or svUnit is interchangeable).</p>
-<p>Finally, svUnit is also designed to be integrated in the SciViews GUI on top of Komodo Edit or IDE (<a href="http://www.activestate.com/komodo_edit" class="uri">http://www.activestate.com/komodo_edit</a>), and to approach extreme programming practices with automatic code testing while you write it. A rather simple interface is provided to link and pilot svUnit from any GUI/IDE, and the Komodo Edit/IDE implementation could be used as an example to program similar integration panels for other R GUIs. svUnit also formats its report with <em>creole wiki</em> syntax. It is directly readable, but it can also be displayed in a much nicer way using any wiki engine compatible with the creole wiki language. It is thus rather easy to write test reports in wiki servers, possibly through nightly automatic process for your code, if you like.</p>
-<p>This vignette is a guided tour of svUnit, showing its features and the various ways you can use it to test your R code.</p>
+<a href="#unit-testing-framework-for-r-with-svunit" class="anchor"></a>Unit testing framework for R with ‘svUnit’</h2>
+<p>Our initial goal was to implement a GUI layer on top of ‘RUnit’, and to integrate test units as smoothly as possible in a code editor, as well as, making tests easily accessible and fully compatible with <code>R CMD check</code> on all platforms supported by R. Ultimately, the test suite should be easy to create, to use interactively, and should be able to test functions in a complex set of R packages.</p>
+<p>However, we encountered several difficulties while trying to enhance ‘RUnit’ mechanism. When we started to work on this project, ‘RUnit’ (version 0.4-17) did not allow to subclass its objects (version 0.4-19 solved this problem). Moreover, its <code>RUnitTestData</code> object is optimized for quick testing, but not at all for easy reviewing of its content: it is a list of lists of lists,… requiring embedded for loop and <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> / <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> procedures to extract some content. Moreover, ‘RUnit’ is implemented as S4 classes, requiring the heavy ‘methods’ package to be loaded, making it impossible to use in a lightweight environment without it, or to test R without the ‘methods’ package laoded. Finally, the concept of test units as source-able files on disk is a nice idea, but it is too rigid for quick writing test cases for objects not associated (yet) with an R packages.</p>
+<p>We did a first implementation of the ‘RUnit’ GUI based on these objects, before realizing that it is really not designed for such an use. So, we decide to write a completely different unit testing framework in R: ‘svUnit’, but we make it test code compatible with ‘RUnit’ (i.e., the engine and objects used are totally different, but the test code run in ‘RUnit’ or ‘svUnit’ is interchangeable).</p>
+<p>Finally, ‘svUnit’ is also designed to be integrated in the SciViews GUI on top of Komodo Edit or IDE (<a href="http://www.activestate.com/komodo_edit" class="uri">http://www.activestate.com/komodo_edit</a>), and to approach extreme programming practices with automatic code testing while you write it. A rather simple interface is provided to link and pilot ‘svUnit’ from any GUI/IDE, and the Komodo Edit/IDE implementation could be used as an example to program similar integration panels for other R GUIs. ‘svUnit’ also formats its report with <em>creole wiki</em> syntax. It is directly readable, but it can also be displayed in a much nicer way using any wiki engine compatible with the creole wiki language. It is thus rather easy to write test reports in wiki servers, possibly through nightly automatic process for your code, if you like.</p>
+<p>This vignette is a guided tour of ‘svUnit’, showing its features and the various ways you can use it to test your R code.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>The svUnit package is available on CRAN (<a href="http://cran.r-project.org" class="uri">http://cran.r-project.org</a>), and its latest development version is also available on Github (<a href="https://github.com/SciViews/svUnit" class="uri">https://github.com/SciViews/svUnit</a>). You can install it with<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>:</p>
+<p>The ‘svUnit’ package is available on CRAN (<a href="https://CRAN.R-project.org/package=svUnit" class="uri">https://CRAN.R-project.org/package=svUnit</a>), and its latest development version is also available on Github (<a href="https://github.com/SciViews/svUnit" class="uri">https://github.com/SciViews/svUnit</a>). You can install it with<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>:</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"svUnit"</span>)</pre></body></html></div>
-<p>This package has no dependence other than R &gt;= 1.9.0. However, if you would like to use its interactive mode in a GUI editor, you must also install Komodo Edit or Komodo IDE and SciViews-K, or use RStudio.</p>
-<p>Once the svUnit package is installed, you can check it is working correctly on your machine with the following example code:</p>
+<p>This package has no required dependences other than R &gt;= 1.9.0 and ‘utils’ (‘XML’ is also used for some export formats, but it is not required to run the tests). However, if you would like to use its interactive mode in a GUI editor, you must also install Komodo Edit or Komodo IDE and SciViews-K, or use RStudio. Its ‘pkgdown’ web site is at <a href="https://www.sciviews.org/svUnit" class="uri">https://www.sciviews.org/svUnit</a>.</p>
+<p>Once the ‘svUnit’ package is installed, you can check it is working correctly on your machine with the following example code:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">svUnit</span>)
 <span class="no">Square</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>(<span class="no">x</span>^<span class="fl">2</span>)
 <span class="fu"><a href="../reference/svTest.html">test</a></span>(<span class="no">Square</span>) <span class="kw">&lt;-</span> <span class="kw">function</span>() {
@@ -142,30 +143,30 @@
 }
 <span class="fu"><a href="../reference/Log.html">clearLog</a></span>()
 (<span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">Square</span>))
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.071 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.063 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
-<span class="co">#&gt; * : checkEqualsNumeric(9, SSSquare(3)) run in 0.002 sec ... **ERROR**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(9, SSSquare(3)) run in less than 0.001 sec ... **ERROR**</span>
 <span class="co">#&gt; Error in SSSquare(3) : could not find function "SSSquare"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; == test(Square) run in less than 0.1 sec: **ERROR**</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 3 Fail: 1 Errors: 1//</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.071 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.063 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; * : checkEqualsNumeric(9, SSSquare(3)) run in 0.002 sec ... **ERROR**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(9, SSSquare(3)) run in less than 0.001 sec ... **ERROR**</span>
 <span class="co">#&gt; Error in SSSquare(3) : could not find function "SSSquare"</span></pre></body></html></div>
 <blockquote>
-<p>Although test unit code is compatible with both svUnit and RUnit, do not load both packages in R memory at the same time, or you will badly mix incompatible code!</p>
+<p>Although test unit code is compatible with both ‘svUnit’ and ‘RUnit’, do not load both packages in R memory at the same time, or you will badly mix incompatible code!</p>
 </blockquote>
 </div>
 <div id="overview-of-svunit" class="section level2">
 <h2 class="hasAnchor">
-<a href="#overview-of-svunit" class="anchor"></a>Overview of svUnit</h2>
-<p>You ensure that code you write in your R functions does the expected work by defining a battery of tests that will compare the output of your code with reference values. In svUnit, the simplest way to define such a battery of tests is by attaching it to functions loaded in R memory<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Of course, you can also define batteries of tests that are independent of any R object, or that check several of them together (so called, <em>integration tests</em>). Here is a couple of examples:</p>
+<a href="#overview-of-svunit" class="anchor"></a>Overview of ‘svUnit’</h2>
+<p>You ensure that code you write in your R functions does the expected work by defining a battery of tests that will compare the output of your code with reference values. In ‘svUnit’, the simplest way to define such a battery of tests is by attaching it to functions loaded in R memory<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Of course, you can also define batteries of tests that are independent of any R object, or that check several of them together (so called, <em>integration tests</em>). Here is a couple of examples:</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">svUnit</span>)
 <span class="co"># Create two R functions that include their own test cases</span>
 <span class="no">Square</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>(<span class="no">x</span>^<span class="fl">2</span>)
@@ -189,7 +190,7 @@
   <span class="no">w</span> <span class="kw">&lt;-</span> <span class="fl">1</span>:<span class="fl">3</span>         <span class="co"># The value to compare to the reference</span>
   <span class="fu"><a href="../reference/check.html">checkEquals</a></span>(<span class="no">v</span>, <span class="no">w</span>)
 })</pre></body></html></div>
-<p>When you run a test in svUnit, it logs its results in a centralized logger. The idea is to get a central repository for tests that you can manipulate as you like (print, summarize, convert, search, display in a GUI, etc.). If you want to start new tests, you should first clean this logger by <code><a href="../reference/Log.html">clearLog()</a></code>. At any time, the logger is accessible by <code><a href="../reference/Log.html">Log()</a></code>, and a summary of its content is displayed using <code>summary(Log()</code>). So, to run test for your <code>Square()</code> function as well as your <code>test_Integrate</code> integration test, you simply do the following:</p>
+<p>When you run a test in ‘svUnit’, it logs its results in a centralized logger. The idea is to get a central repository for tests that you can manipulate as you like (print, summarize, convert, search, display in a GUI, etc.). If you want to start new tests, you should first clean this logger by <code><a href="../reference/Log.html">clearLog()</a></code>. At any time, the logger is accessible by <code><a href="../reference/Log.html">Log()</a></code>, and a summary of its content is displayed using <code>summary(Log()</code>). So, to run test for your <code>Square()</code> function as well as your <code>test_Integrate</code> integration test, you simply do the following:</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/Log.html">clearLog</a></span>()
 <span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">Square</span>)
 <span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">test_Integrate</span>)
@@ -208,7 +209,7 @@
 <span class="co">#&gt; == test(Square) run in less than 0.1 sec: OK</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 3 Fail: 0 Errors: 0//</span></pre></body></html></div>
-<p>In this report, you see that all your tests succeed. Note that svUnit is making the distinction between a test that <strong>fails</strong> (the code is run correctly, but the result is different from what was expected) and code that raises <strong>error</strong> (it was not possible to run the test because its code is incorrect, or for some other reasons). Note also that the function <code><a href="../reference/check.html">checkException()</a></code> is designed to explicitly test code that should <code><a href="https://rdrr.io/r/base/stop.html">stop()</a></code> in R<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. So, if that test does not raises an exception, it is considered to have failed. This is useful to check that your functions correctly trap wrong arguments, for instance, like in <code></code>checkException(Square(“xx”))` here above (a character string is provided where a numerical value is expected).</p>
+<p>In this report, you see that all your tests succeed. Note that ‘svUnit’ is making the distinction between a test that <strong>fails</strong> (the code is run correctly, but the result is different from what was expected) and code that raises <strong>error</strong> (it was not possible to run the test because its code is incorrect, or for some other reasons). Note also that the function <code><a href="../reference/check.html">checkException()</a></code> is designed to explicitly test code that should <code><a href="https://rdrr.io/r/base/stop.html">stop()</a></code> in R<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. So, if that test does not raises an exception, it is considered to have failed. This is useful to check that your functions correctly trap wrong arguments, for instance, like in <code><a href="../reference/check.html">checkException(Square("xx"))</a></code> here above (a character string is provided where a numerical value is expected).</p>
 <p>Now, let’s look what happens if we test the <code>Cube()</code> function without clearing the logger:</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">Cube</span>)
 <span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in 0.002 sec ... **FAILS**</span>
@@ -240,13 +241,13 @@
 <span class="co">#&gt; //Pass: 3 Fail: 0 Errors: 0//</span></pre></body></html></div>
 <p>We note this:</p>
 <ol style="list-style-type: decimal">
-<li>When a test succeeds, nothing is printed by default (result is returned invisibly). But when a test fails, or raises errors, the guilty test(s) results are printed. We expected <code><a href="https://rdrr.io/r/base/c.html">c(8, 28)</a></code> (made intentionally wrong for the sake of the demonstration) from <code>Cube(2:3)</code> in <code><a href="../reference/check.html">checkEqualsNumeric(c(8, 28), Cube(2:3))</a></code>, and (of course), we got <code><a href="https://rdrr.io/r/base/c.html">c(8, 27)</a></code>. This test shows how svUnit presents test failures.</li>
-<li>The results of the tests on <code>Cube()</code> are added to the previous report. So, it is possible to build rather easily reports that summarize tests on several objects, by adding test results in the logger sequentially. svUnit does this naturally and transparently. Starting a new report is equally simple: just use <code><a href="../reference/Log.html">clearLog()</a></code>…</li>
+<li>When a test succeeds, nothing is printed by default (result is returned invisibly). But when a test fails, or raises errors, the guilty test(s) results are printed. We expected <code><a href="https://rdrr.io/r/base/c.html">c(8, 28)</a></code> (made intentionally wrong for the sake of the demonstration) from <code>Cube(2:3)</code> in <code><a href="../reference/check.html">checkEqualsNumeric(c(8, 28), Cube(2:3))</a></code>, and (of course), we got <code><a href="https://rdrr.io/r/base/c.html">c(8, 27)</a></code>. This test shows how ‘svUnit’ presents test failures.</li>
+<li>The results of the tests on <code>Cube()</code> are added to the previous report. So, it is possible to build rather easily reports that summarize tests on several objects, by adding test results in the logger sequentially. ‘svUnit’ does this naturally and transparently. Starting a new report is equally simple: just use <code><a href="../reference/Log.html">clearLog()</a></code>…</li>
 </ol>
 <div id="assertions-in-svunit" class="section level3">
 <h3 class="hasAnchor">
-<a href="#assertions-in-svunit" class="anchor"></a>Assertions in svUnit</h3>
-<p>The most basic item in a test suite is an <strong>assertion</strong> represented by a <code>checkXXX()</code> function in svUnit/RUnit. Five such functions are currently defined:</p>
+<a href="#assertions-in-svunit" class="anchor"></a>Assertions in ‘svUnit’</h3>
+<p>The most basic item in a test suite is an <strong>assertion</strong> represented by a <code>checkXXX()</code> function in ‘svUnit’/‘RUnit’. Five such functions are currently defined:</p>
 <ul>
 <li>
 <code><a href="../reference/check.html">checkEquals(current, target)</a></code> determines if data in <code>target</code> is the same as data in <code>current</code>.</li>
@@ -255,7 +256,7 @@
 <li>
 <code><a href="../reference/check.html">checkIdentical(current, target)</a></code> checks whether two R objects are strictly identical.</li>
 <li>
-<code><a href="../reference/check.html">checkTrue(expr)</a></code> only succeed if <code>expr</code> is <code>TRUE</code>. Note a difference in svUnit and RUnit (at least, in its version 0.4-17): the RUnit function is not vectorized and <code>expr</code> must return a single atomic logical value. The corresponding svUnit function also accepts a vector of logical values. In this case, all elements of the vector must be <code>TRUE</code> for the test to succeed. When you make sure that <code>expr</code> always returns a single logical value (for instance by using <code><a href="https://rdrr.io/r/base/all.html">all(expr)</a></code>), both functions should be compatible.</li>
+<code><a href="../reference/check.html">checkTrue(expr)</a></code> only succeed if <code>expr</code> is <code>TRUE</code>. Note a difference in ‘svUnit’ and ‘RUnit’ (at least, in its version 0.4-17): the ‘RUnit’ function is not vectorized and <code>expr</code> must return a single atomic logical value. The corresponding ‘svUnit’ function also accepts a vector of logical values. In this case, all elements of the vector must be <code>TRUE</code> for the test to succeed. When you make sure that <code>expr</code> always returns a single logical value (for instance by using <code><a href="https://rdrr.io/r/base/all.html">all(expr)</a></code>), both functions should be compatible.</li>
 <li>
 <code><a href="../reference/check.html">checkException(expr)</a></code> verifies that a given code raises an exception (in R, it means that a line of code with <code><a href="https://rdrr.io/r/base/stop.html">stop()</a></code> is executed).</li>
 <li>
@@ -284,14 +285,14 @@
 <p>The last command <code><a href="../reference/Log.html">Log()</a></code> prints the content of the logger. You see how a report is printed, with a first part being a short summary by categories (assertions run at the command line are placed automatically in the <code>eval</code> category: there is no better context known for them. Usually, those assertions should be placed in test functions, or in test units, as we will see later in this manual, and the category will reflect this organization). A detailed report on the tests that failed or raised an error is also printed at the end of the report.</p>
 <p>Of course, the same report is much easier to manipulate from within the graphical tree in the Komodo’s <strong>R Unit</strong> tab, but the simple text report in R has the advantage of being independent from any GUI, and from Komodo. It can also be generated in batch mode. Last, but not least, it uses a general Wiki formatting called creole wiki (<a href="http://www.wikicreole.org/wiki/Creole1.0" class="uri">http://www.wikicreole.org/wiki/Creole1.0</a>).</p>
 <div class="figure">
-<img src="svUnit_wikiReport.png" alt=""><p class="caption">svUnit test report as it appears when inserted in a wiki page (DokuWiki engine with the creole plugin installed). Note the summary of results at the top left of the page, and the clickable table of contents with detailed entries to easily navigate to the test log you are consulting). Timing of the test is also clearly indicated, since it is a complementary but important information (if a test succeeds, but calculation is way too long, it is good to know it)!</p>
+<img src="svUnit_wikiReport.png" alt=""><p class="caption">‘svUnit’ test report as it appears when inserted in a wiki page (DokuWiki engine with the creole plugin installed). Note the summary of results at the top left of the page, and the clickable table of contents with detailed entries to easily navigate to the test log you are consulting). Timing of the test is also clearly indicated, since it is a complementary but important information (if a test succeeds, but calculation is way too long, it is good to know it)!</p>
 </div>
 <p>The figure illustrates the way the same report looks like in DokuWiki with the creole plugin (<a href="http://www.wikicreole.org/wiki/DokuWiki" class="uri">http://www.wikicreole.org/wiki/DokuWiki</a>) installed. Note the convenient table of content that lists here a clickable list of all tests run. From this point, it is relatively easy to define nightly cron task jobs on a server to run a script that executes these tests and update a wiki page (look at your particular wiki engine documentation to determine how you can access wiki pages on the command line).</p>
 </div>
 <div id="manipulating-the-logger-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#manipulating-the-logger-data" class="anchor"></a>Manipulating the logger data</h3>
-<p>The svUnit package provides a series of functions to manipulate the logger from the command line, in particular, <code><a href="../reference/svTestData.html">stats()</a></code>,<code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>, <code><a href="../reference/svSuiteData.html">metadata()</a></code> and <code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code>:</p>
+<p>The ‘svUnit’ package provides a series of functions to manipulate the logger from the command line, in particular, <code><a href="../reference/svTestData.html">stats()</a></code>,<code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>, <code><a href="../reference/svSuiteData.html">metadata()</a></code> and <code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code>:</p>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="co"># Clear test exclusion list for running all test suites</span>
 <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">svUnit.excludeList</span> <span class="kw">=</span> <span class="kw">NULL</span>)
 <span class="co"># Clear the logger</span>
@@ -331,21 +332,21 @@
 <span class="co"># Get some statistics</span>
 <span class="fu"><a href="../reference/svTestData.html">stats</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())[, <span class="fl">1</span>:<span class="fl">3</span>]
 <span class="co">#&gt;                                    kind timing                time</span>
-<span class="co">#&gt; testBadTests                  **ERROR**  0.001 2020-04-13 16:05:11</span>
-<span class="co">#&gt; test_Integrate                       OK  0.000 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testis.test                          OK  0.001 2020-04-13 16:05:11</span>
-<span class="co">#&gt; test_R                               OK  0.000 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testsvSuite                          OK  0.002 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testCube                      **FAILS**  0.000 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testbar                              OK  0.000 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testrunTest                 DEACTIVATED  0.002 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testmat                              OK  0.000 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testCreateClass                      OK  0.001 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testSquare                           OK  0.000 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testsvTest                           OK  0.003 2020-04-13 16:05:11</span>
-<span class="co">#&gt; testsvSuiteList                      OK  0.007 2020-04-13 16:05:11</span>
+<span class="co">#&gt; testBadTests                  **ERROR**  0.002 2020-04-14 07:59:15</span>
+<span class="co">#&gt; test_Integrate                       OK  0.000 2020-04-14 07:59:15</span>
+<span class="co">#&gt; testis.test                          OK  0.001 2020-04-14 07:59:15</span>
+<span class="co">#&gt; test_R                               OK  0.000 2020-04-14 07:59:15</span>
+<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2020-04-14 07:59:16</span>
+<span class="co">#&gt; testsvSuite                          OK  0.002 2020-04-14 07:59:15</span>
+<span class="co">#&gt; testCube                      **FAILS**  0.000 2020-04-14 07:59:15</span>
+<span class="co">#&gt; testbar                              OK  0.000 2020-04-14 07:59:16</span>
+<span class="co">#&gt; testrunTest                 DEACTIVATED  0.001 2020-04-14 07:59:15</span>
+<span class="co">#&gt; testmat                              OK  0.000 2020-04-14 07:59:16</span>
+<span class="co">#&gt; testCreateClass                      OK  0.001 2020-04-14 07:59:16</span>
+<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2020-04-14 07:59:16</span>
+<span class="co">#&gt; testSquare                           OK  0.000 2020-04-14 07:59:15</span>
+<span class="co">#&gt; testsvTest                           OK  0.002 2020-04-14 07:59:15</span>
+<span class="co">#&gt; testsvSuiteList                      OK  0.008 2020-04-14 07:59:15</span>
 <span class="co"># A slightly different presentation than with print</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt; = A svUnit test suite run in less than 0.1 sec with:</span>
@@ -491,7 +492,7 @@
 <span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt; [1] svUnit_1.0.0</span>
+<span class="co">#&gt; [1] svUnit_1.0.1</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
 <span class="co">#&gt;  [1] Rcpp_1.0.4.6       rprojroot_1.3-2    crayon_1.3.4       digest_0.6.25     </span>
@@ -502,7 +503,7 @@
 <span class="co">#&gt; [21] compiler_3.6.3     memoise_1.1.0      htmltools_0.4.0    knitr_1.28        </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $.time</span>
-<span class="co">#&gt; [1] "2020-04-13 16:05:11 UTC"</span>
+<span class="co">#&gt; [1] "2020-04-14 07:59:15 UTC"</span>
 <span class="co"># List content of the log</span>
 <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt;  [1] "test_Integrate"              "test_R"                     </span>
@@ -561,7 +562,7 @@
 <span class="co">#&gt;  [9] "testMyVirtualBaseClass.setX" "testrunTest"                </span>
 <span class="co">#&gt; [11] "testSquare"                  "testsvSuite"                </span>
 <span class="co">#&gt; [13] "testsvSuiteList"             "testsvTest"</span></pre></body></html></div>
-<p>As we will see in the following section, svUnit proposes several means to organize individual assertions in modules: <strong>test functions</strong>, <strong>test units</strong> and <strong>test suites</strong>. This organization is inspired from RUnit, but with additional ways of using tests in interactive sessions (for instance, the ability to attach a test to the objects to be tested).</p>
+<p>As we will see in the following section, ‘svUnit’ proposes several means to organize individual assertions in modules: <strong>test functions</strong>, <strong>test units</strong> and <strong>test suites</strong>. This organization is inspired from ‘RUnit’, but with additional ways of using tests in interactive sessions (for instance, the ability to attach a test to the objects to be tested).</p>
 </div>
 <div id="test-function" class="section level3">
 <h3 class="hasAnchor">
@@ -577,7 +578,7 @@
 <span class="no">test_function</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/svTest.html">as.svTest</a></span>(<span class="no">test_function</span>)
 <span class="fu"><a href="../reference/svTest.html">is.svTest</a></span>(<span class="no">test_function</span>)
 <span class="co">#&gt; [1] TRUE</span></pre></body></html></div>
-<p>A test function should be made a special object called <code>svTest</code>, so that svUnit can recognize it. This <code>svTest</code> object, is allowed to live on its own (for instance, in the user’s workspace, or anywhere you like). It can be defined in a R script, be saved in a <code>.RData</code> file, etc… Note that this is very different from RUnit where test must always be located in a unit tes file on disk). In svUnit (not RUnit), you run such a test simply by using <code><a href="../reference/svTest.html">runTest()</a></code>, which returns the results invisibly and add it to the logger:</p>
+<p>A test function should be made a special object called <code>svTest</code>, so that ‘svUnit’ can recognize it. This <code>svTest</code> object, is allowed to live on its own (for instance, in the user’s workspace, or anywhere you like). It can be defined in a R script, be saved in a <code>.RData</code> file, etc… Note that this is very different from ‘RUnit’ where test must always be located in a unit test file on disk). In ‘svUnit’ (not ‘RUnit’), you run such a test simply by using <code><a href="../reference/svTest.html">runTest()</a></code>, which returns the results invisibly and add it to the logger:</p>
 <div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="../reference/Log.html">clearLog</a></span>()
 <span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">test_function</span>)
 <span class="fu"><a href="../reference/Log.html">Log</a></span>()
@@ -589,7 +590,7 @@
 <span class="co">#&gt; == test_function run in less than 0.1 sec: OK</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 2 Fail: 0 Errors: 0//</span></pre></body></html></div>
-<p>Now, a test function is most likely designed to test an R object. The svUnit package also provides facilities to attach the test function to the object to be tested. Hence, the test cases and the tested object conveniently form a single entity that one can manipulate, copy, save, reload, etc. with all the usual tools in R. This association is simply made using <code>test(myobj) &lt;-</code>:</p>
+<p>Now, a test function is most likely designed to test an R object. The ‘svUnit’ package also provides facilities to attach the test function to the object to be tested. Hence, the test cases and the tested object conveniently form a single entity that one can manipulate, copy, save, reload, etc. with all the usual tools in R. This association is simply made using <code>test(myobj) &lt;-</code>:</p>
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="co"># A very simple function</span>
 <span class="no">Square</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>(<span class="no">x</span>^<span class="fl">2</span>)
 
@@ -632,8 +633,8 @@
 <h3 class="hasAnchor">
 <a href="#test-units" class="anchor"></a>Test units</h3>
 <p>An <strong>unit</strong> is a coherent piece of software that can be tested separately from the rest. Typically, a R package is a structured way to compile and distribute such code units in R. Hence, we need a mean to organize tests related to this “unit” conveniently.</p>
-<p>Since a package can contain several functions, data frames, or other objects, our unit should collect together individual test functions related to each of these objects that compose our package. Also, the test unit should accommodate the well-define organization of a package, and should integrate in the already existing testing features of R, in particular, <code>R CMD check</code>. In both RUnit, and svUnit, one can define such test units, and they are made code compatible between the two implementations.</p>
-<p>A test unit is a source-able text file that contains one or more test functions, plus possibly <code>.setUp()</code> and <code>.tearDown()</code> functions (see the online help for further information on these special functions). In RUnit, you must write such test unit files from scratch. With svUnit, you can “promote” one or several test functions (associated to other objects, or “living” alone as separate <code>svTest</code> objects) by using <code><a href="../reference/svTest.html">makeUnit()</a></code>. Here is how you promote the test associated with our <code>Square()</code> function to a simple test unit containing only one test function:</p>
+<p>Since a package can contain several functions, data frames, or other objects, our unit should collect together individual test functions related to each of these objects that compose our package. Also, the test unit should accommodate the well-define organization of a package, and should integrate in the already existing testing features of R, in particular, <code>R CMD check</code>. In both ‘RUnit’, and ‘svUnit’, one can define such test units, and they are made code compatible between the two implementations.</p>
+<p>A test unit is a source-able text file that contains one or more test functions, plus possibly <code>.setUp()</code> and <code>.tearDown()</code> functions (see the online help for further information on these special functions). In ‘RUnit’, you must write such test unit files from scratch. With ‘svUnit’, you can “promote” one or several test functions (associated to other objects, or “living” alone as separate <code>svTest</code> objects) by using <code><a href="../reference/svTest.html">makeUnit()</a></code>. Here is how you promote the test associated with our <code>Square()</code> function to a simple test unit containing only one test function:</p>
 <div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="co"># Create a test unit on disk and view its content</span>
 <span class="no">unit</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/svTest.html">makeUnit</a></span>(<span class="no">Square</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/file.show.html">file.show</a></span>(<span class="no">unit</span>, <span class="kw">delete.file</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
@@ -669,7 +670,7 @@ testSquare &lt;- function() {
   checkEqualsNumeric(c(1, 4, 9), Square(1:3))
   checkException(Square("xx"))
 }</code></pre>
-<p>Compatibility of these test unit files between RUnit and svUnit was a major concern in the design of svUnit. Consequently, code specific to svUnit (for managing the context of the tests) is embedded in a <code>if ("package:svUnit" %in% search())</code> construct. That way, if svUnit is not loaded in memory, this code is not executed. <em>Note that you should avoid loading in memory both svUnit and RUnit at the same time! If you do so, you will most likely crash your tests.</em></p>
+<p>Compatibility of these test unit files between ‘RUnit’ and ‘svUnit’ was a major concern in the design of ‘svUnit’. Consequently, code specific to ‘svUnit’ (for managing the context of the tests) is embedded in a <code>if ("package:svUnit" %in% search())</code> construct. That way, if ‘svUnit’ is not loaded in memory, this code is not executed. <em>Note that you should avoid loading in memory both ‘svUnit’ and ‘RUnit’ at the same time! If you do so, you will most likely crash your tests.</em></p>
 <p>You will see further that it is possible to write much more complex test units with the same <code><a href="../reference/svTest.html">makeUnit()</a></code> function. But for the moment, let’s discuss a little bit how such test units should be organized in R package.</p>
 <p>If you intend to associate test units to your R package, you should respect the following conventions:</p>
 <ul>
@@ -677,18 +678,18 @@ testSquare &lt;- function() {
 <li>Place them in the <code>/inst/unitTests</code> subdirectory of the package sources, or in one of its subdirectories. If you place them in a subdirectory of <code>/inst/unitTests</code>, then you define secondary unit tests for (optional) detailed testing of specific item in your package. Always keep in mind that all <code>runit*.R</code> files in a directory will be run one after the other. So, if you want to make subgroups you would like to dissociate them, and locate them is separate subdirectories.</li>
 <li>When the package will be compiled, all these test units will be located in <code>/unitTests</code> in the compiled/installed version of your R package.</li>
 </ul>
-<p>If you respect these conventions, svUnit knows where package unit tests are located and will be able to find and run them quite easily. See, for instance, the examples in the svUnit package.</p>
-<p>So, with test units associated to packages, you have a very convenient way to run these tests, including from the Komodo GUI. With just a little bit more coding you can also include these test units in the <code>R CMD check</code> process of your packages. You do this by means of examples in a help page (we prefer to use <strong>examples</strong>, instead of <code>/tests</code> in the <code>R CMD check</code> process, because examples offer a more flexible way to run tests and you can also run them in interactive sessions through the <code><a href="https://rdrr.io/r/utils/example.html">example()</a></code> R function, which is not the case for code located in the <code>/tests</code> subdirectory of your package). Here is what you do to associate some or all of your unit tests to the <code>R CMD check</code> process (illustrated with the case of the svUnit package itself):</p>
+<p>If you respect these conventions, ‘svUnit’ knows where package unit tests are located and will be able to find and run them quite easily. See, for instance, the examples in the ‘svUnit’ package.</p>
+<p>So, with test units associated to packages, you have a very convenient way to run these tests, including from the Komodo GUI. With just a little bit more coding you can also include these test units in the <code>R CMD check</code> process of your packages. You do this by means of examples in a help page (we prefer to use <strong>examples</strong>, instead of <code>/tests</code> in the <code>R CMD check</code> process, because examples offer a more flexible way to run tests and you can also run them in interactive sessions through the <code><a href="https://rdrr.io/r/utils/example.html">example()</a></code> R function, which is not the case for code located in the <code>/tests</code> subdirectory of your package). Here is what you do to associate some or all of your unit tests to the <code>R CMD check</code> process (illustrated with the case of the ‘svUnit’ package itself):</p>
 <ul>
 <li>Define a <code>.Rd</code> help file in the <code>/man</code> subdirectory called <code>unitTests.&lt;mypackage&gt;.Rd</code> where <mypackage> is the name of your package (or whatever name you prefer).</mypackage>
 </li>
 <li>Fill the <code>.Rd</code> file, making sure that you define an alias as <code>unitTests.&lt;mypackage&gt;</code>. Also place a little bit of information telling how users can run your test in an interactive session.</li>
-<li>The important part of this file is, of course, the <code>\examples{}</code> section. You must first clear the log, then run each test, and then, call the <code><a href="../reference/Log.html">errorLog()</a></code> function. That function looks if one or more tests failed or raised an error. In this case, it stops execution of the example and causes a dump of the test log in the <code>R CMD check</code> process. That way, providing that you have the svUnit package installed in the machine where you run <code>R CMD check</code>, your test units will be included nicely in the checking process of your packages, that is, they will run silently each time you check your package if no error occurs, but will produce a detailed report in case of problems.</li>
-<li>Here is how your <code>.Rd</code> file should looks like (example of the svUnit package):</li>
+<li>The important part of this file is, of course, the <code>\examples{}</code> section. You must first clear the log, then run each test, and then, call the <code><a href="../reference/Log.html">errorLog()</a></code> function. That function looks if one or more tests failed or raised an error. In this case, it stops execution of the example and causes a dump of the test log in the <code>R CMD check</code> process. That way, providing that you have the ‘svUnit’ package installed in the machine where you run <code>R CMD check</code>, your test units will be included nicely in the checking process of your packages, that is, they will run silently each time you check your package if no error occurs, but will produce a detailed report in case of problems.</li>
+<li>Here is how your <code>.Rd</code> file should looks like (example of the ‘svUnit’ package):</li>
 </ul>
 <pre><code>\name{unitTests.svUnit}
 \alias{unitTests.svUnit}
-\title{ Unit tests for the package svUnit }
+\title{ Unit tests for the package 'svUnit' }
 \description{ Performs unit tests defined in this
   package by running \code{example(unitTests.svUnit)}.
   Tests are in \code{runit*.R} files Located in the
@@ -696,19 +697,64 @@ testSquare &lt;- function() {
   subdirectories (’/inst/unitTests’ and subdirectories
   in package sources).
 }
-\author{Philippe Grosjean
-  (\email{phgrosjean@sciviews.org})}
+\author{Philippe Grosjean}
+\keyword{utilities}
 \examples{
 if (require(svUnit)) {
   clearLog()
   runTest(svSuite("package:svUnit"), "svUnit")
-  # Possibly run other tests here... errorLog()
+  \donttest{
+  # Tests to run with example() but not with R CMD check
+  runTest(svSuite("package:svUnit (VirtualClass)"), "VirtualClass")
+  }
+  \dontrun{
+  # Tests to present in ?unitTests.svUnit but not run automatically
+  # Run all currently loaded packages test cases and test suites
+  runTest(svSuiteList(), "AllTests")
+  }
+  \dontshow{
+  # Put here test units you want to run during R CMD check but
+  # don't want to show or run with example(unitTests.svUnit)
+  }
+  # Check errors at the end (needed to interrupt R CMD check)
+  errorLog()
 }
-}
-\keyword{utilities}</code></pre>
-<p>Note, however, that if the package svUnit is not available on the computer where you run <code>R CMD check</code>, your tests are silently ignored (<code>require()</code> issues a warning, but that does not prevent the checking process to continue). This is an intended feature in order to allow compilation of your package without requiring svUnit. Hence, dependence to svUnit is less strict and also allows you to check your tests using RUnit (but you have to write a dedicated function for that). Still to keep such a less strict dependence on svUnit, you should add <code>svUnit</code>in the <code>Suggests:</code> field in the <code>DESCRIPTION</code> file of your package, not in <code>Depends:</code> or <code>Imports:</code> fields (except if you use svUnit for other purposes that testing your package using the mechanism discussed here, of course.</p>
+}</code></pre>
+<p>Alternatively, if you use ‘roxygen2’ to build your documentation, you can add a <code>unitTests.&lt;pkgname&gt;.R</code> file in the <code>/R</code> subdirectory containing ROxygen code to generate the adequate documentation. Here is the <code>unitTests.svUnit.R</code> file:</p>
+<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="co">#' Unit tests for the package 'svUnit'</span>
+<span class="co">#'</span>
+<span class="co">#' Performs unit tests defined in this package by running</span>
+<span class="co">#' `example(unitTests.svUnit)`. Tests are in `runit*.R` files located in the</span>
+<span class="co">#' '/unitTests' subdirectory or one of its subdirectories ('/inst/unitTests' and</span>
+<span class="co">#' subdirectories in package sources).</span>
+<span class="co">#'</span>
+<span class="co">#' @name unitTests.svUnit</span>
+<span class="co">#' @author Philippe Grosjean</span>
+<span class="co">#' @keywords utilities</span>
+<span class="co">#' @examples</span>
+<span class="co">#' if (require(svUnit)) {</span>
+<span class="co">#'   clearLog()</span>
+<span class="co">#'   runTest(svSuite("package:svUnit"), "svUnit")</span>
+<span class="co">#'   \donttest{</span>
+<span class="co">#'   # Tests to run with example() but not with R CMD check</span>
+<span class="co">#'   runTest(svSuite("package:svUnit (VirtualClass)"), "VirtualClass")</span>
+<span class="co">#'   }</span>
+<span class="co">#'   \dontrun{</span>
+<span class="co">#'   # Tests to present in ?unitTests.svUnit but not run automatically</span>
+<span class="co">#'   # Run all currently loaded packages test cases and test suites</span>
+<span class="co">#'   runTest(svSuiteList(), "AllTests")</span>
+<span class="co">#'   }</span>
+<span class="co">#'   \dontshow{</span>
+<span class="co">#'   # Put here test units you want to run during R CMD check but</span>
+<span class="co">#'   # don't want to show or run with example(unitTests.svUnit)</span>
+<span class="co">#'   }</span>
+<span class="co">#'   # Check errors at the end (needed to interrupt R CMD check)</span>
+<span class="co">#'   errorLog()</span>
+<span class="co">#' }</span>
+<span class="kw">NULL</span></pre></body></html></div>
+<p>Note, however, that if the package ‘svUnit’ is not available on the computer where you run <code>R CMD check</code>, your tests are silently ignored (<code>require()</code> issues a warning, but that does not prevent the checking process to continue). This is an intended feature in order to allow compilation of your package without requiring ‘svUnit’. Hence, dependence to ‘svUnit’ is less strict and also allows you to check your tests using ‘RUnit’ (but you have to write a dedicated function for that). Still to keep such a less strict dependence on ‘svUnit’, you should add <code>svUnit</code> in the <code>Suggests:</code> field in the <code>DESCRIPTION</code> file of your package, not in <code>Depends:</code> or <code>Imports:</code> fields (except if you use ‘svUnit’ for other purposes that testing your package using the mechanism discussed here, of course).</p>
 <p>Also, this approach, associated with examples, provides a very convenient and easy way to test a package from the command line in an interactive session by running:</p>
-<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/example.html">example</a></span>(<span class="no">unitTests.svUnit</span>)
+<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/example.html">example</a></span>(<span class="no">unitTests.svUnit</span>)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; untT.U&gt; if (require(svUnit)) {</span>
 <span class="co">#&gt; untT.U+   clearLog()</span>
@@ -743,10 +789,10 @@ if (require(svUnit)) {
 <div id="test-suites-collections-of-test-functions-and-units" class="section level3">
 <h3 class="hasAnchor">
 <a href="#test-suites-collections-of-test-functions-and-units" class="anchor"></a>Test suites: collections of test functions and units</h3>
-<p>The highest level of organization of your tests is the <strong>test suite</strong>. A test suite is an unordered collection of test functions and test units. You can select test units associated with R package in a very convenient way: just specify <code>package:myPkg</code> and all test units in the <code>/unitTests</code> subdirectory of the package myPkg will be included (svUnit does all the required work to map these to actual directories where the test unit files are located). Also, if you specify <code>package:myPkg(subgroup)</code>, you will include the test units defined in <code>/unitTests/subgroup</code> in the package myPkg. Of course, you will be able to also add test units defined in custom directories, outside of R packages (for instance for integration of <em>harness tests</em> that check cross-packages, or multi-packages features of your application).</p>
+<p>The highest level of organization of your tests is the <strong>test suite</strong>. A test suite is an unordered collection of test functions and test units. You can select test units associated with R package in a very convenient way: just specify <code>package:myPkg</code> and all test units in the <code>/unitTests</code> subdirectory of the package myPkg will be included (‘svUnit’ does all the required work to map these to actual directories where the test unit files are located). Also, if you specify <code>package:myPkg(subgroup)</code>, you will include the test units defined in <code>/unitTests/subgroup</code> in the package myPkg. Of course, you will be able to also add test units defined in custom directories, outside of R packages (for instance for integration of <em>harness tests</em> that check cross-packages, or multi-packages features of your application).</p>
 <p>Test functions associated to your test suite receive a special treatment. Unlike <code><a href="../reference/svTest.html">runTest()</a></code> applied to a single test function, or to an object that has an associated test function, these tests are not run from the version loaded in memory. Instead, they are first collected together in a test unit file on disk (located in the R temporary directory, by default), and run from there. Hence, building a more complex test unit file by collecting together several test functions is just a question of constructing a test suite, and then, applying the <code><a href="../reference/svTest.html">makeUnit()</a></code> function to this <code>svSuite</code> object.</p>
-<p>Before we apply all this, you should also know the existence of one more function: <code><a href="../reference/svSuite.html">svSuiteList()</a></code>. This function lists all test units and test functions available in your system at a given time. So, you don’t need to manually create lists of components. You are better to list them automatically. Of course, this function has a lot of arguments for listing only test units in packages, only test functions, specifying where (in which environment) the test functions are located, adding custom directories where to look for test units, etc. See the online help of this function for the description of all these arguments. One argument is particularly important: <code>excludeList =</code>. This argument defines one or several regular expressions that are used as filters to hide items from the list. This is required, since you will certainly not want to run again and again, let’s say, the example tests associated with the svUnit package (svUnit must be loaded in memory to run the tests, so its tests examples will always be listed by <code><a href="../reference/svSuite.html">svSuiteList()</a></code>, … unless you define an adequate filter expression that will exclude them from your list)! As the default argument suggests it, the regular expression for list exclusion could also be recorded in <code><a href="https://rdrr.io/r/base/options.html">options(svUnit.excludeList = ...)</a></code>. Here is how it works:</p>
-<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="co"># Reset default exclusion list</span>
+<p>Before we apply all this, you should also know the existence of one more function: <code><a href="../reference/svSuite.html">svSuiteList()</a></code>. This function lists all test units and test functions available in your system at a given time. So, you don’t need to manually create lists of components. You are better to list them automatically. Of course, this function has a lot of arguments for listing only test units in packages, only test functions, specifying where (in which environment) the test functions are located, adding custom directories where to look for test units, etc. See the online help of this function for the description of all these arguments. One argument is particularly important: <code>excludeList =</code>. This argument defines one or several regular expressions that are used as filters to hide items from the list. This is required, since you will certainly not want to run again and again, let’s say, the example tests associated with the ‘svUnit’ package (‘svUnit’ must be loaded in memory to run the tests, so its tests examples will always be listed by <code><a href="../reference/svSuite.html">svSuiteList()</a></code>, … unless you define an adequate filter expression that will exclude them from your list)! As the default argument suggests it, the regular expression for list exclusion could also be recorded in <code><a href="https://rdrr.io/r/base/options.html">options(svUnit.excludeList = ...)</a></code>. Here is how it works:</p>
+<div class="sourceCode" id="cb20"><html><body><pre class="r"><span class="co"># Reset default exclusion list</span>
 <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">svUnit.excludeList</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"package:sv"</span>, <span class="st">"package:RUnit"</span>))
 <span class="co"># List all currently available tests</span>
 <span class="fu"><a href="../reference/svSuite.html">svSuiteList</a></span>()
@@ -755,7 +801,7 @@ if (require(svUnit)) {
 <span class="co">#&gt; - Test functions:</span>
 <span class="co">#&gt; [1] "test_function"  "test_Integrate" "test(Cube)"     "test(Square)"</span></pre></body></html></div>
 <p>Thus, every entry matching the regular expressions <code>package:sv</code> and <code>package:RUnit</code> are excluded from the list. The entries <code>package:svUnit</code> and <code>package:svUnit (VirtualClass)</code> match first pattern and are thus excluded. Now, let’s clear the exclusion list to see what happens:</p>
-<div class="sourceCode" id="cb20"><html><body><pre class="r"><span class="co"># Clear exclusion list</span>
+<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="co"># Clear exclusion list</span>
 <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">svUnit.excludeList</span> <span class="kw">=</span> <span class="kw">NULL</span>)
 <span class="fu"><a href="../reference/svSuite.html">svSuiteList</a></span>()
 <span class="co">#&gt; A svUnit test suite definition with:</span>
@@ -766,8 +812,8 @@ if (require(svUnit)) {
 <span class="co">#&gt; </span>
 <span class="co">#&gt; - Test functions:</span>
 <span class="co">#&gt; [1] "test_function"  "test_Integrate" "test(Cube)"     "test(Square)"</span></pre></body></html></div>
-<p>The test units associated with the package svUnit are now listed. You have noticed that <code><a href="../reference/svSuite.html">svSuiteList()</a></code> can also find automatically <code>svTest</code> objects, as well as tests attached to objects in the user’s workspace. You can create a suite by collecting all these items together very easily:</p>
-<div class="sourceCode" id="cb21"><html><body><pre class="r">(<span class="no">mySuite</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/svSuite.html">svSuiteList</a></span>())
+<p>The test units associated with the package ‘svUnit’ are now listed. You have noticed that <code><a href="../reference/svSuite.html">svSuiteList()</a></code> can also find automatically <code>svTest</code> objects, as well as tests attached to objects in the user’s workspace. You can create a suite by collecting all these items together very easily:</p>
+<div class="sourceCode" id="cb22"><html><body><pre class="r">(<span class="no">mySuite</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/svSuite.html">svSuiteList</a></span>())
 <span class="co">#&gt; A svUnit test suite definition with:</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; - Test suites:</span>
@@ -777,10 +823,10 @@ if (require(svUnit)) {
 <span class="co">#&gt; - Test functions:</span>
 <span class="co">#&gt; [1] "test_function"  "test_Integrate" "test(Cube)"     "test(Square)"</span></pre></body></html></div>
 <p>Now let’s make a test unit using tests collected in this suite:</p>
-<div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="no">myUnit</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/svTest.html">makeUnit</a></span>(<span class="no">mySuite</span>, <span class="kw">name</span> <span class="kw">=</span> <span class="st">"ExampleTests"</span>)
+<div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="no">myUnit</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/svTest.html">makeUnit</a></span>(<span class="no">mySuite</span>, <span class="kw">name</span> <span class="kw">=</span> <span class="st">"ExampleTests"</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/file.show.html">file.show</a></span>(<span class="no">myUnit</span>, <span class="kw">delete.file</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
 <p>This produces a file named <code>runitExampleTests.R</code> located (by default) in the R temporary directory, and which collects together all tests in the user’s workspace (either as <code>svTest</code> objects, or as tests attached to other objects), plus tests suites in packages that are <strong>not</strong> in the exclusion list. Running all tests in your suite is very simple. You still use <code><a href="../reference/svTest.html">runTest()</a></code> as usual, but this time, you apply it to your <code>svSuite</code> object:</p>
-<div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="fu"><a href="../reference/Log.html">clearLog</a></span>()
+<div class="sourceCode" id="cb24"><html><body><pre class="r"><span class="fu"><a href="../reference/Log.html">clearLog</a></span>()
 <span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">mySuite</span>)
 <span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in less than 0.001 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.03571429</span>
@@ -927,18 +973,18 @@ if (require(svUnit)) {
 <span class="co">#&gt; == testsvSuiteList (in runitsvSuite.R) run in less than 0.1 sec: OK</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 6 Fail: 0 Errors: 0//</span></pre></body></html></div>
-<p>There are many other tools to manipulate <code>svSuite</code> objects in the svUnit package, including functions to define the content of the suite manually (see online help).</p>
+<p>There are many other tools to manipulate <code>svSuite</code> objects in the ‘svUnit’ package, including functions to define the content of the suite manually (see online help).</p>
 </div>
 <div id="using-svunit-with-rstudio" class="section level3">
 <h3 class="hasAnchor">
-<a href="#using-svunit-with-rstudio" class="anchor"></a>Using svUnit with RStudio</h3>
-<p>Except by integrating your tests in a packages as explained above in this document, nothing is required to make your tests run in RStudio. The <code>Build -&gt; Test Package</code> menu entry should run your tests with svUnit once this integration is done.</p>
+<a href="#using-svunit-with-rstudio" class="anchor"></a>Using ‘svUnit’ with RStudio</h3>
+<p>Except by integrating your tests in a packages as explained above in this document, nothing is required to make your tests run in RStudio. The <code>Build -&gt; Test Package</code> menu entry should run your tests with ‘svUnit’ once this integration is done.</p>
 </div>
 <div id="using-svunit-with-sciviews-komodo" class="section level3">
 <h3 class="hasAnchor">
-<a href="#using-svunit-with-sciviews-komodo" class="anchor"></a>Using svUnit with SciViews Komodo</h3>
-<p>If you use the SciViews Komodo GUI, you can integrate svUnit tests in this IDE and display reports in a convenient hierarchical tree presentation.</p>
-<p>If R is started from within Komodo Edit or IDE (with the SciViews-K and SciViews-K Unit plugins installed), then, loading the svUnit package in R automatically installs the <strong>R Unit</strong> side panel in Komodo at right. Its use should be straightforward:</p>
+<a href="#using-svunit-with-sciviews-komodo" class="anchor"></a>Using ‘svUnit’ with SciViews Komodo</h3>
+<p>If you use the SciViews Komodo GUI, you can integrate ‘svUnit’ tests in this IDE and display reports in a convenient hierarchical tree presentation.</p>
+<p>If R is started from within Komodo Edit or IDE (with the SciViews-K and SciViews-K Unit plugins installed), then, loading the ‘svUnit’ package in R automatically installs the <strong>R Unit</strong> side panel in Komodo at right. Its use should be straightforward:</p>
 <div class="figure">
 <img src="svUnit_KomodoRUnit.png" alt=""><p class="caption">Komodo Edit with SciViews-K and SciViews-K Unit after running tests. At right: the <strong>R Unit</strong> panel that display (at the top) the list of available tests, and test units where you can select the ones to run, and at the bottom, a tree with the results from last tests run. The stripe at the very top is green if all tests succeed, and red (as here), if at least one tests failed or raised an error.</p>
 </div>
@@ -951,7 +997,7 @@ if (require(svUnit)) {
 </ul>
 <p>The <code>Auto</code> mode, when activated, sources R files currently edited in Komodo whenever you save them, and then, refreshes the test report tree. This mode allows you to run automatically your tests in the background while you edit your R code!</p>
 <blockquote>
-<p>If you want to implement such a side panel in another GUI, make sure to look at the <code>koUnit\_XXX()</code> functions in the svUnit package. These functions allow to control the GUI in Komodo remotely from within R, and similar functions should not be too difficult to implement for other GUIs.</p>
+<p>If you want to implement such a side panel in another GUI, make sure to look at the <code>koUnit\_XXX()</code> functions in the ‘svUnit’ package. These functions allow to control the GUI in Komodo remotely from within R, and similar functions should not be too difficult to implement for other GUIs.</p>
 </blockquote>
 </div>
 </div>
@@ -970,9 +1016,10 @@ if (require(svUnit)) {
 <div class="footnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Install the development version with `devtools::install_github(“SciViews/svUnit”).<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>In fact, you can attach svUnit tests to any kind of R object, not only function. This could be useful to test S3/S4 objects, or even, datasets.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p><code><a href="../reference/check.html">checkException()</a></code> can also track <code><a href="https://rdrr.io/r/base/warning.html">warning()</a></code> messages with this little trick: first convert all warnings into errors with <code>owarn &lt;- options(warn = 2)$warn</code>, run the code that should generate a warning inside <code><a href="../reference/check.html">checkException()</a></code>, and then restore default warning behavior with <code><a href="https://rdrr.io/r/base/options.html">options(warn = owarn)</a></code>.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>There is also a very simple testing system in ‘testit’ (<a href="https://CRAN.R-project.org/package=testit" class="uri">https://CRAN.R-project.org/package=testit</a>) using only one assertion: <code>assert()</code> for all test. Other interesting R packages on CRAN are ‘testthis’ (<a href="https://CRAN.R-project.org/package=testthis" class="uri">https://CRAN.R-project.org/package=testthis</a>), which adds more tools and an RStudio addin around ‘testthat’, and ‘runittotestthat’ (<a href="https://CRAN.R-project.org/package=runittotestthat" class="uri">https://CRAN.R-project.org/package=runittotestthat</a>) which, as its name implies, automatically converts ‘RUnit’ tests into ‘testthat’ equivalents.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Install the development version with `devtools::install_github(“SciViews/svUnit”).<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>In fact, you can attach ‘svUnit’ tests to any kind of R object, not only function. This could be useful to test S3/S4 objects, or even, datasets.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p><code><a href="../reference/check.html">checkException()</a></code> can also track <code><a href="https://rdrr.io/r/base/warning.html">warning()</a></code> messages with this little trick: first convert all warnings into errors with <code>owarn &lt;- options(warn = 2)$warn</code>, run the code that should generate a warning inside <code><a href="../reference/check.html">checkException()</a></code>, and then restore default warning behavior with <code><a href="https://rdrr.io/r/base/options.html">options(warn = owarn)</a></code>.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
   </div>
