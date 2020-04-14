@@ -31,6 +31,7 @@ warnings_are_errors: true
 # Don't build vignettes on Mac OS X
 r_build_args: --no-manual --no-resave-data --compact-vignettes=gs+qpdf
 r_check_args: --no-manual --as-cran
+disable_homebrew: true
 
 #matrix:
 #  include:

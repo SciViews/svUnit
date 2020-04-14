@@ -1,6 +1,6 @@
 Package: svUnit
 Type: Package
-Version: 1.0.1
+Version: 1.0.2
 Date: 2020-04-14
 Title: 'SciViews' - Unit, Integration and System Testing
 Description: A complete unit test system and functions to implement its GUI part.

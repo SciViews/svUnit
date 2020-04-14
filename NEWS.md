@@ -1,3 +1,7 @@
+# svUnit 1.0.2
+
+- http://www.r-project.org changed into https://www.r-project.org in svUnit vignette (required by CRAN). 
+
 # svUnit 1.0.1
 
 - Corrections in URLs in the svUnit vignettes (canonical forms for CRAN packages like https://CRAN.R-project.org/package=<pkg_name> + another buggy URL).

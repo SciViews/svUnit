@@ -508,4 +508,4 @@ The `Auto` mode, when activated, sources R files currently edited in Komodo when
 
 * König, T., K. Jünemann & M. Burger, 2007. RUnit – A unit test framework for R. Vignette of the package RUnit available on CRAN. 11 pp.
 
-* R Development Core Team, 2008. R: A language and environment for statistical computing. [online: http://www.R-project.org]
+* R Core Team, 2019. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. [online: https://www.R-project.org]
