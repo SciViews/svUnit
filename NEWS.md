@@ -1,3 +1,7 @@
+# svUnit 1.0.1
+
+- Corrections in URLs in the svUnit vignettes (canonical forms for CRAN packages like https://CRAN.R-project.org/package=<pkg_name> + another buggy URL).
+
 # svUnit 1.0.0
 
 - No further problems found in two years => version bumped to 1.0.0.

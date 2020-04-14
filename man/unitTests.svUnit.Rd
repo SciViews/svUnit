@@ -2,7 +2,7 @@
 % Please edit documentation in R/unitTests.svUnit.R
 \name{unitTests.svUnit}
 \alias{unitTests.svUnit}
-\title{Unit tests for the package svUnit}
+\title{Unit tests for the package 'svUnit'}
 \description{
 Performs unit tests defined in this package by running
 \code{example(unitTests.svUnit)}. Tests are in \code{runit*.R} files located in the
@@ -33,5 +33,4 @@ if (require(svUnit)) {
 \author{
 Philippe Grosjean
 }
-\concept{unit testing}
 \keyword{utilities}

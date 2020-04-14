@@ -1,4 +1,4 @@
-#' Unit tests for the package svUnit
+#' Unit tests for the package 'svUnit'
 #'
 #' Performs unit tests defined in this package by running
 #' `example(unitTests.svUnit)`. Tests are in `runit*.R` files located in the
@@ -8,7 +8,6 @@
 #' @name unitTests.svUnit
 #' @author Philippe Grosjean
 #' @keywords utilities
-#' @concept unit testing
 #' @examples
 #' if (require(svUnit)) {
 #'   clearLog()

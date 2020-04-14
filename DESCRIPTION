@@ -1,14 +1,15 @@
 Package: svUnit
 Type: Package
-Version: 1.0.0
-Date: 2020-04-12
+Version: 1.0.1
+Date: 2020-04-14
 Title: 'SciViews' - Unit, Integration and System Testing
 Description: A complete unit test system and functions to implement its GUI part.
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
   email = "phgrosjean@sciviews.org"))
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 1.9.0)
-Suggests: svGUI, datasets, utils, XML, RUnit, knitr, covr
+Imports: utils
+Suggests: svGUI, datasets, XML, RUnit, knitr, covr
 License: GPL-2
 URL: https://github.com/SciViews/svUnit, https://www.sciviews.org/svUnit/
 BugReports: https://github.com/SciViews/svUnit/issues
