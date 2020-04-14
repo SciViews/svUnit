@@ -10,7 +10,7 @@ citEntry(entry="Manual",
 
          textVersion =
          paste("Grosjean, Ph. (", version$year, "). ",
-               "SciViews: A GUI API for R. ",
+               "SciViews-R. ",
                "UMONS, Mons, Belgium. ",
                "URL http://www.sciviews.org/SciViews-R.",
                sep = "")

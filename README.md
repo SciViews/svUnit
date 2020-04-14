@@ -13,7 +13,7 @@ cycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://w
 
 ### Latest stable version
 
-The latest stable version of **svUnit** can simply be installed from [CRAN](http://cran.r-project.org):
+The latest stable version of 'svUnit' can simply be installed from [CRAN](http://cran.r-project.org):
 
 ```r
 install.packages("svUnit")
@@ -21,25 +21,25 @@ install.packages("svUnit")
 
 ### Development version
 
-Make sure you have the **devtools** R package installed:
+Make sure you have the 'devtools' R package installed:
 
 ```r
 install.packages("devtools")
 ```
 
-Use `install_github()` to install the **svUnit** package from Github (source from **master** branch will be recompiled on your machine):
+Use `install_github()` to install the 'svUnit' package from Github (source from **master** branch will be recompiled on your machine):
 
 ```r
 devtools::install_github("SciViews/svUnit")
 ```
 
-R should install all required dependencies automatically, and then it should compile and install **svUnit**.
+R should install all required dependencies automatically, and then it should compile and install 'svUnit'.
 
-Latest devel version of **svUnit** (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svUnit/build/artifacts).
+Latest devel version of 'svUnit' (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svUnit/build/artifacts).
 
 ## Usage
 
-Make the **svUnit** package available in your R session:
+Make the 'svUnit' package available in your R session:
 
 ```r
 library("svUnit")
@@ -50,9 +50,10 @@ Get help about this package:
 ```r
 library(help = "svUnit")
 help("svUnit-package")
+vignette("svUnit") # None is installed with install_github()
 ```
 
-For further instructions, please, refer to these help pages.
+For further instructions, please, refer to these help pages at https://www.sciviews.org/svUnit/.
 
 ## Note to developers
 
