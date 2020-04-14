@@ -76,7 +76,7 @@ information it contains in various ways to analyze the results." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">svUnit</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -260,8 +260,8 @@ centralized in the same log ('svSuiteData' object).</p>
 #&gt; No exception generated!</div><div class='input'>
 <span class='co'># Now inspect the log, which is a 'svSuiteData' object</span>
 <span class='fu'>is.svSuiteData</span>(<span class='fu'><a href='Log.html'>Log</a></span>())</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='svTestData.html'>stats</a></span>(<span class='fu'><a href='Log.html'>Log</a></span>())</div><div class='output co'>#&gt;                kind timing                time unit msg
-#&gt; test(foo) **ERROR**  0.000 2020-04-14 07:59:12         
-#&gt; eval             OK  0.001 2020-04-14 07:59:12         </div><div class='input'><span class='fu'>metadata</span>(<span class='fu'><a href='Log.html'>Log</a></span>())</div><div class='output co'>#&gt; $.R.version
+#&gt; test(foo) **ERROR**  0.000 2020-04-14 10:05:33         
+#&gt; eval             OK  0.001 2020-04-14 10:05:33         </div><div class='input'><span class='fu'>metadata</span>(<span class='fu'><a href='Log.html'>Log</a></span>())</div><div class='output co'>#&gt; $.R.version
 #&gt;                _                           
 #&gt; platform       x86_64-apple-darwin15.6.0   
 #&gt; arch           x86_64                      
@@ -294,7 +294,7 @@ centralized in the same log ('svSuiteData' object).</p>
 #&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     
 #&gt; 
 #&gt; other attached packages:
-#&gt; [1] svUnit_1.0.1
+#&gt; [1] svUnit_1.0.2
 #&gt; 
 #&gt; loaded via a namespace (and not attached):
 #&gt;  [1] Rcpp_1.0.4.6       rstudioapi_0.11    xml2_1.3.1         whisker_0.4       
@@ -310,7 +310,7 @@ centralized in the same log ('svSuiteData' object).</p>
 #&gt; [41] highlight_0.5.0    pkgconfig_2.0.3   
 #&gt; 
 #&gt; $.time
-#&gt; [1] "2020-04-14 07:59:12 UTC"
+#&gt; [1] "2020-04-14 10:05:33 UTC"
 #&gt; </div><div class='input'><span class='fu'><a href='Log.html'>Log</a></span>()    <span class='co'># Print method</span></div><div class='output co'>#&gt; = A svUnit test suite run in less than 0.1 sec with:
 #&gt; 
 #&gt; * test(foo) ... **ERROR**

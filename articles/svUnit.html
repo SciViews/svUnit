@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">svUnit</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -143,7 +143,7 @@
 }
 <span class="fu"><a href="../reference/Log.html">clearLog</a></span>()
 (<span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">Square</span>))
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.063 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.058 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; * : checkEqualsNumeric(9, SSSquare(3)) run in less than 0.001 sec ... **ERROR**</span>
@@ -153,7 +153,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 3 Fail: 1 Errors: 1//</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.063 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.058 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; </span>
@@ -332,21 +332,21 @@
 <span class="co"># Get some statistics</span>
 <span class="fu"><a href="../reference/svTestData.html">stats</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())[, <span class="fl">1</span>:<span class="fl">3</span>]
 <span class="co">#&gt;                                    kind timing                time</span>
-<span class="co">#&gt; testBadTests                  **ERROR**  0.002 2020-04-14 07:59:15</span>
-<span class="co">#&gt; test_Integrate                       OK  0.000 2020-04-14 07:59:15</span>
-<span class="co">#&gt; testis.test                          OK  0.001 2020-04-14 07:59:15</span>
-<span class="co">#&gt; test_R                               OK  0.000 2020-04-14 07:59:15</span>
-<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2020-04-14 07:59:16</span>
-<span class="co">#&gt; testsvSuite                          OK  0.002 2020-04-14 07:59:15</span>
-<span class="co">#&gt; testCube                      **FAILS**  0.000 2020-04-14 07:59:15</span>
-<span class="co">#&gt; testbar                              OK  0.000 2020-04-14 07:59:16</span>
-<span class="co">#&gt; testrunTest                 DEACTIVATED  0.001 2020-04-14 07:59:15</span>
-<span class="co">#&gt; testmat                              OK  0.000 2020-04-14 07:59:16</span>
-<span class="co">#&gt; testCreateClass                      OK  0.001 2020-04-14 07:59:16</span>
-<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2020-04-14 07:59:16</span>
-<span class="co">#&gt; testSquare                           OK  0.000 2020-04-14 07:59:15</span>
-<span class="co">#&gt; testsvTest                           OK  0.002 2020-04-14 07:59:15</span>
-<span class="co">#&gt; testsvSuiteList                      OK  0.008 2020-04-14 07:59:15</span>
+<span class="co">#&gt; testBadTests                  **ERROR**  0.001 2020-04-14 10:05:36</span>
+<span class="co">#&gt; test_Integrate                       OK  0.000 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testis.test                          OK  0.001 2020-04-14 10:05:36</span>
+<span class="co">#&gt; test_R                               OK  0.000 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2020-04-14 10:05:37</span>
+<span class="co">#&gt; testsvSuite                          OK  0.002 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testCube                      **FAILS**  0.000 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testbar                              OK  0.001 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testrunTest                 DEACTIVATED  0.001 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testmat                              OK  0.000 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testCreateClass                      OK  0.001 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2020-04-14 10:05:37</span>
+<span class="co">#&gt; testSquare                           OK  0.001 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testsvTest                           OK  0.002 2020-04-14 10:05:36</span>
+<span class="co">#&gt; testsvSuiteList                      OK  0.005 2020-04-14 10:05:36</span>
 <span class="co"># A slightly different presentation than with print</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt; = A svUnit test suite run in less than 0.1 sec with:</span>
@@ -492,7 +492,7 @@
 <span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt; [1] svUnit_1.0.1</span>
+<span class="co">#&gt; [1] svUnit_1.0.2</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
 <span class="co">#&gt;  [1] Rcpp_1.0.4.6       rprojroot_1.3-2    crayon_1.3.4       digest_0.6.25     </span>
@@ -503,7 +503,7 @@
 <span class="co">#&gt; [21] compiler_3.6.3     memoise_1.1.0      htmltools_0.4.0    knitr_1.28        </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $.time</span>
-<span class="co">#&gt; [1] "2020-04-14 07:59:15 UTC"</span>
+<span class="co">#&gt; [1] "2020-04-14 10:05:36 UTC"</span>
 <span class="co"># List content of the log</span>
 <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt;  [1] "test_Integrate"              "test_R"                     </span>
@@ -1010,7 +1010,7 @@ if (require(svUnit)) {
 <li><p>Ihaka R. &amp; R. Gentleman, 1996. R: a language for data analysis and graphics. <em>J. Comput. Graphic. Stat.</em>, 5:299-314.</p></li>
 <li><p>Jeffries, R., 2006. Extreme programming, web site at: <a href="http://www.xprogramming.com" class="uri">http://www.xprogramming.com</a>.</p></li>
 <li><p>König, T., K. Jünemann &amp; M. Burger, 2007. RUnit – A unit test framework for R. Vignette of the package RUnit available on CRAN. 11 pp.</p></li>
-<li><p>R Development Core Team, 2008. R: A language and environment for statistical computing. [online: <a href="http://www.R-project.org" class="uri">http://www.R-project.org</a>]</p></li>
+<li><p>R Core Team, 2019. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. [online: <a href="https://www.R-project.org" class="uri">https://www.R-project.org</a>]</p></li>
 </ul>
 </div>
 <div class="footnotes">
