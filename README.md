@@ -12,6 +12,8 @@
 cycle stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 <!-- badges: end -->
 
+'svUnit' is a testing framework inspired by xUnit/jUnit. It is ismilar and compatible with 'RUnit', but implemented totally differently internally. Test suite writen for 'RUnit' or 'svUInit' should be inter-compatible. Look at the documentation to discover what 'svUnit' may offer to you for testing your R packages.
+
 ## Installation
 
 The latest stable version of 'svUnit' can simply be installed from [CRAN](http://cran.r-project.org):
