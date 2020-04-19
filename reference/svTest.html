@@ -372,7 +372,7 @@ unit files too).</p>
 <span class='co'># (just an indication because in real situation with test unit files, we</span>
 <span class='co'># have also the time required to source the units!)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='fl'>100</span>) <span class='fu'>runTest</span>(<span class='no'>foo</span>))[<span class='fl'>3</span>]</div><div class='output co'>#&gt; elapsed 
-#&gt;    0.18 </div><div class='input'>
+#&gt;   0.178 </div><div class='input'>
 <span class='fu'>is.svTest</span>(<span class='fu'>test</span>(<span class='no'>foo</span>))    <span class='co'># Yes, of course!</span></div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='co'># When an object without associated test is passed to runTest(),</span>
 <span class='co'># a simple test containing only a DEACTIVATED entry is build</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fl'>10</span>
