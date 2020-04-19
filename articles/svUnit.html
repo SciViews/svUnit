@@ -171,7 +171,7 @@
 }
 <span class="fu"><a href="../reference/Log.html">clearLog</a></span>()
 (<span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">Square</span>))
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.067 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.057 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; * : checkEqualsNumeric(9, SSSquare(3)) run in less than 0.001 sec ... **ERROR**</span>
@@ -181,7 +181,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 3 Fail: 1 Errors: 1//</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.067 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.057 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; </span>
@@ -240,7 +240,7 @@
 <p>In this report, you see that all your tests succeed. Note that ‘svUnit’ is making the distinction between a test that <strong>fails</strong> (the code is run correctly, but the result is different from what was expected) and code that raises <strong>error</strong> (it was not possible to run the test because its code is incorrect, or for some other reasons). Note also that the function <code><a href="../reference/check.html">checkException()</a></code> is designed to explicitly test code that should <code><a href="https://rdrr.io/r/base/stop.html">stop()</a></code> in R<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. So, if that test does not raises an exception, it is considered to have failed. This is useful to check that your functions correctly trap wrong arguments, for instance, like in <code><a href="../reference/check.html">checkException(Square("xx"))</a></code> here above (a character string is provided where a numerical value is expected).</p>
 <p>Now, let’s look what happens if we test the <code>Cube()</code> function without clearing the logger:</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">Cube</span>)
-<span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in less than 0.001 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in 0.002 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.03571429</span>
 <span class="co">#&gt;  num [1:2] 8 27</span>
 <span class="fu"><a href="../reference/Log.html">Log</a></span>()
@@ -255,7 +255,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 2 Fail: 1 Errors: 0//</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in less than 0.001 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in 0.002 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.03571429</span>
 <span class="co">#&gt;  num [1:2] 8 27</span>
 <span class="co">#&gt; </span>
@@ -360,21 +360,21 @@
 <span class="co"># Get some statistics</span>
 <span class="fu"><a href="../reference/svTestData.html">stats</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())[, <span class="fl">1</span>:<span class="fl">3</span>]
 <span class="co">#&gt;                                    kind timing                time</span>
-<span class="co">#&gt; testBadTests                  **ERROR**  0.001 2020-04-19 22:25:53</span>
-<span class="co">#&gt; test_Integrate                       OK  0.000 2020-04-19 22:25:52</span>
-<span class="co">#&gt; testis.test                          OK  0.002 2020-04-19 22:25:53</span>
-<span class="co">#&gt; test_R                               OK  0.000 2020-04-19 22:25:52</span>
-<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2020-04-19 22:25:53</span>
-<span class="co">#&gt; testsvSuite                          OK  0.001 2020-04-19 22:25:52</span>
-<span class="co">#&gt; testCube                      **FAILS**  0.001 2020-04-19 22:25:52</span>
-<span class="co">#&gt; testbar                              OK  0.000 2020-04-19 22:25:53</span>
-<span class="co">#&gt; testrunTest                 DEACTIVATED  0.001 2020-04-19 22:25:53</span>
-<span class="co">#&gt; testmat                              OK  0.000 2020-04-19 22:25:53</span>
-<span class="co">#&gt; testCreateClass                      OK  0.000 2020-04-19 22:25:53</span>
-<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2020-04-19 22:25:53</span>
-<span class="co">#&gt; testSquare                           OK  0.000 2020-04-19 22:25:52</span>
-<span class="co">#&gt; testsvTest                           OK  0.003 2020-04-19 22:25:53</span>
-<span class="co">#&gt; testsvSuiteList                      OK  0.006 2020-04-19 22:25:53</span>
+<span class="co">#&gt; testBadTests                  **ERROR**  0.000 2020-04-19 22:35:07</span>
+<span class="co">#&gt; test_Integrate                       OK  0.000 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testis.test                          OK  0.002 2020-04-19 22:35:07</span>
+<span class="co">#&gt; test_R                               OK  0.000 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testsvSuite                          OK  0.003 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testCube                      **FAILS**  0.002 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testbar                              OK  0.000 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testrunTest                 DEACTIVATED  0.001 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testmat                              OK  0.001 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testCreateClass                      OK  0.001 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testSquare                           OK  0.001 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testsvTest                           OK  0.003 2020-04-19 22:35:07</span>
+<span class="co">#&gt; testsvSuiteList                      OK  0.006 2020-04-19 22:35:07</span>
 <span class="co"># A slightly different presentation than with print</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt; = A svUnit test suite run in less than 0.1 sec with:</span>
@@ -531,7 +531,7 @@
 <span class="co">#&gt; [21] compiler_3.6.3     memoise_1.1.0      htmltools_0.4.0    knitr_1.28        </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $.time</span>
-<span class="co">#&gt; [1] "2020-04-19 22:25:52 UTC"</span>
+<span class="co">#&gt; [1] "2020-04-19 22:35:07 UTC"</span>
 <span class="co"># List content of the log</span>
 <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt;  [1] "test_Integrate"              "test_R"                     </span>
@@ -570,7 +570,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $timing</span>
 <span class="co">#&gt; timing </span>
-<span class="co">#&gt;  0.001</span></pre></body></html></div>
+<span class="co">#&gt;  0.002</span></pre></body></html></div>
 <p>As the logger inherits from <code>environment</code>, you can manage individual test data the same way as objects in any other environment. For instance, if you want to delete a particular test data without touching to the rest, you can use:</p>
 <div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt;  [1] "test_Integrate"              "test_R"                     </span>
