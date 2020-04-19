@@ -22,7 +22,7 @@
 #' [all.equal.numeric()].
 #'
 #' @return
-#' Thes function return `TRUE` if the test succeeds, `FALSE` if it fails,
+#' These function return `TRUE` if the test succeeds, `FALSE` if it fails,
 #' possibly with a 'result' attribute containing more information about the
 #' problem. This is very different from corresponding functions in 'RUnit' that
 #' stop with an error in case of test failure. Consequently, current functions
@@ -34,9 +34,9 @@
 #' junit.framework.Assert of Java junit framework. They should be
 #' code-compatible with functions of same name in 'RUnit' 0.4.17, except
 #' for [checkTrue()] that is vectorized here, but accept only a scalar result in
-#' 'RUnit'. For scalar test, the behaviour of the function is the same in both
+#' 'RUnit'. For scalar test, the behavior of the function is the same in both
 #' packages.
-#' See [svTest()] for examples of utilisation of these functions in
+#' See [svTest()] for examples of use of these functions in
 #' actual test cases attached to R objects.
 #' See also the note about S4 objects in the [RUnit::checkTrue()] online help of the
 #' 'RUnit' package.

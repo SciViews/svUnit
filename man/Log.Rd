@@ -45,7 +45,7 @@ change it, if you write functions to manipulate this log).
 object was deleted or not.
 
 \code{\link[=errorLog]{errorLog()}} is mainly used for its side-effect of stopping code execution
-and/or printing a summmary of the test runs in the context of example
+and/or printing a summary of the test runs in the context of example
 massaging in R CMD check (see the "Writing R extensions" manual). However,
 this function also returns invisibly a contingency table with the number of
 successes, failures, errors and deactivated tests recorded so far.

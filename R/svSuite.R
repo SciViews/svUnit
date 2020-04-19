@@ -44,7 +44,7 @@
 #' all tests for packages whose name start with 'sv' or 'RUnit' are excluded,
 #' that is, `c("package:sv", "package:RUnit")`.
 #' @param pos The environment to look for 'objects' (environment, character
-#' string with name of an environment, or interger with position of the
+#' string with name of an environment, or integer with position of the
 #' environment in the search path.
 #' @param loadPackages In the case a list of packages is provided in
 #' `packages =`, do we make sure that these packages are loaded? If yes, the
@@ -86,10 +86,10 @@
 #' a test unit file on disk is sourced in a local environment and test functions
 #' are run (same approach as in the 'RUnit' package, and the same test unit files
 #' should be compatibles with both 'RUnit' and 'svUnit' packages), but in the
-#' case of a loosy definition of the tests by attachment to objects, the test
+#' case of a loosely definition of the tests by attachment to objects, the test
 #' unit file is created on the fly in the temporary directory (by default).
 #'
-#' At any time, you can transform a series of tests loosy attached to objects
+#' At any time, you can transform a series of tests loosely attached to objects
 #' into a test unit file by applying [makeUnit()] to a 'svSuite' object,
 #' probably specifying another directory than the (default) temporary dir for
 #' more permanent storage of your test unit file. The best choice is the

@@ -12,7 +12,7 @@
 #' @param ... Not used currently.
 #' @param compare Do we compare the list of available test suite and return
 #' something to the GUI client only if there are changes in the list? This is
-#' used (when `TRUE`) to avoid unnecessary multiple processings of the same list
+#' used (when `TRUE`) to avoid unnecessary multiple processing of the same list
 #' by the GUI client.
 #'
 #' @return

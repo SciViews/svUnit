@@ -1,3 +1,9 @@
+# svUnit 1.0.3
+
+- During the conversion to Roxygen2, the topic 'svUnit' was lost . Corrected.
+
+- A new 'pkgdown' web site is added at https://www.sciviews.org/svUnit.
+
 # svUnit 1.0.2
 
 - http://www.r-project.org changed into https://www.r-project.org in svUnit vignette (required by CRAN). 
@@ -42,7 +48,7 @@
 
 # svUnit 0.7-9
 
-- Vignette svUnit reimplemented in LyX 2.0-0.
+- Vignette svUnit translated into LyX 2.0-0.
 
 # svUnit 0.7-8
 
@@ -64,7 +70,7 @@
 
 # svUnit 0.7-4
 
-- Backquoting of test name in evaluation instruction, allowing to use syntactically incorrect names for tests.
+- Backquotes set to test name in evaluation instruction, allowing to use syntactically incorrect names for tests.
 
 # svUnit 0.7-3
 
@@ -72,13 +78,13 @@
 
 - The `unitTest.svUnit` man page now uses `require(svUnit)` in a mechanism that ignores the tests in case svUnit is not installed in a machine where R CMD check is run.
 
-- `errorLog()` now briefly reports statistics on all test run when used in `interactive()` mode. This is more appropriate when the tests are run by using `example(unitTests.<mypackage>)`, while it does not change original behaviour (silent execution of the tests, except in case of failure or error) during the R CMD check process.
+- `errorLog()` now briefly reports statistics on all test run when used in `interactive()` mode. This is more appropriate when the tests are run by using `example(unitTests.<mypackage>)`, while it does not change original behavior (silent execution of the tests, except in case of failure or error) during the R CMD check process.
 
 - The package vignette is updated to reflect these changes.
 
 # svUnit 0.7-2
 
-- Added a unitname argument in `runTest.svSuite()` to select one test unit to run in the test suite. Thanks to Thomas Wutzler for submitting this patch.
+- Added a `unitname=` argument in `runTest.svSuite()` to select one test unit to run in the test suite. Thanks to Thomas Wutzler for submitting this patch.
 
 # svUnit 0.7-1
 

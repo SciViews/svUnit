@@ -1,5 +1,7 @@
-# svUnit- Unit, Integration and System Testing
 
+# svUnit
+
+<!-- badges: start -->
 [![Linux Build Status](https://travis-ci.org/SciViews/svUnit.svg )](https://travis-ci.org/SciViews/svUnit)
 [![Win Build Status](https://ci.appveyor.com/api/projects/status/github/SciViews/svUnit?branch=master&svg=true)](http://ci.appveyor.com/project/phgrosjean/svUnit)
 [![Coverage Status](https://img.shields.io/codecov/c/github/SciViews/svUnit/master.svg)
@@ -7,11 +9,10 @@
 [![CRAN Status](http://www.r-pkg.org/badges/version/svUnit)](http://cran.r-project.org/package=svUnit)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![Life
-cycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/)
+cycle stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+<!-- badges: end -->
 
 ## Installation
-
-### Latest stable version
 
 The latest stable version of 'svUnit' can simply be installed from [CRAN](http://cran.r-project.org):
 
@@ -19,9 +20,7 @@ The latest stable version of 'svUnit' can simply be installed from [CRAN](http:/
 install.packages("svUnit")
 ```
 
-### Development version
-
-Make sure you have the 'devtools' R package installed:
+You can also install the latest developement version. Make sure you have the 'devtools' R package installed:
 
 ```r
 install.packages("devtools")
@@ -37,9 +36,9 @@ R should install all required dependencies automatically, and then it should com
 
 Latest devel version of 'svUnit' (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svUnit/build/artifacts).
 
-## Usage
+## Further explore 'svUnit'
 
-Make the 'svUnit' package available in your R session:
+You can get further help about this package this way: Make the 'svUnit' package available in your R session:
 
 ```r
 library("svUnit")
@@ -55,8 +54,10 @@ vignette("svUnit") # None is installed with install_github()
 
 For further instructions, please, refer to these help pages at https://www.sciviews.org/svUnit/.
 
-## Note to developers
+## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that the svSweave project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
+## Note to developers
 
 This package used to be developed on R-Forge in the past. However, the latest [R-Forge version](https://r-forge.r-project.org/projects/sciviews/) was moved to this Github repository on 2016-03-17 (SVN version 569). **Please, do not use R-Forge anymore for SciViews development, use this Github repository instead.**

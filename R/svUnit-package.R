@@ -1,17 +1,12 @@
-#' SciViews - Unit, Integration and System Testing
-#'
-#' The SciViews svUnit package defines a framework for testing R code, not
+#' @details
+#' The SciViews 'svUnit' package defines a framework for testing R code, not
 #' unlike jUnit for Java. It is inspired on the `checkxxx()` functions from the
-#' RUnit package and the same test unit files should be compatible with both
-#' svUnit and RUnit. However, the internal implementation is completely
-#' different and svUnit can also be used interactively, while RUnit is only
+#' 'RUnit' package and the same test unit files should be compatible with both
+#' 'svUnit' and 'RUnit'. However, the internal implementation is completely
+#' different and svUnit can also be used interactively, while 'RUnit' is only
 #' designed to run test units written in files on disks.
 #'
-#' @docType package
-#' @name svUnit-package
-#'
-#' @details
-#' The test unit framework provided in svUnit is based on tests, also called
+#' The test unit framework provided in 'svUnit' is based on tests, also called
 #' assertions, implemented in `checkxxx()` functions. For instance, the
 #' `checkTrue(expr)` function check if its 'expr' argument returns `TRUE`.
 #' Results of these assertions are collected in a centralized logger located in
@@ -41,7 +36,8 @@
 #' eliminate a given test record using `rm(mytest, envir = .Log)`.
 #'
 #' Test cases are collections of assertions with the satellite code needed to
-#' build example or situations to be tested. They are collected together in argument-less functions with class being 'svTest'. See `?svTest`  for
+#' build example or situations to be tested. They are collected together in
+#' argument-less functions with class being 'svTest'. See `?svTest`  for
 #' further explanations and a couple of example test cases/test functions.
 #'
 #' In its simplest instance, a test function is defined as a separate R object
@@ -57,15 +53,15 @@
 #' Several test functions can be collected together in so-called test units. A
 #' test unit only exists on disk. It is a file named 'runit*.R' containing
 #' sourceable R code with test functions having names starting with 'test'
-#' (unlike RUnit, the default convention of file names starting with 'runit' and
-#' test function names starting with 'test' is not customizable in svUnit). One
-#' can also define special `.setUp()` and `.tearDown()` functions in the unit.
-#' The first function will be run before each test function, and the latter one
-#' will be run after it. Test units are created manually, or from a collection
-#' of objects with associated test functions loaded in an environment (usually
-#' `.GlobalEnv`) thanks to the [makeUnit()] method. These units should be
-#' mutually compatible with those used in the RUnit package (at least this is
-#'  verified with version 0.4-17 of RUnit).
+#' (unlike 'RUnit', the default convention of file names starting with 'runit'
+#' and test function names starting with 'test' is not customizable in
+#' 'svUnit'). One can also define special `.setUp()` and `.tearDown()` functions
+#' in the test unit. The first function will be run before each test function,
+#' and the latter one will be run after it. Test units are created manually, or
+#' from a collection of objects with associated test functions loaded in an
+#' environment (usually `.GlobalEnv`) thanks to the [makeUnit()] method. These
+#' units should be mutually compatible with those used in the 'RUnit' package
+#' (at least this is verified with version 0.4-17 of 'RUnit').
 #'
 #' Test units defined for packages should be located in the package /runitTests
 #' subdirectory (/inst/runitTests for source of the package) or one of its
@@ -81,27 +77,25 @@
 #'
 #' A GUI (Graphical User Interface) is provided to automatically build and run
 #' tests suites and to get a graphical (tree) interactive report of the results
-#' in the Komodo Edit or IDE code editor, together with the SciViews-K extension.
-#' If you want to use this (optional) GUI, you have to install required software
-#' components on your machine.
+#' in the Komodo Edit or IDE code editor, together with the SciViews-K
+#' extension. If you want to use this (optional) GUI, you have to install
+#' required software components on your machine.
 #'
-#' Finally, the svUnit framework is compatible with R CMD check (see the manual
-#' "Writing R extensions"). You simply define man pages (.Rd files) with an
-#' example section running selected test units from your package. The function
-#' [errorLog()] is designed to generate and error if one or more tests failed or
-#' raised an error during R CMD check, and it should be used at the end of the
-#' example that runs your unit test(s). That way, R CMD check is interrupted and
-#' a detailed report of the tests that failed or raised an error is printed. See
-#' an example in `?unitTests.svUnit`.
+#' Finally, the 'svUnit' framework is compatible with `R CMD check` (see the
+#' manual "Writing R extensions"). You simply define man pages (.Rd files) with
+#' an example section running selected test units from your package. The
+#' function [errorLog()] is designed to generate and error if one or more tests
+#' failed or raised an error during `R CMD check`, and it should be used at the
+#' end of the example that runs your unit test(s). That way, `R CMD check` is
+#' interrupted and a detailed report of the tests that failed or raised an error
+#' is printed. See an example in `?unitTests.svUnit`.
 #'
 #' @author Written by Ph. Grosjean, inspired from the general design of the
 #' 'RUnit' package by Thomas Konig, Klaus Junemann & Matthias Burger.
 #'
-#' @references There is a huge litterature and unit testing. An easy starting
+#' @references There is a huge literature and unit testing. An easy starting
 #' point is: \url{http://en.wikipedia.org/wiki/Unit_test}.
 #'
-#' @keywords utilities
-#' @concept unit testing
 #' @examples
 #' # Clear the logger
 #' clearLog()
@@ -132,4 +126,12 @@
 #' test(foo) <- testfoo
 #'
 #' (runTest(foo))	# Now, that's fine!
+
+#' @keywords internal
+"_PACKAGE"
+
+# The following block is used by usethis to automatically manage
+# roxygen namespace tags. Modify with care!
+## usethis namespace: start
+## usethis namespace: end
 NULL
