@@ -290,7 +290,7 @@
 </h1>
 <ul>
 <li><p>Loading of svUnit sometimes failed during checking of the SciViews-K Unit plugin installation in Komodo Edit/IDE. Corrected. Thanks Claudia Beleites.</p></li>
-<li><p>The <code>unitTest.svUnit</code> man page now uses <code><a href="https://rdrr.io/pkg/svUnit/man">require(svUnit)</a></code> in a mechanism that ignores the tests in case svUnit is not installed in a machine where R CMD check is run.</p></li>
+<li><p>The <code>unitTest.svUnit</code> man page now uses <code><a href="https://www.sciviews.org/svUnit/reference">require(svUnit)</a></code> in a mechanism that ignores the tests in case svUnit is not installed in a machine where R CMD check is run.</p></li>
 <li><p><code><a href="../reference/Log.html">errorLog()</a></code> now briefly reports statistics on all test run when used in <code><a href="https://rdrr.io/r/base/interactive.html">interactive()</a></code> mode. This is more appropriate when the tests are run by using <code>example(unitTests.&lt;mypackage&gt;)</code>, while it does not change original behavior (silent execution of the tests, except in case of failure or error) during the R CMD check process.</p></li>
 <li><p>The package vignette is updated to reflect these changes.</p></li>
 </ul>
