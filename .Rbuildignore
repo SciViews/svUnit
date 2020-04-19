@@ -20,3 +20,4 @@ Makefile
 ^pkgdown$
 ^\.github$
 ^CODE_OF_CONDUCT\.md$
+^revdep$
