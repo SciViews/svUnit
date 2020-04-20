@@ -10,14 +10,7 @@ Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 1.9.0)
 Imports: utils
-Suggests: 
-    svGUI,
-    datasets,
-    XML,
-    RUnit,
-    knitr,
-    covr,
-    spelling
+Suggests: svGUI, datasets, XML, RUnit, knitr, covr, spelling
 License: GPL-2
 URL: https://github.com/SciViews/svUnit, https://www.sciviews.org/svUnit/
 BugReports: https://github.com/SciViews/svUnit/issues
