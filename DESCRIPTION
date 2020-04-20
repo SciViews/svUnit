@@ -5,7 +5,8 @@ Date: 2020-04-16
 Title: 'SciViews' - Unit, Integration and System Testing
 Description: A complete unit test system and functions to implement its GUI part.
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
-  email = "phgrosjean@sciviews.org"))
+  email = "phgrosjean@sciviews.org",
+  comment = c(ORCID = "0000-0002-2694-9471")))
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 1.9.0)
 Imports: utils
