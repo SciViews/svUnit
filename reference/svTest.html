@@ -8,6 +8,14 @@
 
 <title>Create, attach to and manipulate test functions in R objects — makeTestListFromExamples • svUnit</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="../apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -372,7 +380,7 @@ unit files too).</p>
 <span class='co'># (just an indication because in real situation with test unit files, we</span>
 <span class='co'># have also the time required to source the units!)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='fl'>100</span>) <span class='fu'>runTest</span>(<span class='no'>foo</span>))[<span class='fl'>3</span>]</div><div class='output co'>#&gt; elapsed 
-#&gt;   0.178 </div><div class='input'>
+#&gt;   0.199 </div><div class='input'>
 <span class='fu'>is.svTest</span>(<span class='fu'>test</span>(<span class='no'>foo</span>))    <span class='co'># Yes, of course!</span></div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='co'># When an object without associated test is passed to runTest(),</span>
 <span class='co'># a simple test containing only a DEACTIVATED entry is build</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fl'>10</span>
