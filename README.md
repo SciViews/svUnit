@@ -2,7 +2,7 @@
 # svUnit
 
 <!-- badges: start -->
-[![Linux Build Status](https://travis-ci.org/SciViews/svUnit.svg )](https://travis-ci.org/SciViews/svUnit)
+[![Linux Build Status](https://travis-ci.com/SciViews/svUnit.svg )](https://travis-ci.com/SciViews/svUnit)
 [![Win Build Status](https://ci.appveyor.com/api/projects/status/github/SciViews/svUnit?branch=master&svg=true)](http://ci.appveyor.com/project/phgrosjean/svUnit)
 [![Coverage Status](https://img.shields.io/codecov/c/github/SciViews/svUnit/master.svg)
 ](https://codecov.io/github/SciViews/svUnit?branch=master)
