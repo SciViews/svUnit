@@ -111,7 +111,7 @@
       <h1 data-toc-skip>svUnit - A framework for unit testing in R</h1>
                         <h4 class="author">Philippe Grosjean (<a href="mailto:phgrosjean@sciviews.org" class="email">phgrosjean@sciviews.org</a>)</h4>
             
-            <h4 class="date">2020-04-20</h4>
+            <h4 class="date">2020-05-02</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/SciViews/svUnit/blob/master/vignettes/svUnit.Rmd"><code>vignettes/svUnit.Rmd</code></a></small>
       <div class="hidden name"><code>svUnit.Rmd</code></div>
@@ -178,7 +178,7 @@
 }
 <span class="fu"><a href="../reference/Log.html">clearLog</a></span>()
 (<span class="fu"><a href="../reference/svTest.html">runTest</a></span>(<span class="no">Square</span>))
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.056 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.06 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; * : checkEqualsNumeric(9, SSSquare(3)) run in less than 0.001 sec ... **ERROR**</span>
@@ -188,7 +188,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 3 Fail: 1 Errors: 1//</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.056 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.06 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; </span>
@@ -367,21 +367,21 @@
 <span class="co"># Get some statistics</span>
 <span class="fu"><a href="../reference/svTestData.html">stats</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())[, <span class="fl">1</span>:<span class="fl">3</span>]
 <span class="co">#&gt;                                    kind timing                time</span>
-<span class="co">#&gt; testBadTests                  **ERROR**  0.001 2020-04-20 11:11:29</span>
-<span class="co">#&gt; test_Integrate                       OK  0.000 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testis.test                          OK  0.001 2020-04-20 11:11:29</span>
-<span class="co">#&gt; test_R                               OK  0.000 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testsvSuite                          OK  0.001 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testCube                      **FAILS**  0.000 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testbar                              OK  0.000 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testrunTest                 DEACTIVATED  0.002 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testmat                              OK  0.000 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testCreateClass                      OK  0.001 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testSquare                           OK  0.000 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testsvTest                           OK  0.002 2020-04-20 11:11:29</span>
-<span class="co">#&gt; testsvSuiteList                      OK  0.007 2020-04-20 11:11:29</span>
+<span class="co">#&gt; testBadTests                  **ERROR**  0.002 2020-05-02 12:23:42</span>
+<span class="co">#&gt; test_Integrate                       OK  0.000 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testis.test                          OK  0.002 2020-05-02 12:23:42</span>
+<span class="co">#&gt; test_R                               OK  0.000 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.001 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testsvSuite                          OK  0.002 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testCube                      **FAILS**  0.001 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testbar                              OK  0.000 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testrunTest                 DEACTIVATED  0.002 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testmat                              OK  0.000 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testCreateClass                      OK  0.001 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.001 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testSquare                           OK  0.001 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testsvTest                           OK  0.001 2020-05-02 12:23:42</span>
+<span class="co">#&gt; testsvSuiteList                      OK  0.007 2020-05-02 12:23:42</span>
 <span class="co"># A slightly different presentation than with print</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt; = A svUnit test suite run in less than 0.1 sec with:</span>
@@ -496,29 +496,29 @@
 <span class="fu"><a href="../reference/svSuiteData.html">metadata</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt; $.R.version</span>
 <span class="co">#&gt;                _                           </span>
-<span class="co">#&gt; platform       x86_64-apple-darwin15.6.0   </span>
+<span class="co">#&gt; platform       x86_64-apple-darwin17.0     </span>
 <span class="co">#&gt; arch           x86_64                      </span>
-<span class="co">#&gt; os             darwin15.6.0                </span>
-<span class="co">#&gt; system         x86_64, darwin15.6.0        </span>
+<span class="co">#&gt; os             darwin17.0                  </span>
+<span class="co">#&gt; system         x86_64, darwin17.0          </span>
 <span class="co">#&gt; status                                     </span>
-<span class="co">#&gt; major          3                           </span>
-<span class="co">#&gt; minor          6.3                         </span>
+<span class="co">#&gt; major          4                           </span>
+<span class="co">#&gt; minor          0.0                         </span>
 <span class="co">#&gt; year           2020                        </span>
-<span class="co">#&gt; month          02                          </span>
-<span class="co">#&gt; day            29                          </span>
-<span class="co">#&gt; svn rev        77875                       </span>
+<span class="co">#&gt; month          04                          </span>
+<span class="co">#&gt; day            24                          </span>
+<span class="co">#&gt; svn rev        78286                       </span>
 <span class="co">#&gt; language       R                           </span>
-<span class="co">#&gt; version.string R version 3.6.3 (2020-02-29)</span>
-<span class="co">#&gt; nickname       Holding the Windsock        </span>
+<span class="co">#&gt; version.string R version 4.0.0 (2020-04-24)</span>
+<span class="co">#&gt; nickname       Arbor Day                   </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $.sessionInfo</span>
-<span class="co">#&gt; R version 3.6.3 (2020-02-29)</span>
-<span class="co">#&gt; Platform: x86_64-apple-darwin15.6.0 (64-bit)</span>
+<span class="co">#&gt; R version 4.0.0 (2020-04-24)</span>
+<span class="co">#&gt; Platform: x86_64-apple-darwin17.0 (64-bit)</span>
 <span class="co">#&gt; Running under: macOS Catalina 10.15.4</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Matrix products: default</span>
-<span class="co">#&gt; BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib</span>
-<span class="co">#&gt; LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib</span>
+<span class="co">#&gt; BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib</span>
+<span class="co">#&gt; LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; locale:</span>
 <span class="co">#&gt; [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8</span>
@@ -534,11 +534,11 @@
 <span class="co">#&gt;  [5] assertthat_0.2.1   MASS_7.3-51.5      R6_2.4.1           backports_1.1.6   </span>
 <span class="co">#&gt;  [9] magrittr_1.5       evaluate_0.14      stringi_1.4.6      rlang_0.4.5       </span>
 <span class="co">#&gt; [13] fs_1.4.1           rmarkdown_2.1      pkgdown_1.5.1.9000 desc_1.2.0        </span>
-<span class="co">#&gt; [17] tools_3.6.3        stringr_1.4.0      yaml_2.2.1         xfun_0.13         </span>
-<span class="co">#&gt; [21] compiler_3.6.3     memoise_1.1.0      htmltools_0.4.0    knitr_1.28        </span>
+<span class="co">#&gt; [17] tools_4.0.0        stringr_1.4.0      yaml_2.2.1         xfun_0.13         </span>
+<span class="co">#&gt; [21] compiler_4.0.0     memoise_1.1.0      htmltools_0.4.0    knitr_1.28        </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $.time</span>
-<span class="co">#&gt; [1] "2020-04-20 11:11:29 UTC"</span>
+<span class="co">#&gt; [1] "2020-05-02 12:23:42 UTC"</span>
 <span class="co"># List content of the log</span>
 <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt;  [1] "test_Integrate"              "test_R"                     </span>
@@ -577,7 +577,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $timing</span>
 <span class="co">#&gt; timing </span>
-<span class="co">#&gt;      0</span></pre></body></html></div>
+<span class="co">#&gt;  0.001</span></pre></body></html></div>
 <p>As the logger inherits from <code>environment</code>, you can manage individual test data the same way as objects in any other environment. For instance, if you want to delete a particular test data without touching to the rest, you can use:</p>
 <div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span>(<span class="fu"><a href="../reference/Log.html">Log</a></span>())
 <span class="co">#&gt;  [1] "test_Integrate"              "test_R"                     </span>
