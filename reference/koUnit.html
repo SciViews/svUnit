@@ -92,9 +92,15 @@ equivalent to sv.r.unit.runTest(); in a Javascript macro in Komodo." />
   gtag('config', 'UA-462421-8');
 </script>-->
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <!-- preloader start -->
@@ -136,12 +142,6 @@ equivalent to sv.r.unit.runTest(); in a Javascript macro in Komodo." />
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/svUnit.html">Get started</a>
 </li>
 <li>
@@ -152,14 +152,14 @@ equivalent to sv.r.unit.runTest(); in a Javascript macro in Komodo." />
 </li>
         <li>
   <a href="https://github.com/SciViews/svUnit/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svUnit <small>v1.0.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svUnit <small>v1.0.4</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -190,15 +190,15 @@ namespace in Komodo/SciViews-K Unit. For instance, <code>koUnit_runTest()</code>
 equivalent to <code>sv.r.unit.runTest();</code> in a Javascript macro in Komodo.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>koUnit_setAutoTest</span>(<span class='no'>state</span>)
+    <pre class="usage"><span class='fu'>koUnit_setAutoTest</span><span class='op'>(</span><span class='va'>state</span><span class='op'>)</span>
 
-<span class='fu'>koUnit_isAutoTest</span>()
+<span class='fu'>koUnit_isAutoTest</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>koUnit_runTest</span>()
+<span class='fu'>koUnit_runTest</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='fu'>koUnit_showRUnitPane</span>(<span class='no'>state</span>)
+<span class='fu'>koUnit_showRUnitPane</span><span class='op'>(</span><span class='va'>state</span><span class='op'>)</span>
 
-<span class='fu'>koUnit_version</span>()</pre>
+<span class='fu'>koUnit_version</span><span class='op'>(</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -228,28 +228,32 @@ correctly in Komodo.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='guiTestReport.html'>guiTestReport()</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Philippe Grosjean</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># Make sure R is communicating with Komodo before use, see ?koCmd in svGUI</span>
-<span class='fu'>koUnit_version</span>()
+<span class='fu'>koUnit_version</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='co'># Toggle visibility of the R Unit pane in Komodo twice</span>
-<span class='fu'>koUnit_showRUnitPane</span>()
-<span class='fu'>koUnit_showRUnitPane</span>()
+<span class='fu'>koUnit_showRUnitPane</span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'>koUnit_showRUnitPane</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='co'># Make sure that the R Unit pane is visible</span>
-<span class='fu'>koUnit_showRUnitPane</span>(<span class='fl'>TRUE</span>)
+<span class='fu'>koUnit_showRUnitPane</span><span class='op'>(</span><span class='cn'>TRUE</span><span class='op'>)</span>
 
 <span class='co'># Is the test unit running in auto mode?</span>
-<span class='fu'>koUnit_isAutoTest</span>()
+<span class='fu'>koUnit_isAutoTest</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='co'># Toggle auto test mode off</span>
-<span class='fu'>koUnit_setAutoTest</span>(<span class='fl'>FALSE</span>)
+<span class='fu'>koUnit_setAutoTest</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span>
 
 <span class='co'># Run the test units from within Komodo</span>
-<span class='fu'>koUnit_runTest</span>()
-}</div></pre>
+<span class='fu'>koUnit_runTest</span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -393,6 +397,8 @@ correctly in Komodo.</p>
 
   
 
+
+  
 
   </body>
 </html>

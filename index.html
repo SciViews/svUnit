@@ -34,6 +34,8 @@
 </script>-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><!-- preloader start --><div class="preloader">
   <img src="preloader.gif" alt="loading...">
@@ -70,12 +72,6 @@
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="articles/svUnit.html">Get started</a>
 </li>
 <li>
@@ -86,13 +82,13 @@
 </li>
         <li>
   <a href="https://github.com/SciViews/svUnit/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
 <div class="navbar-title">
-        <a class="navbar-brand" href="index.html"><p class="h2">svUnit <small>v1.0.3</small></p></a>
+        <a class="navbar-brand" href="index.html"><p class="h2">svUnit <small>v1.0.4</small></p></a>
       </div>
     </div>
 <!--/.nav-collapse -->
@@ -110,49 +106,54 @@
 <div id="svunit" class="section level1">
 
 <!-- badges: start -->
-<p><a href="https://travis-ci.com/SciViews/svUnit"><img src="https://travis-ci.com/SciViews/svUnit.svg" alt="Linux Build Status"></a> <a href="http://ci.appveyor.com/project/phgrosjean/svUnit"><img src="https://ci.appveyor.com/api/projects/status/github/SciViews/svUnit?branch=master&amp;svg=true" alt="Win Build Status"></a> <a href="https://codecov.io/github/SciViews/svUnit?branch=master"><img src="https://img.shields.io/codecov/c/github/SciViews/svUnit/master.svg" alt="Coverage Status"></a> <a href="http://cran.r-project.org/package=svUnit"><img src="http://www.r-pkg.org/badges/version/svUnit" alt="CRAN Status"></a> <a href="http://www.gnu.org/licenses/gpl-2.0.html"><img src="https://img.shields.io/badge/license-GPL-blue.svg" alt="License"></a> <a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Life cycle stable"></a> <!-- badges: end --></p>
+
 <blockquote>
 <p>‘svUnit’ is a testing framework inspired by RUnit, itself inspired by xUnit/jUnit. It is similar and compatible with ‘RUnit’, but implemented differently internally. Test suite written for ‘RUnit’ or ‘svUInit’ should be intercompatible. Look at the documentation to discover what ‘svUnit’ offers for testing your R packages.</p>
 </blockquote>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>The latest stable version of ‘svUnit’ can simply be installed from <a href="http://cran.r-project.org">CRAN</a>:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"svUnit"</span>)</pre></div>
+<p>The latest stable version of ‘svUnit’ can simply be installed from <a href="http://cran.r-project.org" class="external-link">CRAN</a>:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"svUnit"</span><span class="op">)</span></code></pre></div>
 <p>You can also install the latest developement version. Make sure you have the ‘devtools’ R package installed:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></code></pre></div>
 <p>Use <code>install_github()</code> to install the ‘svUnit’ package from Github (source from <strong>master</strong> branch will be recompiled on your machine):</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"SciViews/svUnit"</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"SciViews/svUnit"</span><span class="op">)</span></code></pre></div>
 <p>R should install all required dependencies automatically, and then it should compile and install ‘svUnit’.</p>
-<p>Latest devel version of ‘svUnit’ (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from <a href="https://ci.appveyor.com/project/phgrosjean/svUnit/build/artifacts">appveyor</a>.</p>
+<p>Latest devel version of ‘svUnit’ (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from <a href="https://ci.appveyor.com/project/phgrosjean/svUnit/build/artifacts" class="external-link">appveyor</a>.</p>
 </div>
 <div id="further-explore-svunit" class="section level2">
 <h2 class="hasAnchor">
 <a href="#further-explore-svunit" class="anchor"></a>Further explore ‘svUnit’</h2>
 <p>You can get further help about this package this way: Make the ‘svUnit’ package available in your R session:</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"svUnit"</span>)</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/SciViews/svUnit" class="external-link">"svUnit"</a></span><span class="op">)</span></code></pre></div>
 <p>Get help about this package:</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">help</span> <span class="kw">=</span> <span class="st">"svUnit"</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span>(<span class="st">"svUnit-package"</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"svUnit"</span>) <span class="co"># None is installed with install_github()</span></pre></div>
-<p>For further instructions, please, refer to these help pages at <a href="https://www.sciviews.org/svUnit/" class="uri">https://www.sciviews.org/svUnit/</a>.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span>help <span class="op">=</span> <span class="st">"svUnit"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="st">"svUnit-package"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/vignette.html" class="external-link">vignette</a></span><span class="op">(</span><span class="st">"svUnit"</span><span class="op">)</span> <span class="co"># None is installed with install_github()</span></code></pre></div>
+<p>For further instructions, please, refer to these help pages at https://www.sciviews.org/svUnit/.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the svSweave project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the ‘svUnit’ project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 <div id="note-to-developers" class="section level2">
 <h2 class="hasAnchor">
 <a href="#note-to-developers" class="anchor"></a>Note to developers</h2>
-<p>This package used to be developed on R-Forge in the past. However, the latest <a href="https://r-forge.r-project.org/projects/sciviews/">R-Forge version</a> was moved to this Github repository on 2016-03-17 (SVN version 569). <strong>Please, do not use R-Forge anymore for SciViews development, use this Github repository instead.</strong></p>
+<p>This package used to be developed on R-Forge in the past. However, the latest <a href="https://r-forge.r-project.org/projects/sciviews/" class="external-link">R-Forge version</a> was moved to this Github repository on 2016-03-17 (SVN version 569). <strong>Please, do not use R-Forge anymore for SciViews development, use this Github repository instead.</strong></p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=svUnit">https://​cloud.r-project.org/​package=svUnit</a>
 </li>
@@ -162,30 +163,46 @@
 </li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
 <li><small><a href="https://www.r-project.org/Licenses/GPL-2">GPL-2</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
+
 <div class="citation">
-<h2>Citation</h2>
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
 <li><a href="authors.html">Citing svUnit</a></li>
 </ul>
 </div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>
 <a href="https://phgrosjean.sciviews.org">Philippe Grosjean</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-2694-9471" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://travis-ci.com/SciViews/svUnit" class="external-link"><img src="https://travis-ci.com/SciViews/svUnit.svg" alt="Linux Build Status"></a></li>
+<li><a href="https://ci.appveyor.com/project/phgrosjean/svUnit" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/github/SciViews/svUnit?branch=master&amp;svg=true" alt="Win Build Status"></a></li>
+<li><a href="https://codecov.io/github/SciViews/svUnit?branch=master" class="external-link"><img src="https://img.shields.io/codecov/c/github/SciViews/svUnit/master.svg" alt="Coverage Status"></a></li>
+<li><a href="https://cran.r-project.org/package=svUnit" class="external-link"><img src="https://www.r-pkg.org/badges/version/svUnit" alt="CRAN Status"></a></li>
+<li><a href="https://www.gnu.org/licenses/gpl-2.0.html" class="external-link"><img src="https://img.shields.io/badge/license-GPL-blue.svg" alt="License"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Life cycle stable"></a></li>
 </ul>
 </div>
 
@@ -319,6 +336,8 @@
 
   
 
+
+  
 
   </body>
 </html>

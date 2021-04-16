@@ -83,9 +83,15 @@
   gtag('config', 'UA-462421-8');
 </script>-->
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-title-body">
       <header>
       <!-- preloader start -->
@@ -127,12 +133,6 @@
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="articles/svUnit.html">Get started</a>
 </li>
 <li>
@@ -143,14 +143,14 @@
 </li>
         <li>
   <a href="https://github.com/SciViews/svUnit/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="index.html"><p class = "h2">svUnit <small>v1.0.3</small></p></a>
+        <a class="navbar-brand" href="index.html"><p class = "h2">svUnit <small>v1.0.4</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -174,13 +174,13 @@
 <li><p>Split the svUnit vignette inot a real getting started one, and a rationate + SciViews-k/Komodo vignettes.</p></li>
 <li><p>Drop the unmaintained SciViews-K/Komodo feature?</p></li>
 <li><p>Add a GUI support for Visual Studio Code (and Atom?)</p></li>
-<li><p>Refine code, snake case equivalent of functions names and get rid of utils <code><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo()</a></code> and <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> dependencies + rename Log into what? tests?.</p></li>
+<li><p>Refine code, snake case equivalent of functions names and get rid of utils <code><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo()</a></code> and <code><a href="https://rdrr.io/r/utils/str.html" class="external-link">str()</a></code> dependencies + rename Log into what? tests?.</p></li>
 <li><p>Make it also compatible with ‘testthat’ (including in RStudio) and ‘testit’ (+ look at ‘testthis’ also).</p></li>
 <li><p>Be able to track the guilty line of code for each test and to output something like: <code>./inst/unitTest/runit.select.R:28:</code>… (would be most useful for Emacs)!</p></li>
 <li><p>We need accessors to <code>timing</code> and <code>max.kind</code>.</p></li>
 <li><p><code><a href="reference/guiTestReport.html">guiTestFeedback()</a></code> must be finished.</p></li>
 <li><p>Output results in html, latex, wiki, etc. format (<code><a href="reference/svSuiteData.html">summary.svSuiteData()</a></code>).</p></li>
-<li><p>Queue tests to run and run them asynchronously using ‘tcltk’ and <code>after()</code> if this package is loaded and we are in <code><a href="https://rdrr.io/r/base/interactive.html">interactive()</a></code> mode.</p></li>
+<li><p>Queue tests to run and run them asynchronously using ‘tcltk’ and <code>after()</code> if this package is loaded and we are in <code><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive()</a></code> mode.</p></li>
 <li><p>Translate this package.</p></li>
 <li><p>Increase test coverage for this package and provide a way to test failures and erros in tests… as success (because we want to test them too)!</p></li>
 <li><p>In <code>RUnit/share/R</code>, there are <code>checkCode.r</code> and <code>compareRUnitTestData.r</code>. The former provides functions to test R code in R files, the latter does a comparison of timings in two test set runs, using a tolerance value. Worth checking and integrating later on!</p></li>
@@ -334,6 +334,8 @@
 
   
 
+
+  
 
   </body>
 </html>

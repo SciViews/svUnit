@@ -83,9 +83,15 @@
   gtag('config', 'UA-462421-8');
 </script>-->
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-news">
       <header>
       <!-- preloader start -->
@@ -127,12 +133,6 @@
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/svUnit.html">Get started</a>
 </li>
 <li>
@@ -143,14 +143,14 @@
 </li>
         <li>
   <a href="https://github.com/SciViews/svUnit/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svUnit <small>v1.0.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svUnit <small>v1.0.4</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -169,13 +169,21 @@
       <small>Source: <a href='https://github.com/SciViews/svUnit/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="svunit-104" class="section level1">
+<h1 class="page-header" data-toc-text="1.0.4">
+<a href="#svunit-104" class="anchor"></a>svUnit 1.0.4<small> Unreleased </small>
+</h1>
+<ul>
+<li>Minor change: markdown added in “suggests”. Komodo Edit is now Komodo IDE.</li>
+</ul>
+</div>
     <div id="svunit-103" class="section level1">
 <h1 class="page-header" data-toc-text="1.0.3">
 <a href="#svunit-103" class="anchor"></a>svUnit 1.0.3<small> 2020-04-20 </small>
 </h1>
 <ul>
-<li><p>During the conversion to Roxygen2, the topic ‘svUnit’ was lost . Corrected.</p></li>
-<li><p>A new ‘pkgdown’ web site is added at <a href="https://www.sciviews.org/svUnit" class="uri">https://www.sciviews.org/svUnit</a>.</p></li>
+<li><p>During the conversion to Roxygen2, the topic ‘svUnit’ was lost. Corrected.</p></li>
+<li><p>A new ‘pkgdown’ web site is added at https://www.sciviews.org/svUnit/.</p></li>
 </ul>
 </div>
     <div id="svunit-102" class="section level1">
@@ -183,8 +191,7 @@
 <a href="#svunit-102" class="anchor"></a>svUnit 1.0.2<small> Unreleased </small>
 </h1>
 <ul>
-<li>
-<a href="http://www.r-project.org" class="uri">http://www.r-project.org</a> changed into <a href="https://www.r-project.org" class="uri">https://www.r-project.org</a> in svUnit vignette (required by CRAN).</li>
+<li>http://www.r-project.org changed into https://www.r-project.org in svUnit vignette (required by CRAN).</li>
 </ul>
 </div>
     <div id="svunit-101" class="section level1">
@@ -192,7 +199,7 @@
 <a href="#svunit-101" class="anchor"></a>svUnit 1.0.1<small> Unreleased </small>
 </h1>
 <ul>
-<li>Corrections in URLs in the svUnit vignettes (canonical forms for CRAN packages like <a href="https://CRAN.R-project.org/package=" class="uri">https://CRAN.R-project.org/package=</a><pkg_name> + another buggy URL).</pkg_name>
+<li>Corrections in URLs in the svUnit vignettes (canonical forms for CRAN packages like https://CRAN.R-project.org/package=<pkg_name> + another buggy URL).</pkg_name>
 </li>
 </ul>
 </div>
@@ -214,7 +221,7 @@
 </h1>
 <ul>
 <li><p>Development moved to Github; Travis CI and appveyor added.</p></li>
-<li><p>Dependency to optional XML package is now managed correctly through <code>requireNamespace()</code> and <code>XML::xxx()</code> calls.</p></li>
+<li><p>Dependency to optional XML package is now managed correctly through <code><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace()</a></code> and <code>XML::xxx()</code> calls.</p></li>
 </ul>
 </div>
     <div id="svunit-07-12" class="section level1">
@@ -239,7 +246,7 @@
 <a href="#svunit-07-10" class="anchor"></a>svUnit 0.7-10<small> 2012-04-01 </small>
 </h1>
 <ul>
-<li><p>In <code><a href="../reference/svSuite.html">runTest.svSuite()</a></code>, a <code>&lt;&lt;-</code> assignation is replaced by <code><a href="https://rdrr.io/r/base/assign.html">assign(..., envir = .GlobalEnv)</a></code>.</p></li>
+<li><p>In <code><a href="../reference/svSuite.html">runTest.svSuite()</a></code>, a <code><a href="https://rdrr.io/r/base/assignOps.html" class="external-link">&lt;&lt;-</a></code> assignation is replaced by <code><a href="https://rdrr.io/r/base/assign.html" class="external-link">assign(..., envir = .GlobalEnv)</a></code>.</p></li>
 <li><p>Vignette svUnit is now moved to <code>\vignettes</code> subdirectory. <code>DESCRIPTION</code> and <code>NEWS</code> files are reworked.</p></li>
 </ul>
 </div>
@@ -298,8 +305,8 @@
 </h1>
 <ul>
 <li><p>Loading of svUnit sometimes failed during checking of the SciViews-K Unit plugin installation in Komodo Edit/IDE. Corrected. Thanks Claudia Beleites.</p></li>
-<li><p>The <code>unitTest.svUnit</code> man page now uses <code><a href="https://www.sciviews.org/svUnit/reference">require(svUnit)</a></code> in a mechanism that ignores the tests in case svUnit is not installed in a machine where R CMD check is run.</p></li>
-<li><p><code><a href="../reference/Log.html">errorLog()</a></code> now briefly reports statistics on all test run when used in <code><a href="https://rdrr.io/r/base/interactive.html">interactive()</a></code> mode. This is more appropriate when the tests are run by using <code>example(unitTests.&lt;mypackage&gt;)</code>, while it does not change original behavior (silent execution of the tests, except in case of failure or error) during the R CMD check process.</p></li>
+<li><p>The <code>unitTest.svUnit</code> man page now uses <code><a href="https://github.com/SciViews/svUnit" class="external-link">require(svUnit)</a></code> in a mechanism that ignores the tests in case svUnit is not installed in a machine where R CMD check is run.</p></li>
+<li><p><code><a href="../reference/Log.html">errorLog()</a></code> now briefly reports statistics on all test run when used in <code><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive()</a></code> mode. This is more appropriate when the tests are run by using <code>example(unitTests.&lt;mypackage&gt;)</code>, while it does not change original behavior (silent execution of the tests, except in case of failure or error) during the R CMD check process.</p></li>
 <li><p>The package vignette is updated to reflect these changes.</p></li>
 </ul>
 </div>
@@ -348,7 +355,7 @@
 <a href="#svunit-06-1" class="anchor"></a>svUnit 0.6-1<small> Unreleased </small>
 </h1>
 <ul>
-<li><p>Correction of a bug in Windows relative to path separators <code>\\</code> versus <code><a href="https://rdrr.io/r/base/Arithmetic.html">/</a></code>, especially using <code><a href="https://rdrr.io/r/base/tempfile.html">tempdir()</a></code>.</p></li>
+<li><p>Correction of a bug in Windows relative to path separators <code>\\</code> versus <code><a href="https://rdrr.io/r/base/Arithmetic.html" class="external-link">/</a></code>, especially using <code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir()</a></code>.</p></li>
 <li><p>Correction of a bug that prevented to list<code>runit*.R</code> files in the unitTests subdirectory of a package under Windows.</p></li>
 </ul>
 </div>
@@ -358,7 +365,7 @@
 </h1>
 <ul>
 <li><p>The package does not depends any more on RUnit. It has his own <code>checkXXX()</code> function (they are compatible with those in RUnit 0.4.17, except that here the <code><a href="../reference/check.html">checkTrue()</a></code> function is vectorized, but they operate very differently),</p></li>
-<li><p>svUnit functions and objects are renamed <code>svSuite</code>, and there is a reworking of objects to end with <code>svTest</code>, <code>svSuite</code>, <code>svTestData</code> and <code>svSuiteData</code>, and many new methods for those objects (<code><a href="https://rdrr.io/r/base/print.html">print()</a></code>, <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>, <code><a href="../reference/svTestData.html">stats()</a></code>, <code><a href="../reference/svSuiteData.html">metadata()</a></code>, <code><a href="../reference/svTest.html">makeUnit()</a></code>, <code><a href="../reference/svTest.html">runTest()</a></code>).</p></li>
+<li><p>svUnit functions and objects are renamed <code>svSuite</code>, and there is a reworking of objects to end with <code>svTest</code>, <code>svSuite</code>, <code>svTestData</code> and <code>svSuiteData</code>, and many new methods for those objects (<code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code>, <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code>, <code><a href="../reference/svTestData.html">stats()</a></code>, <code><a href="../reference/svSuiteData.html">metadata()</a></code>, <code><a href="../reference/svTest.html">makeUnit()</a></code>, <code><a href="../reference/svTest.html">runTest()</a></code>).</p></li>
 <li><p><code><a href="../reference/svSuiteData.html">print.svSuiteData()</a></code> and <code><a href="../reference/svSuiteData.html">summary.svSuiteData()</a></code> are completely reworked.</p></li>
 <li><p><code><a href="../reference/svSuite.html">svSuiteList()</a></code> now accepts additional, dirs, manages an exclusion list and has an argument <code>loadPackages =</code> to force loading packages provided in the list.</p></li>
 <li><p>Names for test units is now <code>runit&lt;name&gt;.R</code>, like in the RUnit package. Same for the test functions which are <code>test&lt;name&gt;.R</code> (used to be <code>runit.&lt;name&gt;.R</code> and <code>test.&lt;name&gt;.R</code>).</p></li>
@@ -528,6 +535,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -88,9 +88,15 @@ into a more formal test unit file on disk by applying the makeUnit() method." />
   gtag('config', 'UA-462421-8');
 </script>-->
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <!-- preloader start -->
@@ -132,12 +138,6 @@ into a more formal test unit file on disk by applying the makeUnit() method." />
       <!-- end svPkgdown global site search with Google -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/svUnit.html">Get started</a>
 </li>
 <li>
@@ -148,14 +148,14 @@ into a more formal test unit file on disk by applying the makeUnit() method." />
 </li>
         <li>
   <a href="https://github.com/SciViews/svUnit/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
       
       <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class = "h2">svUnit <small>v1.0.3</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class = "h2">svUnit <small>v1.0.4</small></p></a>
       </div>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -179,74 +179,74 @@ into a more formal test unit file on disk by applying the makeUnit() method." />
     <p>Test functions are functions without arguments with class 'svTest' containing
 one or more assertions using <code>checkxxx()</code> functions. They can be
 attached to any object as a 'test' attribute. They can also be transferred
-into a more formal test unit file on disk by applying the <code>makeUnit()</code> method.</p>
+into a more formal test unit file on disk by applying the <code><a href='svTest.html'>makeUnit()</a></code> method.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>makeTestListFromExamples</span>(<span class='no'>packageName</span>, <span class='no'>manFilesDir</span>, <span class='kw'>skipFailing</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+    <pre class="usage"><span class='fu'><a href='svTest.html'>makeTestListFromExamples</a></span><span class='op'>(</span><span class='va'>packageName</span>, <span class='va'>manFilesDir</span>, skipFailing <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>svTest</span>(<span class='no'>testFun</span>)
-
-<span class='co'># S3 method for svTest</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='fu'>as.svTest</span>(<span class='no'>x</span>)
-
-<span class='fu'>is.svTest</span>(<span class='no'>x</span>)
-
-<span class='fu'>is.test</span>(<span class='no'>x</span>)
-
-<span class='fu'>test</span>(<span class='no'>x</span>)
-
-<span class='fu'>test</span>(<span class='no'>x</span>) <span class='kw'>&lt;-</span> <span class='no'>value</span>
-
-<span class='fu'>makeUnit</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='co'># S3 method for default</span>
-<span class='fu'>makeUnit</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/make.names.html'>make.names</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span>(<span class='no'>x</span>))),
-  <span class='kw'>dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(),
-  <span class='kw'>objfile</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>codeSetUp</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>codeTearDown</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='no'>...</span>
-)
+<span class='fu'><a href='svTest.html'>svTest</a></span><span class='op'>(</span><span class='va'>testFun</span><span class='op'>)</span>
 
 <span class='co'># S3 method for svTest</span>
-<span class='fu'>makeUnit</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/make.names.html'>make.names</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span>(<span class='no'>x</span>))),
-  <span class='kw'>dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(),
-  <span class='kw'>objfile</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>codeSetUp</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>codeTearDown</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='no'>...</span>
-)
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>runTest</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'><a href='svTest.html'>as.svTest</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+
+<span class='fu'><a href='svTest.html'>is.svTest</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+
+<span class='fu'><a href='svTest.html'>is.test</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+
+<span class='fu'><a href='svTest.html'>test</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+
+<span class='fu'><a href='svTest.html'>test</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
+
+<span class='fu'><a href='svTest.html'>makeUnit</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for default</span>
-<span class='fu'>runTest</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span>(<span class='no'>x</span>)),
-  <span class='kw'>objfile</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>tag</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>msg</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='no'>...</span>
-)
+<span class='fu'><a href='svTest.html'>makeUnit</a></span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/make.names.html'>make.names</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>,
+  dir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span>,
+  objfile <span class='op'>=</span> <span class='st'>""</span>,
+  codeSetUp <span class='op'>=</span> <span class='cn'>NULL</span>,
+  codeTearDown <span class='op'>=</span> <span class='cn'>NULL</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
+
+<span class='co'># S3 method for svTest</span>
+<span class='fu'><a href='svTest.html'>makeUnit</a></span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/make.names.html'>make.names</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>,
+  dir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span>,
+  objfile <span class='op'>=</span> <span class='st'>""</span>,
+  codeSetUp <span class='op'>=</span> <span class='cn'>NULL</span>,
+  codeTearDown <span class='op'>=</span> <span class='cn'>NULL</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
+
+<span class='fu'><a href='svTest.html'>runTest</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='co'># S3 method for default</span>
+<span class='fu'><a href='svTest.html'>runTest</a></span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>,
+  objfile <span class='op'>=</span> <span class='st'>""</span>,
+  tag <span class='op'>=</span> <span class='st'>""</span>,
+  msg <span class='op'>=</span> <span class='st'>""</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
 <span class='co'># S3 method for list</span>
-<span class='fu'>runTest</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'><a href='svTest.html'>runTest</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for svTest</span>
-<span class='fu'>runTest</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span>(<span class='no'>x</span>)),
-  <span class='kw'>objfile</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>tag</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>msg</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='no'>...</span>
-)</pre>
+<span class='fu'><a href='svTest.html'>runTest</a></span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>,
+  objfile <span class='op'>=</span> <span class='st'>""</span>,
+  tag <span class='op'>=</span> <span class='st'>""</span>,
+  msg <span class='op'>=</span> <span class='st'>""</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -330,48 +330,55 @@ your files, and in this argument.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A 'svTest' object for <code>svTest()</code>, <code>as.svTest()</code> and <code>test()</code>. Function
-<code>is.svTest()</code> returns <code>TRUE</code> if 'x' is a 'svTest' object, and <code>is.test()</code>
+    <p>A 'svTest' object for <code><a href='svTest.html'>svTest()</a></code>, <code><a href='svTest.html'>as.svTest()</a></code> and <code><a href='svTest.html'>test()</a></code>. Function
+<code><a href='svTest.html'>is.svTest()</a></code> returns <code>TRUE</code> if 'x' is a 'svTest' object, and <code><a href='svTest.html'>is.test()</a></code>
 does the same but also looks in the 'test' attribute if the class of 'x' is
 not 'svTest' and returns <code>TRUE</code> if it finds something there.</p>
-<p><code>makeUnit()</code> takes an object, extract its test function and write it in a
+<p><code><a href='svTest.html'>makeUnit()</a></code> takes an object, extract its test function and write it in a
 sourceable test unit on the disk (it should be compatible with 'RUnit' test
 unit files too).</p>
-<p><code>runTest()</code> returns invisibly a 'svTestData' object with all results after running specified tests.</p>
+<p><code><a href='svTest.html'>runTest()</a></code> returns invisibly a 'svTestData' object with all results after running specified tests.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='svSuite.html'>svSuite()</a></code>, <code><a href='svTestData.html'>is.svTestData()</a></code>, <code><a href='Log.html'>Log()</a></code>, <code><a href='check.html'>checkEquals()</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Philippe Grosjean</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='Log.html'>clearLog</a></span>()    <span class='co'># Clear the log file</span>
+    <pre class="examples"><div class='input'><span class='fu'><a href='Log.html'>clearLog</a></span><span class='op'>(</span><span class='op'>)</span>    <span class='co'># Clear the log file</span>
 
-<span class='no'>foo</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>y</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-  <span class='fu'><a href='https://rdrr.io/r/base/function.html'>return</a></span>(<span class='no'>x</span> * <span class='no'>y</span>)
-<span class='fu'>is.test</span>(<span class='no'>foo</span>)    <span class='co'># No</span></div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='co'># Create test cases for this function</span>
-<span class='fu'>test</span>(<span class='no'>foo</span>) <span class='kw'>&lt;-</span> <span class='kw'>function</span>() {
-  <span class='fu'><a href='check.html'>checkEqualsNumeric</a></span>(<span class='fl'>4</span>, <span class='fu'>foo</span>(<span class='fl'>2</span>))
-  <span class='fu'><a href='check.html'>checkEqualsNumeric</a></span>(<span class='fl'>6</span>, <span class='fu'>foo</span>(<span class='fl'>2</span>, <span class='fl'>3</span>))
-  <span class='fu'><a href='check.html'>checkTrue</a></span>(<span class='fu'>is.test</span>(<span class='no'>foo</span>))
-  <span class='fu'><a href='check.html'>checkTrue</a></span>(<span class='fu'>is.test</span>(<span class='fu'>test</span>(<span class='no'>foo</span>)))
-  <span class='fu'><a href='check.html'>checkIdentical</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/attr.html'>attr</a></span>(<span class='no'>foo</span>, <span class='st'>"test"</span>), <span class='fu'>test</span>(<span class='no'>foo</span>))
-  <span class='fu'><a href='check.html'>checkException</a></span>(<span class='fu'>foo</span>(<span class='fl'>2</span>, <span class='st'>"aa"</span>))
-  <span class='fu'><a href='check.html'>checkException</a></span>(<span class='fu'>foo</span>(<span class='st'>"bb"</span>))
-}
-<span class='fu'>is.test</span>(<span class='no'>foo</span>)    <span class='co'># Yes</span></div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='va'>foo</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span> <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>x</span> <span class='op'>*</span> <span class='va'>y</span><span class='op'>)</span>
+<span class='fu'><a href='svTest.html'>is.test</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span>    <span class='co'># No</span>
+</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='co'># Create test cases for this function</span>
+<span class='fu'><a href='svTest.html'>test</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='fu'><a href='check.html'>checkEqualsNumeric</a></span><span class='op'>(</span><span class='fl'>4</span>, <span class='fu'>foo</span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='check.html'>checkEqualsNumeric</a></span><span class='op'>(</span><span class='fl'>6</span>, <span class='fu'>foo</span><span class='op'>(</span><span class='fl'>2</span>, <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='check.html'>checkTrue</a></span><span class='op'>(</span><span class='fu'><a href='svTest.html'>is.test</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='check.html'>checkTrue</a></span><span class='op'>(</span><span class='fu'><a href='svTest.html'>is.test</a></span><span class='op'>(</span><span class='fu'><a href='svTest.html'>test</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='check.html'>checkIdentical</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/attr.html'>attr</a></span><span class='op'>(</span><span class='va'>foo</span>, <span class='st'>"test"</span><span class='op'>)</span>, <span class='fu'><a href='svTest.html'>test</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='check.html'>checkException</a></span><span class='op'>(</span><span class='fu'>foo</span><span class='op'>(</span><span class='fl'>2</span>, <span class='st'>"aa"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'><a href='check.html'>checkException</a></span><span class='op'>(</span><span class='fu'>foo</span><span class='op'>(</span><span class='st'>"bb"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='fu'><a href='svTest.html'>is.test</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span>    <span class='co'># Yes</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># Create a test unit on disk and view it</span>
-<span class='no'>unit</span> <span class='kw'>&lt;-</span> <span class='fu'>makeUnit</span>(<span class='no'>foo</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/file.show.html'>file.show</a></span>(<span class='no'>unit</span>, <span class='kw'>delete.file</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-}
+<span class='va'>unit</span> <span class='op'>&lt;-</span> <span class='fu'><a href='svTest.html'>makeUnit</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/file.show.html'>file.show</a></span><span class='op'>(</span><span class='va'>unit</span>, delete.file <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='op'>}</span>
 
 <span class='co'># Run the test</span>
-(<span class='fu'>runTest</span>(<span class='no'>foo</span>))</div><div class='output co'>#&gt; 
+<span class='op'>(</span><span class='fu'><a href='svTest.html'>runTest</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; 
 #&gt; == test(foo) run in less than 0.1 sec: OK
 #&gt; 
 #&gt; //Pass: 7 Fail: 0 Errors: 0//
 #&gt; </div><div class='input'><span class='co'># Same as...</span>
-<span class='no'>bar</span> <span class='kw'>&lt;-</span> <span class='fu'>test</span>(<span class='no'>foo</span>)
-(<span class='fu'>runTest</span>(<span class='no'>bar</span>))</div><div class='output co'>#&gt; 
+<span class='va'>bar</span> <span class='op'>&lt;-</span> <span class='fu'><a href='svTest.html'>test</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span>
+<span class='op'>(</span><span class='fu'><a href='svTest.html'>runTest</a></span><span class='op'>(</span><span class='va'>bar</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; 
 #&gt; == bar run in less than 0.1 sec: OK
 #&gt; 
 #&gt; //Pass: 7 Fail: 0 Errors: 0//
@@ -379,19 +386,23 @@ unit files too).</p>
 <span class='co'># How fast can we run 100 times such kind of tests (700 test in total)?</span>
 <span class='co'># (just an indication because in real situation with test unit files, we</span>
 <span class='co'># have also the time required to source the units!)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='fl'>100</span>) <span class='fu'>runTest</span>(<span class='no'>foo</span>))[<span class='fl'>3</span>]</div><div class='output co'>#&gt; elapsed 
-#&gt;   0.211 </div><div class='input'>
-<span class='fu'>is.svTest</span>(<span class='fu'>test</span>(<span class='no'>foo</span>))    <span class='co'># Yes, of course!</span></div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='co'># When an object without associated test is passed to runTest(),</span>
+<span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span><span class='op'>(</span><span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>100</span><span class='op'>)</span> <span class='fu'><a href='svTest.html'>runTest</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span>
+</div><div class='output co'>#&gt; elapsed 
+#&gt;   0.224 </div><div class='input'>
+<span class='fu'><a href='svTest.html'>is.svTest</a></span><span class='op'>(</span><span class='fu'><a href='svTest.html'>test</a></span><span class='op'>(</span><span class='va'>foo</span><span class='op'>)</span><span class='op'>)</span>    <span class='co'># Yes, of course!</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='co'># When an object without associated test is passed to runTest(),</span>
 <span class='co'># a simple test containing only a DEACTIVATED entry is build</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fl'>10</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='fu'>runTest</span>(<span class='no'>x</span>))</div><div class='output co'>#&gt; * Object has no tests!:  ... DEACTIVATED
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='fu'><a href='svTest.html'>runTest</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; * Object has no tests!:  ... DEACTIVATED
 #&gt; 
 #&gt; 
 #&gt; == test(x) run in less than 0.1 sec: DEACTIVATED
 #&gt; 
 #&gt; //Pass: 0 Fail: 0 Errors: 0//
 #&gt; </div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='fu'><a href='Log.html'>Log</a></span>())</div><div class='output co'>#&gt; = A svUnit test suite run in less than 0.1 sec with:
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='fu'><a href='Log.html'>Log</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; = A svUnit test suite run in less than 0.1 sec with:
 #&gt; 
 #&gt; * bar ... OK
 #&gt; * test(x) ... DEACTIVATED
@@ -412,7 +423,8 @@ unit files too).</p>
 #&gt; 
 #&gt; //Pass: 7 Fail: 0 Errors: 0//
 #&gt; </div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span>(<span class='no'>foo</span>, <span class='no'>bar</span>, <span class='no'>x</span>)</div></pre>
+<span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span><span class='va'>foo</span>, <span class='va'>bar</span>, <span class='va'>x</span><span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -556,6 +568,8 @@ unit files too).</p>
 
   
 
+
+  
 
   </body>
 </html>
