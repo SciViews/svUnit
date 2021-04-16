@@ -12,35 +12,35 @@
 cycle stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 <!-- badges: end -->
 
-> 'svUnit' is a testing framework inspired by RUnit, itself inspired by xUnit/jUnit. It is similar and compatible with 'RUnit', but implemented differently internally. Test suite written for 'RUnit' or 'svUInit' should be intercompatible. Look at the documentation to discover what 'svUnit' offers for testing your R packages.
+> {svUnit} is a testing framework inspired by {RUnit}, itself inspired by xUnit/jUnit. It is similar and compatible with {RUnit}, but implemented differently internally. Test suite written for {RUnit} or {svUInit} should be intercompatible. Look at the documentation to discover what {svUnit} offers for testing your R packages.
 
 ## Installation
 
-The latest stable version of 'svUnit' can simply be installed from [CRAN](http://cran.r-project.org):
+The latest stable version of {svUnit} can simply be installed from [CRAN](http://cran.r-project.org):
 
 ```r
 install.packages("svUnit")
 ```
 
-You can also install the latest developement version. Make sure you have the 'devtools' R package installed:
+You can also install the latest developement version. Make sure you have the {devtools} R package installed:
 
 ```r
 install.packages("devtools")
 ```
 
-Use `install_github()` to install the 'svUnit' package from Github (source from **master** branch will be recompiled on your machine):
+Use `install_github()` to install the {svUnit} package from Github (source from **master** branch will be recompiled on your machine):
 
 ```r
 devtools::install_github("SciViews/svUnit")
 ```
 
-R should install all required dependencies automatically, and then it should compile and install 'svUnit'.
+R should install all required dependencies automatically, and then it should compile and install {svUnit}.
 
-Latest devel version of 'svUnit' (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svUnit/build/artifacts).
+Latest devel version of {svUnit} (source + Windows binaries for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svUnit/build/artifacts).
 
-## Further explore 'svUnit'
+## Further explore {svUnit}
 
-You can get further help about this package this way: Make the 'svUnit' package available in your R session:
+You can get further help about this package this way: Make the {svUnit} package available in your R session:
 
 ```r
 library("svUnit")
@@ -58,8 +58,8 @@ For further instructions, please, refer to these help pages at https://www.scivi
 
 ## Code of Conduct
 
-Please note that the 'svUnit' project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the {svUnit} project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
 ## Note to developers
 
-This package used to be developed on R-Forge in the past. However, the latest [R-Forge version](https://r-forge.r-project.org/projects/sciviews/) was moved to this Github repository on 2016-03-17 (SVN version 569). **Please, do not use R-Forge anymore for SciViews development, use this Github repository instead.**
+This package used to be developed on R-Forge in the past. However, the latest [R-Forge version](https://r-forge.r-project.org/projects/sciviews/) was moved to this GitHub repository on 2016-03-17 (SVN version 569). **Please, do not use R-Forge anymore for SciViews development, use this GitHub repository instead.**
