@@ -3,11 +3,11 @@
 
 <!-- badges: start -->
 [![Linux Build Status](https://travis-ci.com/SciViews/svUnit.svg )](https://travis-ci.com/SciViews/svUnit)
-[![Win Build Status](https://ci.appveyor.com/api/projects/status/github/SciViews/svUnit?branch=master&svg=true)](http://ci.appveyor.com/project/phgrosjean/svUnit)
+[![Win Build Status](https://ci.appveyor.com/api/projects/status/github/SciViews/svUnit?branch=master&svg=true)](https://ci.appveyor.com/project/phgrosjean/svUnit)
 [![Coverage Status](https://img.shields.io/codecov/c/github/SciViews/svUnit/master.svg)
 ](https://codecov.io/github/SciViews/svUnit?branch=master)
-[![CRAN Status](http://www.r-pkg.org/badges/version/svUnit)](http://cran.r-project.org/package=svUnit)
-[![License](https://img.shields.io/badge/license-GPL-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![CRAN Status](https://www.r-pkg.org/badges/version/svUnit)](https://cran.r-project.org/package=svUnit)
+[![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![Life
 cycle stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 <!-- badges: end -->
@@ -58,7 +58,7 @@ For further instructions, please, refer to these help pages at https://www.scivi
 
 ## Code of Conduct
 
-Please note that the svSweave project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the 'svUnit' project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
 ## Note to developers
 

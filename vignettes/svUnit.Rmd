@@ -58,7 +58,7 @@ However, we encountered several difficulties while trying to enhance 'RUnit' mec
 We did a first implementation of the 'RUnit' GUI based on these objects, before realizing that it is really not designed for such an use. So, we decide to write a completely different unit testing framework in R: 'svUnit', but we make it test code compatible with 'RUnit' (i.e., the engine and objects used are totally different, but the test code run in 'RUnit' or 'svUnit' is interchangeable).
 
 Finally, 'svUnit' is also designed to be integrated in the SciViews
-GUI on top of Komodo Edit or IDE (http://www.activestate.com/komodo_edit), and to approach extreme programming practices with automatic code testing while you write it. A rather simple interface is provided to link and pilot 'svUnit' from any GUI/IDE, and the Komodo Edit/IDE implementation could be used as an example to program similar integration panels for other R GUIs. 'svUnit' also formats its report with *creole wiki* syntax. It is directly readable, but it can also be displayed in a much nicer way using any wiki engine compatible with the creole wiki language. It is thus rather easy to write test reports in wiki servers, possibly through nightly automatic process for your code, if you like.
+GUI on top of Komodo IDE (https://www.activestate.com/products/komodo-ide/), and to approach extreme programming practices with automatic code testing while you write it. A rather simple interface is provided to link and pilot 'svUnit' from any GUI/IDE, and the Komodo IDE implementation could be used as an example to program similar integration panels for other R GUIs. 'svUnit' also formats its report with *creole wiki* syntax. It is directly readable, but it can also be displayed in a much nicer way using any wiki engine compatible with the creole wiki language. It is thus rather easy to write test reports in wiki servers, possibly through nightly automatic process for your code, if you like.
 
 This vignette is a guided tour of 'svUnit', showing its features
 and the various ways you can use it to test your R code.
@@ -72,7 +72,7 @@ The 'svUnit' package is available on CRAN (https://CRAN.R-project.org/package=sv
 install.packages("svUnit")
 ```
 
-This package has no required dependencies other than R >= 1.9.0 and 'utils' ('XML' is also used for some export formats, but it is not required to run the tests). However, if you would like to use its interactive mode in a GUI editor, you must also install Komodo Edit or Komodo IDE and SciViews-K, or use RStudio. Its 'pkgdown' web site is at https://www.sciviews.org/svUnit.
+This package has no required dependencies other than R >= 1.9.0 and 'utils' ('XML' is also used for some export formats, but it is not required to run the tests). However, if you would like to use its interactive mode in a GUI editor, you must also install Komodo Edit or Komodo IDE and SciViews-K, or use RStudio. Its 'pkgdown' web site is at https://www.sciviews.org/svUnit/.
 
 Once the 'svUnit' package is installed, you can check it is working correctly on your machine with the following example code:
 
@@ -498,7 +498,7 @@ The `Auto` mode, when activated, sources R files currently edited in Komodo when
 
 ## References
 
-* Grosjean, Ph., 2003. SciViews: an object-oriented abstraction layer to design GUIs on top of various calculation kernels [online: http://www.ci.tuwien.ac.at/Conferences/DSC-2003]
+* Grosjean, Ph., 2003. SciViews: an object-oriented abstraction layer to design GUIs on top of various calculation kernels [online: http://www.ci.tuwien.ac.at/Conferences/DSC-2003/]
 
 * IEEE Standards Boards, 1993. IEEE standard for software unit testing. ANSI/IEEE Std 1008-1987. 24 pp.
 
