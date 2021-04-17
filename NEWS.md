@@ -1,3 +1,7 @@
+# svUnit 1.0.5
+
+- Correction of a few URLs in the vignette.
+
 # svUnit 1.0.4
 
 - Minor change: markdown added in "suggests". Komodo Edit is now Komodo IDE.

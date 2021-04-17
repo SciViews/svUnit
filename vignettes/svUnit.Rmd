@@ -20,12 +20,12 @@ knitr::opts_chunk$set(
 
 ## Introduction
 
-Unit testing (see http://en.wikipedia.org/wiki/Unit_test) is an approach successfully used to develop software, and to ease code refactoring for keeping bugs to the minimum. It is also the insurance that the software is doing the right calculation (quality insurance). Basically, a test just checks if the code is running and is producing the correct answer/behavior in a given situation. As such, unit tests are build in R package production because all examples in documentation files, and perhaps, test code in `/tests` subdirectory are run during the checking of a package (`R CMD check <pkg>`). However, the R approach lacks a certain number of features to allow optimal use of unit tests as in extreme programming (test first – code second):
+Unit testing (see https://en.wikipedia.org/wiki/Unit_test) is an approach successfully used to develop software, and to ease code refactoring for keeping bugs to the minimum. It is also the insurance that the software is doing the right calculation (quality insurance). Basically, a test just checks if the code is running and is producing the correct answer/behavior in a given situation. As such, unit tests are build in R package production because all examples in documentation files, and perhaps, test code in `/tests` subdirectory are run during the checking of a package (`R CMD check <pkg>`). However, the R approach lacks a certain number of features to allow optimal use of unit tests as in extreme programming (test first – code second):
 
 * Tests are related to package compilation and cannot easily be run independently (for instance, for functions developed separately).
 * Once a test fails, the checking process is interrupted. Thus one has to correct the bug and launch package checking again... and perhaps get caught by the next bug. It is a long and painful process.
 * There is no way to choose one or several tests selectively: all are run or not (depending on command line options) during package checking.
-* It is very hard, or near to impossible to program in R in a test driven development (*write tests first*) with the standard tools (http://en.wikipedia.org/wiki/Test-driven_development).
+* It is very hard, or near to impossible to program in R in a test driven development (*write tests first*) with the standard tools (https://en.wikipedia.org/wiki/Test-driven_development).
 * Consequently, the '*test-code-simplify*' cycle is not easily accessible yet to R programmer, because of the lack of an interactive and flexible testing mechanism providing immediate, or quasi immediate feedback about changes made.
 * We would like also to emphasize that test suites are not only useful to check code, they can also be used to check data, or the pertinence of analyses.
 
@@ -504,7 +504,7 @@ The `Auto` mode, when activated, sources R files currently edited in Komodo when
 
 * Ihaka R. & R. Gentleman, 1996. R: a language for data analysis and graphics. *J. Comput. Graphic. Stat.*, 5:299-314.
 
-* Jeffries, R., 2006. Extreme programming, web site at: http://www.xprogramming.com.
+* Jeffries, R., 2006. Extreme programming, web site at: https://ronjeffries.com/xprog/what-is-extreme-programming/.
 
 * König, T., K. Jünemann & M. Burger, 2007. RUnit – A unit test framework for R. Vignette of the package RUnit available on CRAN. 11 pp.
 
