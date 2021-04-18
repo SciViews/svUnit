@@ -88,7 +88,7 @@
 </li>
       </ul>
 <div class="navbar-title">
-        <a class="navbar-brand" href="../index.html"><p class="h2">svUnit <small>v1.0.5</small></p></a>
+        <a class="navbar-brand" href="../index.html"><p class="h2">svUnit <small>v1.0.6</small></p></a>
       </div>
     </div>
 <!--/.nav-collapse -->
@@ -107,7 +107,7 @@
       <h1 data-toc-skip>svUnit - A framework for unit testing in R</h1>
                         <h4 data-toc-skip class="author">Philippe Grosjean (<a href="mailto:phgrosjean@sciviews.org" class="email">phgrosjean@sciviews.org</a>)</h4>
             
-            <h4 data-toc-skip class="date">2021-04-17</h4>
+            <h4 data-toc-skip class="date">2021-04-18</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/SciViews/svUnit/blob/master/vignettes/svUnit.Rmd" class="external-link"><code>vignettes/svUnit.Rmd</code></a></small>
       <div class="hidden name"><code>svUnit.Rmd</code></div>
@@ -176,7 +176,7 @@
 <span class="op">}</span>
 <span class="fu"><a href="../reference/Log.html">clearLog</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">(</span><span class="fu"><a href="../reference/svTest.html">runTest</a></span><span class="op">(</span><span class="va">Square</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.025 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.024 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; * : checkEqualsNumeric(9, SSSquare(3)) run in less than 0.001 sec ... **ERROR**</span>
@@ -186,7 +186,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 3 Fail: 1 Errors: 1//</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.025 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.024 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; </span>
@@ -248,7 +248,7 @@
 <p>Now, let’s look what happens if we test the <code>Cube()</code> function without clearing the logger:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/svTest.html">runTest</a></span><span class="op">(</span><span class="va">Cube</span><span class="op">)</span>
-<span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in 0.002 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in less than 0.001 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.03571429</span>
 <span class="co">#&gt;  num [1:2] 8 27</span>
 <span class="fu"><a href="../reference/Log.html">Log</a></span><span class="op">(</span><span class="op">)</span>
@@ -263,7 +263,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 2 Fail: 1 Errors: 0//</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in 0.002 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(c(8, 28), Cube(2:3)) run in less than 0.001 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.03571429</span>
 <span class="co">#&gt;  num [1:2] 8 27</span>
 <span class="co">#&gt; </span>
@@ -370,21 +370,21 @@
 <span class="co"># Get some statistics</span>
 <span class="fu"><a href="../reference/svTestData.html">stats</a></span><span class="op">(</span><span class="fu"><a href="../reference/Log.html">Log</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>
 <span class="co">#&gt;                                    kind timing                time</span>
-<span class="co">#&gt; testBadTests                  **ERROR**  0.001 2021-04-17 07:11:07</span>
-<span class="co">#&gt; test_Integrate                       OK  0.000 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testis.test                          OK  0.002 2021-04-17 07:11:07</span>
-<span class="co">#&gt; test_R                               OK  0.000 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testsvSuite                          OK  0.001 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testCube                      **FAILS**  0.000 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testbar                              OK  0.000 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testrunTest                 DEACTIVATED  0.002 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testmat                              OK  0.000 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testCreateClass                      OK  0.001 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2021-04-17 07:11:08</span>
-<span class="co">#&gt; testSquare                           OK  0.000 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testsvTest                           OK  0.003 2021-04-17 07:11:07</span>
-<span class="co">#&gt; testsvSuiteList                      OK  0.008 2021-04-17 07:11:07</span>
+<span class="co">#&gt; testBadTests                  **ERROR**  0.001 2021-04-18 19:37:28</span>
+<span class="co">#&gt; test_Integrate                       OK  0.000 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testis.test                          OK  0.001 2021-04-18 19:37:28</span>
+<span class="co">#&gt; test_R                               OK  0.000 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.001 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testsvSuite                          OK  0.001 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testCube                      **FAILS**  0.000 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testbar                              OK  0.000 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testrunTest                 DEACTIVATED  0.002 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testmat                              OK  0.001 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testCreateClass                      OK  0.001 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testSquare                           OK  0.001 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testsvTest                           OK  0.003 2021-04-18 19:37:28</span>
+<span class="co">#&gt; testsvSuiteList                      OK  0.006 2021-04-18 19:37:28</span>
 <span class="co"># A slightly different presentation than with print</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu"><a href="../reference/Log.html">Log</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; = A svUnit test suite run in less than 0.1 sec with:</span>
@@ -530,7 +530,7 @@
 <span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt; [1] svUnit_1.0.5</span>
+<span class="co">#&gt; [1] svUnit_1.0.6</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
 <span class="co">#&gt;  [1] rprojroot_2.0.2    digest_0.6.27      crayon_1.4.1       R6_2.5.0          </span>
@@ -543,7 +543,7 @@
 <span class="co">#&gt; [29] sass_0.3.1        </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $.time</span>
-<span class="co">#&gt; [1] "2021-04-17 07:11:07 UTC"</span>
+<span class="co">#&gt; [1] "2021-04-18 19:37:28 UTC"</span>
 <span class="co"># List content of the log</span>
 <span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="fu"><a href="../reference/Log.html">Log</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;  [1] "test_Integrate"              "test_R"                     </span>
