@@ -1,3 +1,7 @@
+# svUnit 1.0.6
+
+- A few more URLs corrections (for CRAN)!
+
 # svUnit 1.0.5
 
 - Correction of a few URLs in the vignette.

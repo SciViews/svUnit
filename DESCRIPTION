@@ -1,7 +1,7 @@
 Package: svUnit
 Type: Package
-Version: 1.0.5
-Date: 2021-04-17
+Version: 1.0.6
+Date: 2021-04-18
 Title: 'SciViews' - Unit, Integration and System Testing
 Description: A complete unit test system and functions to implement its GUI part.
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),

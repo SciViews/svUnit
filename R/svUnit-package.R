@@ -94,7 +94,7 @@
 #' 'RUnit' package by Thomas Konig, Klaus Junemann & Matthias Burger.
 #'
 #' @references There is a huge literature and unit testing. An easy starting
-#' point is: \url{http://en.wikipedia.org/wiki/Unit_test}.
+#' point is: \url{https://en.wikipedia.org/wiki/Unit_test}.
 #'
 #' @examples
 #' # Clear the logger

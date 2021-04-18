@@ -133,7 +133,7 @@ test(foo) <- testfoo
 }
 \references{
 There is a huge literature and unit testing. An easy starting
-point is: \url{http://en.wikipedia.org/wiki/Unit_test}.
+point is: \url{https://en.wikipedia.org/wiki/Unit_test}.
 }
 \seealso{
 Useful links:
