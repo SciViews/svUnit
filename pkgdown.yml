@@ -3,7 +3,7 @@ pkgdown: 2.0.3
 pkgdown_sha: ~
 articles:
   svUnit: svUnit.html
-last_built: 2022-05-10T06:55Z
+last_built: 2022-05-10T07:44Z
 urls:
   reference: https://www.sciviews.org/svUnit/reference
   article: https://www.sciviews.org/svUnit/articles

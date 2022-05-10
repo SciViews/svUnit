@@ -176,7 +176,7 @@
 <span class="op">}</span>
 <span class="fu"><a href="../reference/Log.html">clearLog</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">(</span><span class="fu"><a href="../reference/svTest.html">runTest</a></span><span class="op">(</span><span class="va">Square</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.019 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.016 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; * : checkEqualsNumeric(9, SSSquare(3)) run in less than 0.001 sec ... **ERROR**</span>
@@ -186,7 +186,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; //Pass: 3 Fail: 1 Errors: 1//</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.019 sec ... **FAILS**</span>
+<span class="co">#&gt; * : checkEqualsNumeric(10, Square(3)) run in 0.016 sec ... **FAILS**</span>
 <span class="co">#&gt; Mean relative difference: 0.1</span>
 <span class="co">#&gt;  num 9</span>
 <span class="co">#&gt; </span>
@@ -370,21 +370,21 @@
 <span class="co"># Get some statistics</span>
 <span class="fu"><a href="../reference/svTestData.html">stats</a></span><span class="op">(</span><span class="fu"><a href="../reference/Log.html">Log</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>
 <span class="co">#&gt;                                    kind timing                time</span>
-<span class="co">#&gt; testBadTests                  **ERROR**  0.001 2022-05-10 06:56:07</span>
-<span class="co">#&gt; test_Integrate                       OK  0.000 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testis.test                          OK  0.000 2022-05-10 06:56:07</span>
-<span class="co">#&gt; test_R                               OK  0.000 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testsvSuite                          OK  0.002 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testCube                      **FAILS**  0.000 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testbar                              OK  0.000 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testrunTest                 DEACTIVATED  0.001 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testmat                              OK  0.001 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testCreateClass                      OK  0.001 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.002 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testSquare                           OK  0.001 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testsvTest                           OK  0.002 2022-05-10 06:56:07</span>
-<span class="co">#&gt; testsvSuiteList                      OK  0.007 2022-05-10 06:56:07</span>
+<span class="co">#&gt; testBadTests                  **ERROR**  0.003 2022-05-10 07:44:26</span>
+<span class="co">#&gt; test_Integrate                       OK  0.000 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testis.test                          OK  0.001 2022-05-10 07:44:26</span>
+<span class="co">#&gt; test_R                               OK  0.000 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testMyVirtualBaseClass.getX          OK  0.000 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testsvSuite                          OK  0.001 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testCube                      **FAILS**  0.001 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testbar                              OK  0.000 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testrunTest                 DEACTIVATED  0.001 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testmat                              OK  0.000 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testCreateClass                      OK  0.000 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testMyVirtualBaseClass.setX          OK  0.001 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testSquare                           OK  0.001 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testsvTest                           OK  0.000 2022-05-10 07:44:26</span>
+<span class="co">#&gt; testsvSuiteList                      OK  0.004 2022-05-10 07:44:26</span>
 <span class="co"># A slightly different presentation than with print</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu"><a href="../reference/Log.html">Log</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; = A svUnit test suite run in less than 0.1 sec with:</span>
@@ -546,7 +546,7 @@
 <span class="co">#&gt; [29] desc_1.4.1        jsonlite_1.8.0   </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $.time</span>
-<span class="co">#&gt; [1] "2022-05-10 06:56:07 UTC"</span>
+<span class="co">#&gt; [1] "2022-05-10 07:44:26 UTC"</span>
 <span class="co"># List content of the log</span>
 <span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="fu"><a href="../reference/Log.html">Log</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;  [1] "test_Integrate"              "test_R"                     </span>
@@ -586,7 +586,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $timing</span>
 <span class="co">#&gt; timing </span>
-<span class="co">#&gt;      0</span></code></pre></div>
+<span class="co">#&gt;  0.001</span></code></pre></div>
 <p>As the logger inherits from <code>environment</code>, you can manage individual test data the same way as objects in any other environment. For instance, if you want to delete a particular test data without touching to the rest, you can use:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="fu"><a href="../reference/Log.html">Log</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
