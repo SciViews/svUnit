@@ -82,7 +82,7 @@ for \code{\link[=checkTrue]{checkTrue()}} that is vectorized here, but accept on
 packages.
 See \code{\link[=svTest]{svTest()}} for examples of use of these functions in
 actual test cases attached to R objects.
-See also the note about S4 objects in the \code{\link[RUnit:checkTrue]{RUnit::checkTrue()}} online help of the
+See also the note about S4 objects in the \code{\link[RUnit:checkFuncs]{RUnit::checkTrue()}} online help of the
 'RUnit' package.
 }
 \examples{
@@ -125,7 +125,7 @@ Log()
 clearLog()
 }
 \seealso{
-\code{\link[=svTest]{svTest()}}, \code{\link[=Log]{Log()}}, \code{\link[=guiTestReport]{guiTestReport()}}, \link[RUnit:checkTrue]{RUnit::checkTrue}
+\code{\link[=svTest]{svTest()}}, \code{\link[=Log]{Log()}}, \code{\link[=guiTestReport]{guiTestReport()}}, \link[RUnit:checkFuncs]{RUnit::checkTrue}
 }
 \author{
 Written by Ph. Grosjean, inspired from the general design of the

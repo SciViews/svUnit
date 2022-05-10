@@ -1,37 +1,31 @@
-
 # svUnit
 
 <!-- badges: start -->
-[![Linux Build Status](https://travis-ci.com/SciViews/svUnit.svg )](https://travis-ci.com/SciViews/svUnit)
-[![Win Build Status](https://ci.appveyor.com/api/projects/status/github/SciViews/svUnit?branch=master&svg=true)](https://ci.appveyor.com/project/phgrosjean/svUnit)
-[![Coverage Status](https://img.shields.io/codecov/c/github/SciViews/svUnit/master.svg)
-](https://codecov.io/github/SciViews/svUnit?branch=master)
-[![CRAN Status](https://www.r-pkg.org/badges/version/svUnit)](https://cran.r-project.org/package=svUnit)
-[![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-[![Life
-cycle stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+
+[![R-CMD-check](https://github.com/SciViews/svUnit/workflows/R-CMD-check/badge.svg)](https://github.com/SciViews/svUnit/actions) [![Win Build Status](https://ci.appveyor.com/api/projects/status/github/SciViews/svUnit?branch=master&svg=true)](https://ci.appveyor.com/project/phgrosjean/svUnit) [![Coverage Status](https://img.shields.io/codecov/c/github/SciViews/svUnit/master.svg)](https://codecov.io/github/SciViews/svUnit?branch=master) [![CRAN Status](https://www.r-pkg.org/badges/version/svUnit)](https://cran.r-project.org/package=svUnit) [![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html) [![Life cycle stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+
 <!-- badges: end -->
 
-> {svUnit} is a testing framework inspired by {RUnit}, itself inspired by xUnit/jUnit. It is similar and compatible with {RUnit}, but implemented differently internally. Test suite written for {RUnit} or {svUInit} should be intercompatible. Look at the documentation to discover what {svUnit} offers for testing your R packages.
+{svUnit} is a testing framework inspired by {RUnit}, itself inspired by xUnit/jUnit. It is similar and compatible with {RUnit}, but implemented differently internally. Test suite written for {RUnit} or {svUInit} should be intercompatible. Look at the documentation to discover what {svUnit} offers for testing your R packages.
 
 ## Installation
 
 The latest stable version of {svUnit} can simply be installed from [CRAN](http://cran.r-project.org):
 
-```r
+``` r
 install.packages("svUnit")
 ```
 
-You can also install the latest developement version. Make sure you have the {devtools} R package installed:
+You can also install the latest development version. Make sure you have the {remotes} R package installed:
 
-```r
-install.packages("devtools")
+``` r
+install.packages("remotes")
 ```
 
 Use `install_github()` to install the {svUnit} package from Github (source from **master** branch will be recompiled on your machine):
 
-```r
-devtools::install_github("SciViews/svUnit")
+``` r
+remotes::install_github("SciViews/svUnit")
 ```
 
 R should install all required dependencies automatically, and then it should compile and install {svUnit}.
@@ -42,19 +36,19 @@ Latest devel version of {svUnit} (source + Windows binaries for the latest stabl
 
 You can get further help about this package this way: Make the {svUnit} package available in your R session:
 
-```r
+``` r
 library("svUnit")
 ```
 
 Get help about this package:
 
-```r
+``` r
 library(help = "svUnit")
 help("svUnit-package")
 vignette("svUnit") # None is installed with install_github()
 ```
 
-For further instructions, please, refer to these help pages at https://www.sciviews.org/svUnit/.
+For further instructions, please, refer to these help pages at <https://www.sciviews.org/svUnit/>.
 
 ## Code of Conduct
 

@@ -224,7 +224,7 @@ options(svUnit.excludeList = oex)
 rm(Square, Cube, foo, test_Integrate, mysuite, myunit, oex)
 }
 \seealso{
-\code{\link[=svSuiteData]{svSuiteData()}}, \code{\link[=svTest]{svTest()}}, \code{\link[=Log]{Log()}}, \code{\link[=checkEquals]{checkEquals()}}, \code{\link[RUnit:checkEquals]{RUnit::checkEquals()}}
+\code{\link[=svSuiteData]{svSuiteData()}}, \code{\link[=svTest]{svTest()}}, \code{\link[=Log]{Log()}}, \code{\link[=checkEquals]{checkEquals()}}, \code{\link[RUnit:checkFuncs]{RUnit::checkEquals()}}
 }
 \author{
 Philippe Grosjean

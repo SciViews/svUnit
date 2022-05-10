@@ -10,12 +10,12 @@ Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 Depends: R (>= 1.9.0)
 Imports: utils
-Suggests: svGUI, datasets, XML, RUnit, knitr, markdown, covr, spelling
+Suggests: svGUI, datasets, XML, RUnit, knitr, rmarkdown, covr, spelling
 License: GPL-2
 URL: https://github.com/SciViews/svUnit, https://www.sciviews.org/svUnit/
 BugReports: https://github.com/SciViews/svUnit/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-US
