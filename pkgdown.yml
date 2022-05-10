@@ -1,9 +1,9 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1.9001
-pkgdown_sha: 8e0838e273462cec420dfa20f240c684a33425d9
+pkgdown: 2.0.3
+pkgdown_sha: ~
 articles:
   svUnit: svUnit.html
-last_built: 2021-04-18T19:37Z
+last_built: 2022-05-10T06:55Z
 urls:
   reference: https://www.sciviews.org/svUnit/reference
   article: https://www.sciviews.org/svUnit/articles

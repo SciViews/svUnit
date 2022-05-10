@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.sciviews.org/svUnit/404.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/svUnit/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/svUnit/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/svUnit/TODO.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/svUnit/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/svUnit/articles/svUnit.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/svUnit/authors.html</loc>
+  </url>
+  <url>
     <loc>https://www.sciviews.org/svUnit/index.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/svUnit/news/index.html</loc>
   </url>
   <url>
     <loc>https://www.sciviews.org/svUnit/reference/Log.html</loc>
@@ -11,6 +35,9 @@
   </url>
   <url>
     <loc>https://www.sciviews.org/svUnit/reference/guiTestReport.html</loc>
+  </url>
+  <url>
+    <loc>https://www.sciviews.org/svUnit/reference/index.html</loc>
   </url>
   <url>
     <loc>https://www.sciviews.org/svUnit/reference/koUnit.html</loc>
@@ -32,8 +59,5 @@
   </url>
   <url>
     <loc>https://www.sciviews.org/svUnit/reference/unitTests.svUnit.html</loc>
-  </url>
-  <url>
-    <loc>https://www.sciviews.org/svUnit/articles/svUnit.html</loc>
   </url>
 </urlset>
