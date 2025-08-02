@@ -4,18 +4,16 @@
 \name{svUnit-package}
 \alias{svUnit}
 \alias{svUnit-package}
-\title{svUnit: 'SciViews' - Unit, Integration and System Testing}
+\title{'SciViews::R' - Unit, Integration and System Testing}
 \description{
-A complete unit test system and functions to implement its GUI part.
-}
-\details{
 The SciViews 'svUnit' package defines a framework for testing R code, not
 unlike jUnit for Java. It is inspired on the \code{checkxxx()} functions from the
 'RUnit' package and the same test unit files should be compatible with both
 'svUnit' and 'RUnit'. However, the internal implementation is completely
 different and svUnit can also be used interactively, while 'RUnit' is only
 designed to run test units written in files on disks.
-
+}
+\details{
 The test unit framework provided in 'svUnit' is based on tests, also called
 assertions, implemented in \code{checkxxx()} functions. For instance, the
 \code{checkTrue(expr)} function check if its 'expr' argument returns \code{TRUE}.
@@ -140,6 +138,7 @@ Useful links:
 \itemize{
   \item \url{https://github.com/SciViews/svUnit}
   \item \url{https://www.sciviews.org/svUnit/}
+  \item \url{https://sciviews.r-universe.dev/svUnit}
   \item Report bugs at \url{https://github.com/SciViews/svUnit/issues}
 }
 
@@ -148,4 +147,3 @@ Useful links:
 Written by Ph. Grosjean, inspired from the general design of the
 'RUnit' package by Thomas Konig, Klaus Junemann & Matthias Burger.
 }
-\keyword{internal}

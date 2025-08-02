@@ -1,11 +1,8 @@
 ## ----setup, include = FALSE---------------------------------------------------
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 
-## ---- eval=FALSE--------------------------------------------------------------
-#  install.packages("svUnit")
+## ----eval=FALSE---------------------------------------------------------------
+# install.packages("svUnit")
 
 ## -----------------------------------------------------------------------------
 library(svUnit)
@@ -125,10 +122,10 @@ test(Square)
 runTest(Square)
 Log()  # Remember we didn't clear the log!
 
-## ---- eval=FALSE--------------------------------------------------------------
-#  # Create a test unit on disk and view its content
-#  unit <- makeUnit(Square)
-#  file.show(unit, delete.file = TRUE)
+## ----eval=FALSE---------------------------------------------------------------
+# # Create a test unit on disk and view its content
+# unit <- makeUnit(Square)
+# file.show(unit, delete.file = TRUE)
 
 ## -----------------------------------------------------------------------------
 example(unitTests.svUnit)
@@ -147,9 +144,9 @@ svSuiteList()
 ## -----------------------------------------------------------------------------
 (mySuite <- svSuiteList())
 
-## ---- eval=FALSE--------------------------------------------------------------
-#  myUnit <- makeUnit(mySuite, name = "ExampleTests")
-#  file.show(myUnit, delete.file = TRUE)
+## ----eval=FALSE---------------------------------------------------------------
+# myUnit <- makeUnit(mySuite, name = "ExampleTests")
+# file.show(myUnit, delete.file = TRUE)
 
 ## -----------------------------------------------------------------------------
 clearLog()

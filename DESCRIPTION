@@ -16,7 +16,7 @@ Suggests:
     svGUI (>= 1.0.0),
     datasets (>= 1.9.0),
     XML (>= 3.99.0.10),
-    RUnit (>=0.4.30), 
+    RUnit (>= 0.4.30), 
     covr (>= 3.5.0),
     knitr (>= 1.42),
     rmarkdown (>= 2.21),
