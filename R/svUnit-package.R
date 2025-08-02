@@ -1,4 +1,5 @@
-#' @details
+#' 'SciViews::R' - Unit, Integration and System Testing
+#'
 #' The SciViews 'svUnit' package defines a framework for testing R code, not
 #' unlike jUnit for Java. It is inspired on the `checkxxx()` functions from the
 #' 'RUnit' package and the same test unit files should be compatible with both
@@ -127,11 +128,8 @@
 #'
 #' (runTest(foo))	# Now, that's fine!
 
-#' @keywords internal
-"_PACKAGE"
-
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
 ## usethis namespace: end
-NULL
+"_PACKAGE"

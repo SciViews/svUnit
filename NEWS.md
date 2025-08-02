@@ -1,3 +1,7 @@
+# svUnit 1.0.7
+
+- New format for CITATION.
+
 # svUnit 1.0.6
 
 - A few more URLs corrections (for CRAN)!

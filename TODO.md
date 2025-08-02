@@ -1,6 +1,6 @@
 # svUnit To Do list
 
-- Split the svUnit vignette inot a real getting started one, and a rationate + SciViews-k/Komodo vignettes.
+- Split the svUnit vignette into a real getting started one, and a rationate + SciViews-k/Komodo vignettes.
 
 - Drop the unmaintained SciViews-K/Komodo feature?
 
